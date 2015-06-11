@@ -1,0 +1,15 @@
+{
+    "description": "Design patterns in PHP",
+    "authors": [
+        {
+            "name": "Riabchenko Vlad",
+            "email": "riabchenko.vlad@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "DesignPatterns\\": ""
+        }
+    }
+}
