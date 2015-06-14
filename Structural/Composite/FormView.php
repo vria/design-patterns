@@ -5,15 +5,9 @@ namespace DesignPatterns\Structural\Composite;
 abstract class FormView
 {
     protected $name;
-    protected $parent = null;
 
     public function __construct($name){
         $this->name = $name;
-    }
-
-    public function getParent()
-    {
-        return $this->parent;
     }
 
     public function getName()
