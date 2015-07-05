@@ -2,6 +2,7 @@
 
 namespace DesignPatterns\Behavioral\Strategy;
 
+
 class PriceFilter implements ProductFilter
 {
     const SUPERIOR = 0x1;

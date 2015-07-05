@@ -2,6 +2,7 @@
 
 namespace DesignPatterns\Behavioral\Strategy;
 
+
 class ProductCollection
 {
     private $products;

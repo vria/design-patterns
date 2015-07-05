@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vlad
- * Date: 17.06.2015
- * Time: 0:22
- */
 
 namespace DesignPatterns\Structural\Decorator;
 

@@ -2,6 +2,7 @@
 
 namespace DesignPatterns\Structural\Composite;
 
+
 class SubmitWidget extends FormView
 {
     public function render()

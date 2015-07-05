@@ -2,6 +2,7 @@
 
 namespace DesignPatterns\Structural\Composite;
 
+
 abstract class FormView
 {
     protected $name;

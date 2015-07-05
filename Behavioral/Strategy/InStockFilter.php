@@ -2,6 +2,7 @@
 
 namespace DesignPatterns\Behavioral\Strategy;
 
+
 class InStockFilter implements ProductFilter
 {
     public function filter($products)
