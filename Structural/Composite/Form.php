@@ -23,7 +23,7 @@ class Form extends FormView
         if (array_key_exists($name, $this->children)) {
             return $this->children[$name];
         }
-        throw new Exception("There is no child with $name name");
+        throw new \InvalidArgumentException("There is no child with $name name");
     }
 
     public function render()

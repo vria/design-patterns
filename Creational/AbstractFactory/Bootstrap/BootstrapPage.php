@@ -32,5 +32,7 @@ class BootstrapPage implements Page
     public function addElement(Element $element)
     {
         $this->elements[] = $element;
+
+        return $this;
     }
 }

@@ -7,7 +7,8 @@ abstract class FormView
 {
     protected $name;
 
-    public function __construct($name){
+    public function __construct($name)
+    {
         $this->name = $name;
     }
 
@@ -18,12 +19,12 @@ abstract class FormView
 
     public function add(FormView $child)
     {
-        throw new Exception("Simple form element cannot have children");
+        throw new \BadMethodCallException("Simple form element cannot have children");
     }
 
     public function get($name)
     {
-        throw new Exception("Simple form element cannot have children");
+        throw new \BadMethodCallException("Simple form element cannot have children");
     }
 
     public abstract function render();

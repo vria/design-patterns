@@ -55,11 +55,10 @@ class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testTextPage(BootstrapPage $page, BootstrapButton $button, BootstrapTextInput $textInput)
     {
-        $page->addElement($textInput);
-        $page->addElement($button);
-
-        $page->render();
-
         $this->expectOutputRegex("/firstname(.*\n*.*)Submit/");
+
+        $page->addElement($textInput)
+             ->addElement($button)
+             ->render();
     }
 }

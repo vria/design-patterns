@@ -55,11 +55,10 @@ class PlainPageFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testTextPage(PlainPage $page, PlainButton $button, PlainTextInput $textInput)
     {
-        $page->addElement($textInput);
-        $page->addElement($button);
-
-        $page->render();
-
         $this->expectOutputRegex("/firstname(.*\n*.*)Submit/");
+
+        $page->addElement($textInput)
+             ->addElement($button)
+             ->render();
     }
 }
