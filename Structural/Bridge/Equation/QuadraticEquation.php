@@ -43,15 +43,13 @@ class QuadraticEquation extends Equation
                 $sqrtD = $this->mathImpl->sqrt($D);
 
                 return array(
-                    'x1' => $this->mathImpl->div($this->mathImpl->add($minusB, $sqrtD), $twoTimesA),
-                    'x2' => $this->mathImpl->div($this->mathImpl->sub($minusB, $sqrtD), $twoTimesA)
+                    $this->mathImpl->div($this->mathImpl->add($minusB, $sqrtD), $twoTimesA),
+                    $this->mathImpl->div($this->mathImpl->sub($minusB, $sqrtD), $twoTimesA)
                 );
             }
             if ($this->mathImpl->cmp($D, 0) == MathImpl::EQUALS) { //Single solution
 
-                return array(
-                    'x' => $this->mathImpl->div($minusB, $twoTimesA),
-                );
+                return array($this->mathImpl->div($minusB, $twoTimesA));
             }
 
             return array();

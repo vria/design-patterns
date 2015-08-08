@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vlad
- * Date: 23.07.2015
- * Time: 23:20
- */
 
 namespace DesignPatterns\Structural\Bridge\Math;
 

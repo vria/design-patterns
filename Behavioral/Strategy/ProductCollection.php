@@ -7,6 +7,9 @@ class ProductCollection
 {
     private $products;
 
+    /**
+     * @var ProductFilter
+     */
     private $filter;
 
     public function __construct($products)
