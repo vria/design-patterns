@@ -1,5 +1,5 @@
 {
-    "description": "Design patterns in PHP",
+    "description": "GoF design patterns in PHP",
     "authors": [
         {
             "name": "Riabchenko Vlad",
@@ -8,8 +8,7 @@
     ],
     "minimum-stability": "stable",
     "require-dev": {
-        "phpunit/phpunit": "4.7.*",
-        
+        "phpunit/phpunit": "4.7.*"
     },
     "autoload": {
         "psr-4": {

@@ -20,4 +20,4 @@ abstract class MoveCommand
     }
 
     public abstract function move();
-} 
+}

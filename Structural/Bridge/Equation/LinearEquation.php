@@ -38,10 +38,10 @@ class LinearEquation extends Equation
      */
     public function solve()
     {
-        if ($this->mathImpl instanceof MathImpl) {
-            return $this->mathImpl->div($this->mathImpl->neg($this->b), $this->a);
-        } else {
+        if (!$this->mathImpl instanceof MathImpl) {
             throw new \LogicException("Math engine should be set via setMathImpl method");
         }
+
+        return $this->mathImpl->div($this->mathImpl->neg($this->b), $this->a);
     }
 }
