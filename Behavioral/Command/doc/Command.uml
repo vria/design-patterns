@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\DesignPatterns\Behavioral\Command\Field</OriginalElement>
+  <nodes>
+    <node x="116.0" y="141.0">\DesignPatterns\Behavioral\Command\Commands\RightCommand</node>
+    <node x="-33.0" y="141.0">\DesignPatterns\Behavioral\Command\Commands\BottomCommand</node>
+    <node x="43.5" y="62.0">\DesignPatterns\Behavioral\Command\Commands\MoveCommand</node>
+    <node x="253.0" y="141.0">\DesignPatterns\Behavioral\Command\Commands\TopCommand</node>
+    <node x="-162.0" y="141.0">\DesignPatterns\Behavioral\Command\Commands\LeftCommand</node>
+    <node x="58.5" y="-17.0">\DesignPatterns\Behavioral\Command\Command</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\DesignPatterns\Behavioral\Command\Commands\BottomCommand" target="\DesignPatterns\Behavioral\Command\Commands\MoveCommand">
+      <point x="0.0" y="-14.5" />
+      <point x="31.5" y="121.0" />
+      <point x="88.125" y="121.0" />
+      <point x="-14.875" y="14.5" />
+    </edge>
+    <edge source="\DesignPatterns\Behavioral\Command\Commands\TopCommand" target="\DesignPatterns\Behavioral\Command\Commands\MoveCommand">
+      <point x="0.0" y="-14.5" />
+      <point x="307.5" y="111.0" />
+      <point x="147.625" y="111.0" />
+      <point x="44.625" y="14.5" />
+    </edge>
+    <edge source="\DesignPatterns\Behavioral\Command\Commands\LeftCommand" target="\DesignPatterns\Behavioral\Command\Commands\MoveCommand">
+      <point x="0.0" y="-14.5" />
+      <point x="-107.5" y="111.0" />
+      <point x="58.375" y="111.0" />
+      <point x="-44.625" y="14.5" />
+    </edge>
+    <edge source="\DesignPatterns\Behavioral\Command\Commands\MoveCommand" target="\DesignPatterns\Behavioral\Command\Command">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\DesignPatterns\Behavioral\Command\Commands\RightCommand" target="\DesignPatterns\Behavioral\Command\Commands\MoveCommand">
+      <point x="0.0" y="-14.5" />
+      <point x="174.5" y="121.0" />
+      <point x="117.875" y="121.0" />
+      <point x="14.875" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="95.0" y="89.0" />
+  <SelectedNodes />
+  <Categories />
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
