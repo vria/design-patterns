@@ -2,9 +2,9 @@
 <phpunit colors="true" bootstrap="./vendor/autoload.php">
     <testsuites>
         <testsuite name="All Pattern's Tests">
-            <directory suffix="Test.php">Behavioral/*/Test</directory>
-            <directory suffix="Test.php">Creational/*/Test</directory>
-            <directory suffix="Test.php">Structural/*/Test</directory>
+            <directory suffix="Test.php">Behavioral/*/tests</directory>
+            <directory suffix="Test.php">Creational/*/tests</directory>
+            <directory suffix="Test.php">Structural/*/tests</directory>
         </testsuite>
     </testsuites>
     <filter>
