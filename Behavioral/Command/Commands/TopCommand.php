@@ -6,6 +6,11 @@ class TopCommand extends MoveCommand
 {
     public function move()
     {
-        $this->game->player->y++;
+        $this->field->toTop();
     }
-} 
+
+    public function moveBack()
+    {
+        $this->field->toBottom();
+    }
+}

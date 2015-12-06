@@ -2,22 +2,21 @@
 
 namespace DesignPatterns\Behavioral\Command\Commands;
 
-use DesignPatterns\Behavioral\Command\Game;
+use DesignPatterns\Behavioral\Command\Command;
+use DesignPatterns\Behavioral\Command\Field;
 
-abstract class MoveCommand
+abstract class MoveCommand implements Command
 {
     /**
-     * @var Game
+     * @var Field
      */
-    protected $game;
+    protected $field;
 
     /**
-     * @param Game $game
+     * @param Field $field
      */
-    public function __construct(Game $game)
+    function __construct(Field $field)
     {
-        $this->game = $game;
+        $this->field = $field;
     }
-
-    public abstract function move();
 }

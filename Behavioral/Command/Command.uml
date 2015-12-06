@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\DesignPatterns\Behavioral\Command\Game</OriginalElement>
+  <nodes>
+    <node x="155.0" y="273.0">\DesignPatterns\Behavioral\Command\Commands\TopCommand</node>
+    <node x="309.0" y="0.0">\DesignPatterns\Behavioral\Command\Point</node>
+    <node x="0.0" y="0.0">\DesignPatterns\Behavioral\Command\Game</node>
+    <node x="0.0" y="273.0">\DesignPatterns\Behavioral\Command\Command</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="101.5" y="171.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constants</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

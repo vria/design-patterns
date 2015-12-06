@@ -6,6 +6,11 @@ class LeftCommand extends MoveCommand
 {
     public function move()
     {
-        $this->game->player->x--;
+        $this->field->toLeft();
     }
-} 
+
+    public function moveBack()
+    {
+        $this->field->toRight();
+    }
+}
