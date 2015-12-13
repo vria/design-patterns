@@ -3,15 +3,16 @@
 namespace DesignPatterns\Creational\AbstractFactory\PlainHTML;
 
 use DesignPatterns\Creational\AbstractFactory\HTMLPageFactory;
-use DesignPatterns\Creational\AbstractFactory\Page;
-use DesignPatterns\Creational\AbstractFactory\TextInput;
-use DesignPatterns\Creational\AbstractFactory\Button;
 
 
+/**
+ * Class PlainPageFactory
+ * @package DesignPatterns\Creational\AbstractFactory\PlainHTML
+ */
 class PlainPageFactory implements HTMLPageFactory
 {
     /**
-     * @return PlainPage|Page
+     * @return PlainPage
      */
     public function createPage()
     {
@@ -19,9 +20,9 @@ class PlainPageFactory implements HTMLPageFactory
     }
 
     /**
-     * @param $name
-     * @param $label
-     * @return PlainTextInput|TextInput
+     * @param string $name
+     * @param string $label
+     * @return PlainTextInput
      */
     public function createTextInput($name, $label)
     {
@@ -29,8 +30,8 @@ class PlainPageFactory implements HTMLPageFactory
     }
 
     /**
-     * @param $label
-     * @return PlainButton|Button
+     * @param string $label
+     * @return PlainButton
      */
     public function createButton($label)
     {

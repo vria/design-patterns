@@ -7,6 +7,9 @@ use DesignPatterns\Structural\Bridge\Math\MathImpl;
 
 class GMPMathImplTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var GMPMathImpl
+     */
     private $GMPMathImpl;
 
     protected function setUp()

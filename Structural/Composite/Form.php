@@ -13,17 +13,28 @@ class Form extends FormView
         $this->children = array();
     }
 
+    /**
+     * @param FormView $child
+     * @return $this
+     */
     public function add(FormView $child)
     {
         $this->children[$child->getName()] = $child;
+
+        return $this;
     }
 
+    /**
+     * @param $name
+     * @return FormView $child
+     */
     public function get($name)
     {
-        if (array_key_exists($name, $this->children)) {
-            return $this->children[$name];
+        if (!array_key_exists($name, $this->children)) {
+            throw new \InvalidArgumentException("There is no child with $name name");
         }
-        throw new \InvalidArgumentException("There is no child with $name name");
+
+        return $this->children[$name];
     }
 
     public function render()

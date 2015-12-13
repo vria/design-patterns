@@ -2,9 +2,15 @@
 
 namespace DesignPatterns\Behavioral\Strategy;
 
-
+/**
+ * Class ProductCollection
+ * @package DesignPatterns\Behavioral\Strategy
+ */
 class ProductCollection
 {
+    /**
+     * @var array
+     */
     private $products;
 
     /**
@@ -12,19 +18,29 @@ class ProductCollection
      */
     private $filter;
 
-    public function __construct($products)
+    /**
+     * @param array $products
+     */
+    public function __construct(array $products)
     {
         $this->products = $products;
     }
 
+    /**
+     * @param ProductFilter $filter
+     */
     public function setFilter(ProductFilter $filter)
     {
         $this->filter = $filter;
     }
 
+    /**
+     * @return array
+     * @throw \LogicException if filter is not set
+     */
     public function filterElements()
     {
-        if (!$this->filter) {
+        if (!$this->filter instanceof ProductFilter) {
             throw new \LogicException("Filter is not set");
         }
 

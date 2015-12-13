@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\DesignPatterns\Structural\Composite\Form</OriginalElement>
+  <nodes>
+    <node x="128.0" y="79.0">\DesignPatterns\Structural\Composite\TextWidget</node>
+    <node x="240.0" y="79.0">\DesignPatterns\Structural\Composite\Form</node>
+    <node x="0.0" y="79.0">\DesignPatterns\Structural\Composite\SubmitWidget</node>
+    <node x="131.5" y="0.0">\DesignPatterns\Structural\Composite\FormView</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\DesignPatterns\Structural\Composite\TextWidget" target="\DesignPatterns\Structural\Composite\FormView">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\DesignPatterns\Structural\Composite\SubmitWidget" target="\DesignPatterns\Structural\Composite\FormView">
+      <point x="0.0" y="-14.5" />
+      <point x="54.0" y="54.0" />
+      <point x="145.66666666666666" y="54.0" />
+      <point x="-28.333333333333343" y="14.5" />
+    </edge>
+    <edge source="\DesignPatterns\Structural\Composite\Form" target="\DesignPatterns\Structural\Composite\FormView">
+      <point x="0.0" y="-14.5" />
+      <point x="270.0" y="54.0" />
+      <point x="202.33333333333331" y="54.0" />
+      <point x="28.333333333333314" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="150.0" y="54.0" />
+  <SelectedNodes />
+  <Categories />
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

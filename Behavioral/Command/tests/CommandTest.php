@@ -26,7 +26,7 @@ class CommandTest extends \PHPUnit_Framework_TestCase
         $this->game->addKey('bottom', new BottomCommand($this->game->getField()));
     }
 
-    public function testAll()
+    public function testReachGoal()
     {
         $this->assertFalse($this->game->checkGoal());
 

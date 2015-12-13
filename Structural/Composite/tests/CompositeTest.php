@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Structural\Composite\Test;
+namespace DesignPatterns\Structural\Composite\Tests;
 
 use DesignPatterns\Structural\Composite\Form;
 use DesignPatterns\Structural\Composite\SubmitWidget;
@@ -37,6 +37,9 @@ class CompositeTest extends \PHPUnit_Framework_TestCase
     /**
      * @depends testTextWidget
      * @depends testSubmitWidget
+     *
+     * @param TextWidget $text
+     * @param SubmitWidget $submit
      */
     public function testChildOfForm(TextWidget $text, SubmitWidget $submit)
     {
@@ -51,7 +54,7 @@ class CompositeTest extends \PHPUnit_Framework_TestCase
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testUnexistingChild()
+    public function testChildNotExists()
     {
         $form = new Form("myform");
         $form->get('unexistingChild');
@@ -60,8 +63,10 @@ class CompositeTest extends \PHPUnit_Framework_TestCase
     /**
      * @expectedException \BadMethodCallException
      * @depends testTextWidget
+     *
+     * @param TextWidget $text
      */
-    public function testSimpleElementException($text)
+    public function testSimpleElementException(TextWidget $text)
     {
         $text->get('unexistingChild');
     }

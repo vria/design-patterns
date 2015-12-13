@@ -19,6 +19,9 @@ class PlainPageFactoryTest extends \PHPUnit_Framework_TestCase
         self::$factory = new PlainPageFactory();
     }
 
+    /**
+     * @return PlainButton
+     */
     public function testButton()
     {
         $button = self::$factory->createButton("Submit");
@@ -28,6 +31,9 @@ class PlainPageFactoryTest extends \PHPUnit_Framework_TestCase
         return $button;
     }
 
+    /**
+     * @return PlainTextInput
+     */
     public function testTextInput()
     {
         $textInput = self::$factory->createTextInput("firstname", "Your name");
@@ -37,6 +43,9 @@ class PlainPageFactoryTest extends \PHPUnit_Framework_TestCase
         return $textInput;
     }
 
+    /**
+     * @return PlainPage
+     */
     public function testTextPageCreation()
     {
         $page = self::$factory->createPage();
@@ -52,6 +61,8 @@ class PlainPageFactoryTest extends \PHPUnit_Framework_TestCase
      * @depends testTextInput
      *
      * @param PlainPage $page
+     * @param PlainButton $button
+     * @param PlainTextInput $textInput
      */
     public function testTextPage(PlainPage $page, PlainButton $button, PlainTextInput $textInput)
     {

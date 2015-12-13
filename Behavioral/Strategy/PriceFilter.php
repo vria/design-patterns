@@ -2,22 +2,40 @@
 
 namespace DesignPatterns\Behavioral\Strategy;
 
-
+/**
+ * Class PriceFilter
+ * @package DesignPatterns\Behavioral\Strategy
+ */
 class PriceFilter implements ProductFilter
 {
-    const SUPERIOR = 0x1;
-    const INFERIOR = 0x2;
+    const SUPERIOR = "SUPERIOR";
+    const INFERIOR = "INFERIOR";
 
+    /**
+     * @var double
+     */
     private $threshold;
+
+    /**
+     * @var string
+     */
     private $compareWay;
 
+    /**
+     * @param $threshold
+     * @param string $compareWay
+     */
     public function __construct($threshold, $compareWay = self::INFERIOR)
     {
         $this->threshold = $threshold;
         $this->compareWay = $compareWay;
     }
 
-    public function filter($products)
+    /**
+     * @param array $products
+     * @return array
+     */
+    public function filter(array $products)
     {
         $threshold = $this->threshold;
         $compareWay = $this->compareWay;

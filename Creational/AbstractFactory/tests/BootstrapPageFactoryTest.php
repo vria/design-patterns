@@ -19,6 +19,9 @@ class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
         self::$factory = new BootstrapPageFactory();
     }
 
+    /**
+     * @return BootstrapButton
+     */
     public function testButton()
     {
         $button = self::$factory->createButton("Submit");
@@ -28,6 +31,9 @@ class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
         return $button;
     }
 
+    /**
+     * @return BootstrapTextInput
+     */
     public function testTextInput()
     {
         $textInput = self::$factory->createTextInput("firstname", "Your name");
@@ -37,6 +43,9 @@ class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
         return $textInput;
     }
 
+    /**
+     * @return BootstrapPage
+     */
     public function testTextPageCreation()
     {
         $page = self::$factory->createPage();
@@ -46,12 +55,15 @@ class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
         return $page;
     }
 
+
     /**
      * @depends testTextPageCreation
      * @depends testButton
      * @depends testTextInput
      *
      * @param BootstrapPage $page
+     * @param BootstrapButton $button
+     * @param BootstrapTextInput $textInput
      */
     public function testTextPage(BootstrapPage $page, BootstrapButton $button, BootstrapTextInput $textInput)
     {
