@@ -4,6 +4,10 @@ namespace DesignPatterns\Structural\Bridge\Equation;
 
 use DesignPatterns\Structural\Bridge\Math\MathImpl;
 
+/**
+ * Class Equation
+ * @package DesignPatterns\Structural\Bridge\Equation
+ */
 abstract class Equation
 {
     /**
@@ -19,5 +23,10 @@ abstract class Equation
         $this->mathImpl = $mathImpl;
     }
 
+    /**
+     * Get roots
+     *
+     * @return mixed
+     */
     public abstract function solve();
 }

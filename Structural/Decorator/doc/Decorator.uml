@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\DesignPatterns\Structural\Decorator\LogMessage</OriginalElement>
+  <nodes>
+    <node x="219.0" y="248.0">\DesignPatterns\Structural\Decorator\LogMessageWithErrorLevelDecorator</node>
+    <node x="232.99999999999997" y="0.0">\DesignPatterns\Structural\Decorator\LogMessageInterface</node>
+    <node x="0.0" y="248.0">\DesignPatterns\Structural\Decorator\LogMessageWithDateDecorator</node>
+    <node x="315.0" y="101.0">\DesignPatterns\Structural\Decorator\LogMessage</node>
+    <node x="136.99999999999997" y="101.0">\DesignPatterns\Structural\Decorator\LogMessageDecorator</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\DesignPatterns\Structural\Decorator\LogMessageDecorator" target="\DesignPatterns\Structural\Decorator\LogMessageInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="215.99999999999997" y="76.0" />
+      <point x="269.0" y="76.0" />
+      <point x="-36.0" y="25.5" />
+    </edge>
+    <edge source="\DesignPatterns\Structural\Decorator\LogMessage" target="\DesignPatterns\Structural\Decorator\LogMessageInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="394.0" y="76.0" />
+      <point x="341.0" y="76.0" />
+      <point x="36.0" y="25.5" />
+    </edge>
+    <edge source="\DesignPatterns\Structural\Decorator\LogMessageWithErrorLevelDecorator" target="\DesignPatterns\Structural\Decorator\LogMessageDecorator">
+      <point x="0.0" y="-48.5" />
+      <point x="332.5" y="223.0" />
+      <point x="255.49999999999997" y="223.0" />
+      <point x="39.5" y="48.5" />
+    </edge>
+    <edge source="\DesignPatterns\Structural\Decorator\LogMessageWithDateDecorator" target="\DesignPatterns\Structural\Decorator\LogMessageDecorator">
+      <point x="0.0" y="-48.5" />
+      <point x="99.5" y="223.0" />
+      <point x="176.49999999999997" y="223.0" />
+      <point x="-39.5" y="48.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="236.5" y="172.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

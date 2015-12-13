@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vlad
- * Date: 24.07.2015
- * Time: 0:11
- */
 
 namespace DesignPatterns\Structural\Bridge\Equation;
-
 
 use DesignPatterns\Structural\Bridge\Math\MathImpl;
 
@@ -35,6 +28,8 @@ class LinearEquation extends Equation
 
     /**
      * @throws \LogicException
+     *
+     * @return mixed
      */
     public function solve()
     {

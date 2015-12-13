@@ -1,26 +1,37 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vlad
- * Date: 24.07.2015
- * Time: 0:40
- */
 
 namespace DesignPatterns\Structural\Bridge\Equation;
 
-
 use DesignPatterns\Structural\Bridge\Math\MathImpl;
 
+/**
+ * Class QuadraticEquation
+ *
+ * ax^2 + bx + c = 0
+ *
+ * @package DesignPatterns\Structural\Bridge\Equation
+ */
 class QuadraticEquation extends Equation
 {
+    /**
+     * @var mixed
+     */
     private $a;
+
+    /**
+     * @var mixed
+     */
     private $b;
+
+    /**
+     * @var mixed
+     */
     private $c;
 
     /**
-     * @param $a
-     * @param $b
-     * @param $c
+     * @param mixed $a
+     * @param mixed $b
+     * @param mixed $c
      */
     public function __construct($a, $b, $c)
     {
@@ -29,6 +40,11 @@ class QuadraticEquation extends Equation
         $this->c = $c;
     }
 
+    /**
+     * @throws \LogicException
+     *
+     * @return mixed
+     */
     public function solve()
     {
         if (!$this->mathImpl instanceof MathImpl) {
@@ -42,7 +58,7 @@ class QuadraticEquation extends Equation
         $twoTimesA = $this->mathImpl->mul(2, $this->a);
         $minusB = $this->mathImpl->neg($this->b);
 
-        //Two solutions
+        // Two solutions
         if ($this->mathImpl->cmp($D, 0) == MathImpl::GREATER) {
             $sqrtD = $this->mathImpl->sqrt($D);
 
@@ -52,13 +68,13 @@ class QuadraticEquation extends Equation
             );
         }
 
-        //Single solution
+        // Single solution
         if ($this->mathImpl->cmp($D, 0) == MathImpl::EQUALS) {
 
             return array($this->mathImpl->div($minusB, $twoTimesA));
         }
 
-        //No sulution
+        // No real solution
         return array();
     }
 }

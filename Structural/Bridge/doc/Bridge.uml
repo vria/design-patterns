@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\DesignPatterns\Structural\Bridge\Equation\Equation</OriginalElement>
+  <nodes>
+    <node x="-199.45780969479358" y="126.8653500897666">\DesignPatterns\Structural\Bridge\Equation\QuadraticEquation</node>
+    <node x="266.0" y="233.0">\DesignPatterns\Structural\Bridge\Math\GMPMathImpl</node>
+    <node x="0.0" y="233.0">\DesignPatterns\Structural\Bridge\Math\TrivialMathImpl</node>
+    <node x="-305.9578096947936" y="3.8653500897665936">\DesignPatterns\Structural\Bridge\Equation\Equation</node>
+    <node x="-330.4578096947936" y="126.8653500897666">\DesignPatterns\Structural\Bridge\Equation\LinearEquation</node>
+    <node x="133.0" y="0.0">\DesignPatterns\Structural\Bridge\Math\MathImpl</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\DesignPatterns\Structural\Bridge\Math\TrivialMathImpl" target="\DesignPatterns\Structural\Bridge\Math\MathImpl">
+      <point x="0.0" y="-91.5" />
+      <point x="123.0" y="208.0" />
+      <point x="194.5" y="208.0" />
+      <point x="-61.5" y="91.5" />
+    </edge>
+    <edge source="\DesignPatterns\Structural\Bridge\Math\GMPMathImpl" target="\DesignPatterns\Structural\Bridge\Math\MathImpl">
+      <point x="0.0" y="-91.5" />
+      <point x="389.0" y="208.0" />
+      <point x="317.5" y="208.0" />
+      <point x="61.5" y="91.5" />
+    </edge>
+    <edge source="\DesignPatterns\Structural\Bridge\Equation\LinearEquation" target="\DesignPatterns\Structural\Bridge\Equation\Equation">
+      <point x="0.0" y="-25.5" />
+      <point x="-274.9578096947936" y="101.8653500897666" />
+      <point x="-255.20780969479358" y="101.8653500897666" />
+      <point x="-50.75" y="36.5" />
+    </edge>
+    <edge source="\DesignPatterns\Structural\Bridge\Equation\QuadraticEquation" target="\DesignPatterns\Structural\Bridge\Equation\Equation">
+      <point x="0.0" y="-25.5" />
+      <point x="-133.95780969479358" y="101.8653500897666" />
+      <point x="-153.70780969479358" y="101.8653500897666" />
+      <point x="50.75" y="36.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="90.5" y="208.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

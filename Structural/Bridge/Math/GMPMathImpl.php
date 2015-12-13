@@ -2,7 +2,10 @@
 
 namespace DesignPatterns\Structural\Bridge\Math;
 
-
+/**
+ * Class GMPMathImpl
+ * @package DesignPatterns\Structural\Bridge\Math
+ */
 class GMPMathImpl implements MathImpl
 {
     /**
@@ -71,6 +74,10 @@ class GMPMathImpl implements MathImpl
         return MathImpl::LOWER;
     }
 
+    /**
+     * @param $number
+     * @return string
+     */
     public function sqrt($number)
     {
         return gmp_strval(gmp_sqrt($number));

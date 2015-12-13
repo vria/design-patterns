@@ -68,5 +68,4 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(array_values($expected), array_values($actual));
     }
-
 }

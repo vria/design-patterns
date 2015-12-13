@@ -2,14 +2,24 @@
 
 namespace DesignPatterns\Structural\Composite;
 
-
+/**
+ * Class Form
+ * @package DesignPatterns\Structural\Composite
+ */
 class Form extends FormView
 {
+    /**
+     * @var array
+     */
     protected $children;
 
+    /**
+     * @param string $name
+     */
     public function __construct($name)
     {
         parent::__construct($name);
+
         $this->children = array();
     }
 
@@ -26,7 +36,7 @@ class Form extends FormView
 
     /**
      * @param $name
-     * @return FormView $child
+     * @return FormView
      */
     public function get($name)
     {
@@ -37,6 +47,9 @@ class Form extends FormView
         return $this->children[$name];
     }
 
+    /**
+     * @inheritdoc
+     */
     public function render()
     {
         if (!$this->parent) {

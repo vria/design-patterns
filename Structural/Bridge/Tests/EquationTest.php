@@ -10,7 +10,14 @@ use DesignPatterns\Structural\Bridge\Math\TrivialMathImpl;
 
 class EquationTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var GMPMathImpl
+     */
     private $GMPMathImpl;
+
+    /**
+     * @var TrivialMathImpl
+     */
     private $trivialImpl;
 
     protected function setUp()

@@ -6,6 +6,10 @@ use DesignPatterns\Structural\Composite\Form;
 use DesignPatterns\Structural\Composite\SubmitWidget;
 use DesignPatterns\Structural\Composite\TextWidget;
 
+/**
+ * Class CompositeTest
+ * @package DesignPatterns\Structural\Composite\Tests
+ */
 class CompositeTest extends \PHPUnit_Framework_TestCase
 {
     /**

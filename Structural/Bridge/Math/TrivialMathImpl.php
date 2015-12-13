@@ -2,7 +2,10 @@
 
 namespace DesignPatterns\Structural\Bridge\Math;
 
-
+/**
+ * Class TrivialMathImpl
+ * @package DesignPatterns\Structural\Bridge\Math
+ */
 class TrivialMathImpl implements MathImpl
 {
     /**
