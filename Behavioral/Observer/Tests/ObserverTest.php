@@ -22,8 +22,8 @@ class ObserverTest extends \PHPUnit_Framework_TestCase
 
     public function testInitialize()
     {
-        $this->expectOutputString("New order state is INITIALIZED");
         $this->order->initialize();
+        $this->expectOutputString("New order state is INITIALIZED");
     }
 
     public function testFinalized()

@@ -30,7 +30,7 @@ abstract class AbstractVoter
      * @param mixed $attribute
      * @return string
      */
-    public function vote($object, $attribute)
+    public final function vote($object, $attribute)
     {
         if ($this->supportedClass() == get_class($object)
             && in_array($attribute, $this->supportedAttributes())
