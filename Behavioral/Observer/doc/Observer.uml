@@ -3,19 +3,32 @@
   <ID>PHP</ID>
   <OriginalElement>\DesignPatterns\Behavioral\Observer\Order</OriginalElement>
   <nodes>
-    <node x="6.0" y="-1.0">\DesignPatterns\Behavioral\Observer\SendEmailObserver</node>
-    <node x="190.0" y="-2.0">\DesignPatterns\Behavioral\Observer\OrderEvolvedObserver</node>
-    <node x="-247.0" y="46.0">\DesignPatterns\Behavioral\Observer\Order</node>
-    <node x="-234.5" y="-99.0">\SplSubject</node>
+    <node x="89.0" y="137.0">\DesignPatterns\Behavioral\Observer\SendEmailObserver</node>
+    <node x="250.0" y="137.0">\DesignPatterns\Behavioral\Observer\OrderEvolvedObserver</node>
+    <node x="-206.0" y="136.0">\DesignPatterns\Behavioral\Observer\Order</node>
+    <node x="172.25" y="35.0">\SplObserver</node>
+    <node x="-193.5" y="-10.0">\SplSubject</node>
   </nodes>
   <notes />
   <edges>
     <edge source="\DesignPatterns\Behavioral\Observer\Order" target="\SplSubject">
-      <point x="0.0" y="-80.5" />
-      <point x="0.0" y="47.5" />
+      <point x="0.0" y="-81.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="\DesignPatterns\Behavioral\Observer\SendEmailObserver" target="\SplObserver">
+      <point x="0.0" y="-26.0" />
+      <point x="159.5" y="112.0" />
+      <point x="207.5" y="112.0" />
+      <point x="-35.25" y="26.0" />
+    </edge>
+    <edge source="\DesignPatterns\Behavioral\Observer\OrderEvolvedObserver" target="\SplObserver">
+      <point x="0.0" y="-26.0" />
+      <point x="326.0" y="112.0" />
+      <point x="278.0" y="112.0" />
+      <point x="35.25" y="26.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="46.5" y="54.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="47.0" y="154.5" />
   <SelectedNodes />
   <Categories>
     <Category>Methods</Category>
