@@ -26,7 +26,7 @@ class ParameterRequest extends Request
         parent::__construct($requestURL);
 
         $this->path = parse_url($requestURL, PHP_URL_PATH);
-        $this->queryParameters = parse_str(parse_url($requestURL, PHP_URL_QUERY));
+        parse_str(parse_url($requestURL, PHP_URL_QUERY), $this->queryParameters);
     }
 
     /**

@@ -18,13 +18,13 @@ class ParameterRouter implements Router
             throw new \InvalidArgumentException;
         }
 
-        if ('user' === $request->getPath() && $request->getQueryParameter('id')) {
+        if ('/user' === $request->getPath() && $request->getQueryParameter('id')) {
             return function(ParameterRequest $request) {
                 return sprintf("<h1>Showing user #%s</h1>", $request->getQueryParameter('id'));
             };
         }
 
-        if ('articles' === $request->getPath()
+        if ('/articles' === $request->getPath()
             && $request->getQueryParameter('category')
             && $request->getQueryParameter('filter')
         ) {

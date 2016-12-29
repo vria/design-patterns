@@ -35,11 +35,10 @@ In this implementation all listeners is notified any time the state is changed e
 variation of Observer pattern assumes that *Listeners* are subscribed to receive notifications
 about particular event.
 
-![Observer UML][Observer UML]
+![Command UML](doc/Command.png)
 
 [https://en.wikipedia.org/wiki/Observer_pattern]: (https://en.wikipedia.org/wiki/Observer_pattern)
-[Order]: (Order.php)
-[PersisterObserver]: (PersisterObserver.php)
-[SendEmailObserver]: (SendEmailObserver.php)
-[LoggerObserver]: (SendEmailObserver.php)
-[Observer UML]: (doc/Observer.png)
+[Order]: (./Order.php)
+[PersisterObserver]: (./PersisterObserver.php)
+[SendEmailObserver]: (./SendEmailObserver.php)
+[LoggerObserver]: (./SendEmailObserver.php)

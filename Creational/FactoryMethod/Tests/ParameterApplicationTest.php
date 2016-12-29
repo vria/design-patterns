@@ -2,7 +2,6 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\Tests;
 
-
 use DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterApplication;
 
 class ParameterApplicationTest extends \PHPUnit_Framework_TestCase
