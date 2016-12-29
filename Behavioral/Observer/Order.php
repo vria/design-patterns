@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Behavioral\Observer;
+namespace DesignPatterns\Behavioral\ObserverSPL;
 
 
 class Order implements \SplSubject

@@ -5,7 +5,7 @@ namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 
 use DesignPatterns\Creational\FactoryMethod\ApplicationFramework;
 
-class Application extends ApplicationFramework
+class SimpleApplication extends ApplicationFramework
 {
     /**
      * @return Router

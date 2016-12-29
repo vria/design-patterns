@@ -1,10 +1,10 @@
 <?php
 
-namespace DesignPatterns\Behavioral\Observer\Tests;
+namespace DesignPatterns\Behavioral\ObserverSPL\Tests;
 
-use DesignPatterns\Behavioral\Observer\Order;
-use DesignPatterns\Behavioral\Observer\OrderEvolvedObserver;
-use DesignPatterns\Behavioral\Observer\SendEmailObserver;
+use DesignPatterns\Behavioral\ObserverSPL\Order;
+use DesignPatterns\Behavioral\ObserverSPL\OrderEvolvedObserver;
+use DesignPatterns\Behavioral\ObserverSPL\SendEmailObserver;
 
 class ObserverTest extends \PHPUnit_Framework_TestCase
 {

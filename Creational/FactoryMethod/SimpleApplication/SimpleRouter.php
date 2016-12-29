@@ -20,7 +20,7 @@ class Router implements RouterInterface
             case '/contact.html':
                 return new Request('contactAction');
             default:
-                throw new \Exception;
+                throw new \Exception("404");
         }
     }
 }

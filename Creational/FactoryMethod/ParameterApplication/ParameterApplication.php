@@ -12,7 +12,7 @@ class Application extends ApplicationFramework
         return new Router();
     }
 
-    public function searchAction($params)
+    public function searchAction($request)
     {
         return 'Search page. Parameters: ' . json_encode($params);
     }
