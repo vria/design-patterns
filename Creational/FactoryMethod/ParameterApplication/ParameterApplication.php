@@ -3,13 +3,25 @@
 namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
 
-use DesignPatterns\Creational\FactoryMethod\ApplicationFramework;
+use DesignPatterns\Creational\FactoryMethod\Application;
 
-class Application extends ApplicationFramework
+class ParameterApplication extends Application
 {
-    public function getRouter()
+    /**
+     * @return ParameterRouter
+     */
+    function createRouter()
     {
-        return new Router();
+        return new ParameterRouter();
+    }
+
+    /**
+     * @param $requestURL
+     * @return ParameterRequest
+     */
+    function createRequest($requestURL)
+    {
+        return new ParameterRequest($requestURL);
     }
 
     public function searchAction($request)

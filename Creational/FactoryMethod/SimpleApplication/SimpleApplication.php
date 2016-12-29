@@ -3,31 +3,25 @@
 namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 
 
-use DesignPatterns\Creational\FactoryMethod\ApplicationFramework;
+use DesignPatterns\Creational\FactoryMethod\Application;
+use DesignPatterns\Creational\FactoryMethod\Request;
 
-class SimpleApplication extends ApplicationFramework
+class SimpleApplication extends Application
 {
     /**
-     * @return Router
+     * @return SimpleRouter
      */
-    public function getRouter()
+    function createRouter()
     {
-        return new Router();
+        return new SimpleRouter();
     }
 
     /**
-     * @return string
+     * @param $requestURL
+     * @return Request
      */
-    public function indexAction()
+    function createRequest($requestURL)
     {
-        return '<h1>Simple App greats you!</h1>';
-    }
-
-    /**
-     * @return string
-     */
-    public function contactAction()
-    {
-        return '<h1>We will be pleased to hear from you!</h1>';
+        return new Request($requestURL);
     }
 }

@@ -1,10 +1,11 @@
 <?php
 
-namespace DesignPatterns\Behavioral\ObserverSPL\Tests;
+namespace DesignPatterns\Behavioral\Observer\Tests;
 
-use DesignPatterns\Behavioral\ObserverSPL\Order;
-use DesignPatterns\Behavioral\ObserverSPL\OrderEvolvedObserver;
-use DesignPatterns\Behavioral\ObserverSPL\SendEmailObserver;
+use DesignPatterns\Behavioral\Observer\Order;
+use DesignPatterns\Behavioral\Observer\LoggerObserver;
+use DesignPatterns\Behavioral\Observer\PersisterObserver;
+use DesignPatterns\Behavioral\Observer\SendEmailObserver;
 
 class ObserverTest extends \PHPUnit_Framework_TestCase
 {
@@ -16,20 +17,23 @@ class ObserverTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->order = new Order();
-        $this->order->attach(new OrderEvolvedObserver());
+        $this->order->attach(new LoggerObserver());
+        $this->order->attach(new PersisterObserver());
         $this->order->attach(new SendEmailObserver());
     }
 
     public function testInitialize()
     {
         $this->order->initialize();
-        $this->expectOutputString("New order state is INITIALIZED");
+        $this->expectOutputString("Order state is INITIALIZED/Persisted order in state of INITIALIZED/");
     }
 
     public function testFinalized()
     {
         $this->order->initialize();
         $this->order->finalize();
-        $this->expectOutputString("New order state is INITIALIZEDNew order state is FINALIZEDYou finalized your order. We're pleased to address you an e-mail");
+        $this->expectOutputString("Order state is INITIALIZED/Persisted order in state of INITIALIZED/"
+            . "Order state is FINALIZED/Persisted order in state of FINALIZED/"
+            . "You finalized your order. We're pleased to address you an e-mail/");
     }
 }

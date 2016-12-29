@@ -8,20 +8,22 @@ class Request
     /**
      * @var string
      */
-    public $method;
+    private $requestURL;
 
     /**
-     * @var array
+     * Request constructor.
+     * @param string $requestURL
      */
-    public $parameters;
-
-    /**
-     * @param string $method
-     * @param array $parameters
-     */
-    function __construct($method, $parameters = array())
+    public function __construct($requestURL)
     {
-        $this->method = $method;
-        $this->parameters = $parameters;
+        $this->requestURL = $requestURL;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRequestURL()
+    {
+        return $this->requestURL;
     }
 }

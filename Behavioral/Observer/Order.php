@@ -1,8 +1,18 @@
 <?php
 
-namespace DesignPatterns\Behavioral\ObserverSPL;
+namespace DesignPatterns\Behavioral\Observer;
 
-
+/**
+ * Order is a Subject that is observed by multiple Observers like
+ * - LoggerObserver
+ * - PersisterObserver
+ * - SendEmailObserver
+ *
+ * Whenever Order changes it's state it notifies all attached Observers.
+ * Note that Order knows nothing about its Observers but the fact that they implements \SplObserver interface.
+ * This allows better reusability both the Order class and observers
+ *
+ */
 class Order implements \SplSubject
 {
     /**
@@ -15,6 +25,9 @@ class Order implements \SplSubject
      */
     private $state;
 
+    /**
+     * Order constructor.
+     */
     public function __construct()
     {
         $this->observers = new \SplObjectStorage();
@@ -55,12 +68,18 @@ class Order implements \SplSubject
         }
     }
 
+    /**
+     * The first step Order lifecycle. Changes the state of the order to "INITIALIZED"
+     */
     public function initialize()
     {
         $this->state = "INITIALIZED";
         $this->notify();
     }
 
+    /**
+     * The second step Order lifecycle. Changes the state of the order to "FINALIZED"
+     */
     public function finalize()
     {
         $this->state = "FINALIZED";

@@ -3,22 +3,26 @@
 namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 
 use DesignPatterns\Creational\FactoryMethod\Request;
-use DesignPatterns\Creational\FactoryMethod\Router as RouterInterface;
+use DesignPatterns\Creational\FactoryMethod\Router;
 
-class Router implements RouterInterface
+class SimpleRouter implements Router
 {
     /**
-     * @param string $requestURL
-     * @return Request
+     * @param Request $request
+     * @return callable
      * @throws \Exception
      */
-    public function getHandleMethod($requestURL)
+    public function defineHandler(Request $request)
     {
-        switch ($requestURL) {
+        switch ($request->getRequestURL()) {
             case '/':
-                return new Request('indexAction');
+                return function(Request $request) {
+                    return '<h1>Simple App greats you!</h1>';
+                };
             case '/contact.html':
-                return new Request('contactAction');
+                return function(Request $request) {
+                    return '<h1>We will be pleased to hear from you!</h1>';
+                };
             default:
                 throw new \Exception("404");
         }

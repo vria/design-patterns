@@ -1,15 +1,56 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vlad
- * Date: 03.11.2016
- * Time: 21:07
- */
 
 namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
 
-class ParameterRequest
-{
+use DesignPatterns\Creational\FactoryMethod\Request;
 
+class ParameterRequest extends Request
+{
+    /**
+     * @var string
+     */
+    private $path;
+
+    /**
+     * @var array
+     */
+    private $queryParameters;
+
+    /**
+     * ParameterRequest constructor.
+     * @param string $requestURL
+     */
+    public function __construct($requestURL)
+    {
+        parent::__construct($requestURL);
+
+        $this->path = parse_url($requestURL, PHP_URL_PATH);
+        $this->queryParameters = parse_str(parse_url($requestURL, PHP_URL_QUERY));
+    }
+
+    /**
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * @return array
+     */
+    public function getQueryParameters()
+    {
+        return $this->queryParameters;
+    }
+
+    /**
+     * @param string $parameter
+     * @return string
+     */
+    public function getQueryParameter($parameter)
+    {
+        return array_key_exists($parameter, $this->queryParameters) ? $this->queryParameters[$parameter] : null;
+    }
 }

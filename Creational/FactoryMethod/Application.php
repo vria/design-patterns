@@ -31,9 +31,8 @@ abstract class Application
     {
         $request = $this->createRequest($requestURL);
         $router = $this->createRouter();
-        
-        $router->defineHandler($request);
+        $handler = $router->defineHandler($request);
 
-        return call_user_func($request->getHandler(), $request);
+        return call_user_func($handler, $request);
     }
 }

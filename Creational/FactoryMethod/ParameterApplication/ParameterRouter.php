@@ -3,36 +3,37 @@
 namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
 use DesignPatterns\Creational\FactoryMethod\Request;
-use DesignPatterns\Creational\FactoryMethod\Router as RouterInterface;
+use DesignPatterns\Creational\FactoryMethod\Router;
 
-class Router implements RouterInterface
+class ParameterRouter implements Router
 {
     /**
-     * @param string $requestURL
-     * @return Request|void
+     * @param Request $request
+     * @return callable
      * @throws \Exception
      */
-    public function getHandleMethod($requestURL)
+    public function defineHandler(Request $request)
     {
-        $parsedURL = parse_url($requestURL);
-
-        $path = $parsedURL['path'];
-
-        $params = array();
-        if (array_key_exists('query', $parsedURL)) {
-            parse_str($parsedURL['query'], $params);
+        if (!$request instanceof ParameterRequest) {
+            throw new \InvalidArgumentException;
         }
 
-        if (preg_match('/^\/search$/', $path)) {
-            return new Request('searchAction', $params);
+        if ('user' === $request->getPath() && $request->getQueryParameter('id')) {
+            return function(ParameterRequest $request) {
+                return sprintf("<h1>Showing user #%s</h1>", $request->getQueryParameter('id'));
+            };
         }
 
-        if (preg_match('/^\/view\/([A-Za-z]+)\/(\d+)/', $path, $matches)) {
-            $params['className'] = $matches[1];
-            $params['id'] = $matches[2];
-            return new Request('viewAction', $params);
+        if ('articles' === $request->getPath()
+            && $request->getQueryParameter('category')
+            && $request->getQueryParameter('filter')
+        ) {
+            return function(ParameterRequest $request) {
+                return sprintf("<h1>Showing articles of %s category with filter %s</h1>",
+                    $request->getQueryParameter('category'), $request->getQueryParameter('filter'));
+            };
         }
 
-        throw new \Exception;
+        throw new \Exception("404");
     }
 }

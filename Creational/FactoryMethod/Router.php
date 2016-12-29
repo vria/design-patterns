@@ -6,8 +6,8 @@ namespace DesignPatterns\Creational\FactoryMethod;
 interface Router
 {
     /**
-     * @param string $requestURL
-     * @return Request
+     * @param Request $request
+     * @return callable
      */
-    public function getHandleMethod($requestURL);
+    public function defineHandler(Request $request);
 }

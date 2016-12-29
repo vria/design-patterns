@@ -3,13 +3,12 @@
 namespace DesignPatterns\Creational\FactoryMethod\Tests;
 
 
-use DesignPatterns\Creational\FactoryMethod\ApplicationFramework;
-use DesignPatterns\Creational\FactoryMethod\ParameterApplication\Application as ParameterApplication;
+use DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterApplication;
 
 class ParameterApplicationTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var ApplicationFramework
+     * @var ParameterApplication
      */
     private $application;
 
@@ -18,16 +17,33 @@ class ParameterApplicationTest extends \PHPUnit_Framework_TestCase
         $this->application = new ParameterApplication();
     }
 
-    public function testSearchAction()
+    public function testRouterClass()
     {
-        $this->assertEquals('Search page. Parameters: {"brand":"Mercedes","type":"coupe"}',
-            $this->application->handle('/search?brand=Mercedes&type=coupe'));
+        $this->assertInstanceOf(
+            'DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRouter',
+            $this->application->createRouter()
+        );
     }
 
-    public function testViewAction()
+    public function testRequestClass()
     {
-        $this->assertEquals('View Product object of id 12',
-            $this->application->handle('/view/Product/12'));
+        $this->assertInstanceOf(
+            'DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRequest',
+            $this->application->createRequest('/url')
+        );
+    }
+
+    public function testUserAction()
+    {
+        $this->assertEquals('<h1>Showing user #123</h1>', $this->application->handle('/user?id=123'));
+    }
+
+    public function testArticlesAction()
+    {
+        $this->assertEquals(
+            '<h1>Showing articles of home category with filter table</h1>',
+            $this->application->handle('/articles?category=home&filter=table')
+        );
     }
 
     /**
@@ -35,6 +51,6 @@ class ParameterApplicationTest extends \PHPUnit_Framework_TestCase
      */
     public function testException()
     {
-        $this->application->handle('/view/-----');
+        $this->application->handle('/404');
     }
 }

@@ -2,13 +2,13 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\Tests;
 
-use DesignPatterns\Creational\FactoryMethod\ApplicationFramework;
-use DesignPatterns\Creational\FactoryMethod\SimpleApplication\Application as SimpleApplication;
+
+use DesignPatterns\Creational\FactoryMethod\SimpleApplication\SimpleApplication;
 
 class SimpleApplicationTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var ApplicationFramework
+     * @var SimpleApplication
      */
     private $application;
 
@@ -19,7 +19,18 @@ class SimpleApplicationTest extends \PHPUnit_Framework_TestCase
 
     public function testRouterClass()
     {
-        $this->assertInstanceOf('DesignPatterns\Creational\FactoryMethod\SimpleApplication\Router', $this->application->getRouter());
+        $this->assertInstanceOf(
+            'DesignPatterns\Creational\FactoryMethod\SimpleApplication\SimpleRouter',
+            $this->application->createRouter()
+        );
+    }
+
+    public function testRequestClass()
+    {
+        $this->assertInstanceOf(
+            'DesignPatterns\Creational\FactoryMethod\Request',
+            $this->application->createRequest('/url')
+        );
     }
 
     public function testIndexAction()
@@ -37,6 +48,6 @@ class SimpleApplicationTest extends \PHPUnit_Framework_TestCase
      */
     public function testException()
     {
-        $this->application->handle('/not-exist');
+        $this->application->handle('/404');
     }
 }
