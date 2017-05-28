@@ -2,11 +2,16 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
-
 use DesignPatterns\Creational\FactoryMethod\Request;
 
-class ParameterRequest extends Request
+
+class ParameterRequest implements Request
 {
+    /**
+     * @var string
+     */
+    private $requestURL;
+
     /**
      * @var string
      */
@@ -23,10 +28,17 @@ class ParameterRequest extends Request
      */
     public function __construct($requestURL)
     {
-        parent::__construct($requestURL);
-
+        $this->requestURL = $requestURL;
         $this->path = parse_url($requestURL, PHP_URL_PATH);
         parse_str(parse_url($requestURL, PHP_URL_QUERY), $this->queryParameters);
+    }
+
+    /**
+     * @return string
+     */
+    public function getRequestURL()
+    {
+        return $this->requestURL;
     }
 
     /**

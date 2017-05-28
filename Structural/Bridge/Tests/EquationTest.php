@@ -2,11 +2,11 @@
 
 namespace DesignPatterns\Structural\Bridge\Tests;
 
-
 use DesignPatterns\Structural\Bridge\Equation\LinearEquation;
 use DesignPatterns\Structural\Bridge\Equation\QuadraticEquation;
 use DesignPatterns\Structural\Bridge\Math\GMPMathImpl;
 use DesignPatterns\Structural\Bridge\Math\TrivialMathImpl;
+
 
 class EquationTest extends \PHPUnit_Framework_TestCase
 {

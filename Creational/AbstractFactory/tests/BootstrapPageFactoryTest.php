@@ -7,6 +7,7 @@ use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPage;
 use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPageFactory;
 use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapTextInput;
 
+
 class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
 {
     /**

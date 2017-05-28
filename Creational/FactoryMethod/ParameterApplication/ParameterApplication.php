@@ -2,8 +2,8 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
-
 use DesignPatterns\Creational\FactoryMethod\Application;
+
 
 class ParameterApplication extends Application
 {
@@ -26,7 +26,7 @@ class ParameterApplication extends Application
 
     public function searchAction($request)
     {
-        return 'Search page. Parameters: ' . json_encode($params);
+        return 'Search page. Parameters: ' . json_encode($request);
     }
 
     public function viewAction($params)

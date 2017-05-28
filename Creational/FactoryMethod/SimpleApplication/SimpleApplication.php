@@ -2,9 +2,9 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 
-
 use DesignPatterns\Creational\FactoryMethod\Application;
 use DesignPatterns\Creational\FactoryMethod\Request;
+
 
 class SimpleApplication extends Application
 {
@@ -22,6 +22,6 @@ class SimpleApplication extends Application
      */
     function createRequest($requestURL)
     {
-        return new Request($requestURL);
+        return new SimpleRequest($requestURL);
     }
 }

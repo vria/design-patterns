@@ -7,6 +7,7 @@ use DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainPage;
 use DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainPageFactory;
 use DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainTextInput;
 
+
 class PlainPageFactoryTest extends \PHPUnit_Framework_TestCase
 {
     /**

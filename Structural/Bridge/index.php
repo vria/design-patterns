@@ -1,7 +1,9 @@
 <?php
 
-require '../../vendor/autoload.php';
+//phpinfo();
+//die();
 
+require '../../vendor/autoload.php';
 
 use DesignPatterns\Structural\Bridge\Equation\LinearEquation;
 use DesignPatterns\Structural\Bridge\Equation\QuadraticEquation;

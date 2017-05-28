@@ -5,6 +5,7 @@ namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 use DesignPatterns\Creational\FactoryMethod\Request;
 use DesignPatterns\Creational\FactoryMethod\Router;
 
+
 class SimpleRouter implements Router
 {
     /**
@@ -12,17 +13,13 @@ class SimpleRouter implements Router
      * @return callable
      * @throws \Exception
      */
-    public function defineHandler(Request $request)
+    public function resolveHandler(Request $request)
     {
         switch ($request->getRequestURL()) {
             case '/':
-                return function(Request $request) {
-                    return '<h1>Simple App greats you!</h1>';
-                };
+                return [SimpleController::class, 'homeAction'];
             case '/contact.html':
-                return function(Request $request) {
-                    return '<h1>We will be pleased to hear from you!</h1>';
-                };
+                return [SimpleController::class, 'contactAction'];
             default:
                 throw new \Exception("404");
         }
