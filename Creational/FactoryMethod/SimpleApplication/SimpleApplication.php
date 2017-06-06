@@ -6,6 +6,9 @@ use DesignPatterns\Creational\FactoryMethod\Application;
 use DesignPatterns\Creational\FactoryMethod\Request;
 
 
+/**
+ * Concrete creator
+ */
 class SimpleApplication extends Application
 {
     /**

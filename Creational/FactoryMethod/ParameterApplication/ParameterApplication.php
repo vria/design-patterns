@@ -5,6 +5,9 @@ namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 use DesignPatterns\Creational\FactoryMethod\Application;
 
 
+/**
+ * Concrete creator
+ */
 class ParameterApplication extends Application
 {
     /**

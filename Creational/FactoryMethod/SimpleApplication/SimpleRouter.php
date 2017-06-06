@@ -6,6 +6,9 @@ use DesignPatterns\Creational\FactoryMethod\Request;
 use DesignPatterns\Creational\FactoryMethod\Router;
 
 
+/**
+ * Concrete product
+ */
 class SimpleRouter implements Router
 {
     /**

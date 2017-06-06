@@ -3,23 +3,23 @@
   <ID>PHP</ID>
   <OriginalElement>\DesignPatterns\Behavioral\TemplateMethod\AbstractVoter</OriginalElement>
   <nodes>
-    <node x="205.0" y="167.0">\DesignPatterns\Behavioral\TemplateMethod\SplDoublyLinkedListVoter</node>
-    <node x="92.5" y="0.0">\DesignPatterns\Behavioral\TemplateMethod\AbstractVoter</node>
-    <node x="0.0" y="167.0">\DesignPatterns\Behavioral\TemplateMethod\SplFixedArrayVoter</node>
+    <node x="101.5" y="0.0">\DesignPatterns\Behavioral\TemplateMethod\AbstractVoter</node>
+    <node x="223.0" y="168.0">\DesignPatterns\Behavioral\TemplateMethod\SplFixedArrayVoter</node>
+    <node x="0.0" y="168.0">\DesignPatterns\Behavioral\TemplateMethod\SplDoublyLinkedListVoter</node>
   </nodes>
   <notes />
   <edges>
     <edge source="\DesignPatterns\Behavioral\TemplateMethod\SplDoublyLinkedListVoter" target="\DesignPatterns\Behavioral\TemplateMethod\AbstractVoter">
-      <point x="0.0" y="-47.5" />
-      <point x="297.5" y="142.0" />
-      <point x="246.25" y="142.0" />
-      <point x="51.25" y="58.5" />
+      <point x="0.0" y="-48.0" />
+      <point x="101.5" y="143.0" />
+      <point x="157.25" y="143.0" />
+      <point x="-55.75" y="59.0" />
     </edge>
     <edge source="\DesignPatterns\Behavioral\TemplateMethod\SplFixedArrayVoter" target="\DesignPatterns\Behavioral\TemplateMethod\AbstractVoter">
-      <point x="0.0" y="-47.5" />
-      <point x="92.5" y="142.0" />
-      <point x="143.75" y="142.0" />
-      <point x="-51.25" y="58.5" />
+      <point x="0.0" y="-48.0" />
+      <point x="324.5" y="143.0" />
+      <point x="268.75" y="143.0" />
+      <point x="55.75" y="59.0" />
     </edge>
   </edges>
   <settings layout="Hierarchic Group" zoom="1.0" x="195.0" y="131.0" />
