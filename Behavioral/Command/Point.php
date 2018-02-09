@@ -2,6 +2,11 @@
 
 namespace DesignPatterns\Behavioral\Command;
 
+/**
+ * Immutable 2D point
+ *
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class Point
 {
     /**
@@ -15,6 +20,8 @@ class Point
     public $y;
 
     /**
+     * Constructor
+     *
      * @param int $x
      * @param int $y
      */

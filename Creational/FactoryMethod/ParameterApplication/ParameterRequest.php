@@ -4,9 +4,10 @@ namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
 use DesignPatterns\Creational\FactoryMethod\Request;
 
-
 /**
  * Concrete product
+ *
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class ParameterRequest implements Request
 {

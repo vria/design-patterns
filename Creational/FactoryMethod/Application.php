@@ -5,6 +5,8 @@ namespace DesignPatterns\Creational\FactoryMethod;
 /**
  * Application abstract base class.
  * Defines a framework for concrete applications.
+ *
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 abstract class Application
 {
@@ -19,12 +21,14 @@ abstract class Application
      * This is another factory method.
      *
      * @param $requestURL
+     *
      * @return Request
      */
     abstract function createRequest($requestURL);
 
     /**
      * @param $requestURL
+     *
      * @return string
      */
     public function handle($requestURL)

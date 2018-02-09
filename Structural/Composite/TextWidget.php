@@ -3,8 +3,7 @@
 namespace DesignPatterns\Structural\Composite;
 
 /**
- * Class TextWidget
- * @package DesignPatterns\Structural\Composite
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class TextWidget extends FormView
 {

@@ -3,8 +3,7 @@
 namespace DesignPatterns\Behavioral\Strategy;
 
 /**
- * Class ProductCollection
- * @package DesignPatterns\Behavioral\Strategy
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class ProductCollection
 {
@@ -36,6 +35,7 @@ class ProductCollection
 
     /**
      * @return array
+     *
      * @throw \LogicException if filter is not set
      */
     public function filterElements()

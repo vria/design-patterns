@@ -3,8 +3,7 @@
 namespace DesignPatterns\Behavioral\Strategy;
 
 /**
- * Class InStockFilter
- * @package DesignPatterns\Behavioral\Strategy
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class InStockFilter implements ProductFilter
 {

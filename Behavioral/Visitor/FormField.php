@@ -2,7 +2,9 @@
 
 namespace DesignPatterns\Behavioral\Visitor;
 
-
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 abstract class FormField
 {
     /**

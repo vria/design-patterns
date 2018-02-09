@@ -8,6 +8,9 @@ use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
 use DesignPatterns\Behavioral\Visitor\Visitor;
 
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class ValidatorVisitor implements Visitor
 {
     /**

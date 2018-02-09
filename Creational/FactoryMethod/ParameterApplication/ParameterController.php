@@ -2,7 +2,9 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
-
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class ParameterController
 {
     /**

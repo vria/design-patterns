@@ -2,13 +2,12 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 
-use DesignPatterns\Creational\AbstractFactory\HTMLPageFactory;
+use DesignPatterns\Creational\AbstractFactory\HTMLFactory;
 
 /**
- * Class BootstrapPageFactory
- * @package DesignPatterns\Creational\AbstractFactory\Bootstrap
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
-class BootstrapPageFactory implements HTMLPageFactory
+class BootstrapPageFactory implements HTMLFactory
 {
     /**
      * @return BootstrapPage
@@ -21,6 +20,7 @@ class BootstrapPageFactory implements HTMLPageFactory
     /**
      * @param string $name
      * @param string $label
+     *
      * @return BootstrapTextInput
      */
     public function createTextInput($name, $label)
@@ -30,6 +30,7 @@ class BootstrapPageFactory implements HTMLPageFactory
 
     /**
      * @param string $label
+     *
      * @return BootstrapButton
      */
     public function createButton($label)

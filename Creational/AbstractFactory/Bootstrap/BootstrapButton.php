@@ -4,10 +4,8 @@ namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 
 use DesignPatterns\Creational\AbstractFactory\Button;
 
-
 /**
- * Class BootstrapButton
- * @package DesignPatterns\Creational\AbstractFactory\Bootstrap
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class BootstrapButton implements Button
 {

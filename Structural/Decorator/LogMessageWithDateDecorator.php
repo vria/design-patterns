@@ -2,10 +2,8 @@
 
 namespace DesignPatterns\Structural\Decorator;
 
-
 /**
- * Class LogMessageWithDateDecorator
- * @package DesignPatterns\Structural\Decorator
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class LogMessageWithDateDecorator extends LogMessageDecorator
 {

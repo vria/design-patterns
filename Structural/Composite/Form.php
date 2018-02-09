@@ -3,8 +3,7 @@
 namespace DesignPatterns\Structural\Composite;
 
 /**
- * Class Form
- * @package DesignPatterns\Structural\Composite
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class Form extends FormView
 {

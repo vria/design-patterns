@@ -5,9 +5,10 @@ namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 use DesignPatterns\Creational\FactoryMethod\Request;
 use DesignPatterns\Creational\FactoryMethod\Router;
 
-
 /**
  * Concrete product
+ *
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SimpleRouter implements Router
 {

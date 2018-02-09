@@ -3,8 +3,7 @@
 namespace DesignPatterns\Structural\Composite;
 
 /**
- * Class SubmitWidget
- * @package DesignPatterns\Structural\Composite
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SubmitWidget extends FormView
 {

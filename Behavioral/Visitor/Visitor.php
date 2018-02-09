@@ -6,6 +6,9 @@ use DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField;
 use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
 use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 interface Visitor
 {
     /**

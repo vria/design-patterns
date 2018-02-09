@@ -2,10 +2,8 @@
 
 namespace DesignPatterns\Structural\Decorator;
 
-
 /**
- * Class LogMessage
- * @package DesignPatterns\Structural\Decorator
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class LogMessage implements LogMessageInterface
 {

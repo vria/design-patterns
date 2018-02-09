@@ -2,7 +2,9 @@
 
 namespace DesignPatterns\Behavioral\TemplateMethod;
 
-
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class SplFixedArrayVoter extends AbstractVoter
 {
     /**
@@ -22,13 +24,13 @@ class SplFixedArrayVoter extends AbstractVoter
     }
 
     /**
-     * @param $object
+     * @param \SplFixedArray $object
      * @param $attribute
+     *
      * @return bool
      */
     protected function hasAccess($object, $attribute)
     {
-        /* @var $object \SplFixedArray */
         return $object->count() > 0;
     }
 }

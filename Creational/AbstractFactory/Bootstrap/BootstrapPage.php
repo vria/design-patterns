@@ -6,13 +6,12 @@ use DesignPatterns\Creational\AbstractFactory\Element;
 use DesignPatterns\Creational\AbstractFactory\Page;
 
 /**
- * Class BootstrapPage
- * @package DesignPatterns\Creational\AbstractFactory\Bootstrap
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class BootstrapPage implements Page
 {
     /**
-     * @var array
+     * @var Element[]
      */
     private $elements = array();
 
@@ -21,16 +20,26 @@ class BootstrapPage implements Page
      */
     public function render()
     {
-        $this->startBody();
+        echo <<<EOT
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body class="container">
+EOT;
+
         foreach ($this->elements as $e) {
-            /* @var $e Element */
             $e->render();
         }
-        $this->endBody();
+
+        echo '</body></html>';
     }
 
     /**
      * @param Element $element
+     *
      * @return $this
      */
     public function addElement(Element $element)
@@ -38,24 +47,5 @@ class BootstrapPage implements Page
         $this->elements[] = $element;
 
         return $this;
-    }
-
-    private function startBody()
-    {
-        echo
-<<<EOT
-<html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    </head>
-    <body class="container">
-EOT;
-    }
-
-    private function endBody()
-    {
-        echo '</body></html>';
     }
 }

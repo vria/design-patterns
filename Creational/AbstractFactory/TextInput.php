@@ -3,8 +3,7 @@
 namespace DesignPatterns\Creational\AbstractFactory;
 
 /**
- * Interface TextInput
- * @package DesignPatterns\Creational\AbstractFactory
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 interface TextInput extends Element
 {

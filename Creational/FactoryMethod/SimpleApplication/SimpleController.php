@@ -2,7 +2,9 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 
-
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class SimpleController
 {
     /**

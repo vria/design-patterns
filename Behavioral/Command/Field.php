@@ -2,7 +2,21 @@
 
 namespace DesignPatterns\Behavioral\Command;
 
+use DesignPatterns\Behavioral\Command\Commands\BottomCommand;
+use DesignPatterns\Behavioral\Command\Commands\LeftCommand;
+use DesignPatterns\Behavioral\Command\Commands\RightCommand;
+use DesignPatterns\Behavioral\Command\Commands\TopCommand;
 
+/**
+ * The receiver. When player wants to move it must call one of these operaions
+ * - toLeft
+ * - toRight
+ * - toTop
+ * - toBottom
+ * Note that the `Joystick` is not coupled with the `Field` and can not call its methods directly.
+ *
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class Field
 {
     /**
@@ -16,6 +30,8 @@ class Field
     private $goal;
 
     /**
+     * Constructor
+     *
      * @param Point $player
      * @param Point $goal
      */
@@ -42,42 +58,50 @@ class Field
     }
 
     /**
-     * @return $this
+     * @return bool
+     */
+    public function checkGoal()
+    {
+        return $this->player->equalTo($this->goal);
+    }
+
+    /**
+     * Move left
+     * @see LeftCommand::move()
+     * @see RightCommand::moveBack()
      */
     public function toLeft()
     {
         $this->player->x--;
-
-        return $this;
     }
 
     /**
-     * @return $this
+     * Move right
+     * @see RightCommand::move()
+     * @see LeftCommand::moveBack()
      */
     public function toRight()
     {
         $this->player->x++;
-
-        return $this;
     }
 
     /**
-     * @return $this
+     * Move top
+     * @see TopCommand::move()
+     * @see BottomCommand::moveBack()
      */
     public function toTop()
     {
         $this->player->y--;
-
-        return $this;
     }
 
     /**
-     * @return $this
+     * Move bottom
+     * @see TopCommand::move()
+     * @see BottomCommand::moveBack()
      */
     public function toBottom()
     {
         $this->player->y++;
-
-        return $this;
     }
 }

@@ -5,9 +5,10 @@ namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 use DesignPatterns\Creational\FactoryMethod\Application;
 use DesignPatterns\Creational\FactoryMethod\Request;
 
-
 /**
  * Concrete creator
+ *
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SimpleApplication extends Application
 {

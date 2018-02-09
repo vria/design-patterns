@@ -3,8 +3,7 @@
 namespace DesignPatterns\Creational\AbstractFactory;
 
 /**
- * Interface Button
- * @package DesignPatterns\Creational\AbstractFactory
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 interface Button extends Element
 {

@@ -3,8 +3,7 @@
 namespace DesignPatterns\Behavioral\Strategy;
 
 /**
- * Class PriceFilter
- * @package DesignPatterns\Behavioral\Strategy
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class PriceFilter implements ProductFilter
 {

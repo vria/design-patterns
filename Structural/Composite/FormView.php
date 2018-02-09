@@ -3,8 +3,7 @@
 namespace DesignPatterns\Structural\Composite;
 
 /**
- * Class FormView
- * @package DesignPatterns\Structural\Composite
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 abstract class FormView
 {
@@ -38,7 +37,7 @@ abstract class FormView
     }
 
     /**
-     * @param sting $name
+     * @param string $name
      *
      * @return FormView
      */

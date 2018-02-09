@@ -3,8 +3,7 @@
 namespace DesignPatterns\Creational\AbstractFactory;
 
 /**
- * Interface Page
- * @package DesignPatterns\Creational\AbstractFactory
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 interface Page extends Element
 {

@@ -4,9 +4,10 @@ namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 
 use DesignPatterns\Creational\FactoryMethod\Request;
 
-
 /**
  * Concrete product
+ *
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SimpleRequest implements Request
 {

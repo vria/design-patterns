@@ -2,10 +2,8 @@
 
 namespace DesignPatterns\Structural\Decorator;
 
-
 /**
- * Class LogMessageWithErrorLevelDecorator
- * @package DesignPatterns\Structural\Decorator
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class LogMessageWithErrorLevelDecorator extends LogMessageDecorator
 {

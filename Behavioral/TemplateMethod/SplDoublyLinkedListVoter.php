@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Behavioral\TemplateMethod;
 
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class SplDoublyLinkedListVoter extends AbstractVoter
 {
     /**
@@ -21,14 +24,13 @@ class SplDoublyLinkedListVoter extends AbstractVoter
     }
 
     /**
-     * @param $object
+     * @param \SplDoublyLinkedList $object
      * @param $attribute
+     *
      * @return bool
      */
     protected function hasAccess($object, $attribute)
     {
-        /* @var $object \SplDoublyLinkedList */
-
         if ($attribute == "unshift" || $attribute == "push") {
             return true;
         }

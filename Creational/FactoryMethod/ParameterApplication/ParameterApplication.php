@@ -4,9 +4,10 @@ namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
 use DesignPatterns\Creational\FactoryMethod\Application;
 
-
 /**
  * Concrete creator
+ *
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class ParameterApplication extends Application
 {

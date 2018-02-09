@@ -5,12 +5,18 @@ namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 use DesignPatterns\Creational\AbstractFactory\TextInput;
 
 /**
- * Class BootstrapTextInput
- * @package DesignPatterns\Creational\AbstractFactory\Bootstrap
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class BootstrapTextInput implements TextInput
 {
+    /**
+     * @var string
+     */
     private $name;
+
+    /**
+     * @var string
+     */
     private $label;
 
     /**
@@ -28,12 +34,11 @@ class BootstrapTextInput implements TextInput
      */
     public function render()
     {
-        echo
-<<<EOT
-    <div class="form-group">
-        <label for="{$this->name}">{$this->label}</label>
-        <input type="text" class="form-control" id="{$this->name}" name="{$this->name}">
-    </div>
+        echo <<<EOT
+<div class="form-group">
+    <label for="{$this->name}">{$this->label}</label>
+    <input type="text" class="form-control" id="{$this->name}" name="{$this->name}">
+</div>
 EOT;
     }
-} 
+}

@@ -2,6 +2,9 @@
 
 namespace DesignPatterns\Behavioral\TemplateMethod;
 
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 abstract class AbstractVoter
 {
     const ACCESS_GRANTED = "ACCESS_GRANTED";
