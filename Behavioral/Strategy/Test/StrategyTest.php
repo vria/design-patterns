@@ -18,12 +18,12 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->products = new ProductCollection(array(
-                array('name' => 'Grand Prime', 'price' => 184.90, 'in_stock' => true),
-                array('name' => 'Core Prime',  'price' => 138.00, 'in_stock' => false),
-                array('name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true),
-                array('name' => 'Galaxy',      'price' => 99.99,  'in_stock' => false)
-        ));
+        $this->products = new ProductCollection([
+            ['name' => 'Grand Prime', 'price' => 184.90, 'in_stock' => true],
+            ['name' => 'Core Prime',  'price' => 138.00, 'in_stock' => false],
+            ['name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true],
+            ['name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true]
+        ]);
     }
 
     /**

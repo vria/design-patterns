@@ -27,7 +27,7 @@ class CommandTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->field = new Field(new Point(0, 0), new Point(2, 2));
+        $this->field = new Field(new Point(1, 1), new Point(2, 2));
 
         $this->joystick = new Joystick();
         $this->joystick->addKey('left', new LeftCommand($this->field));
@@ -36,32 +36,59 @@ class CommandTest extends \PHPUnit_Framework_TestCase
         $this->joystick->addKey('bottom', new BottomCommand($this->field));
     }
 
+    public function testLeft()
+    {
+        $this->joystick->pressKey('left');
+        $this->assertEquals(new Point(0, 1), $this->field->getPlayer());
+    }
+
+    public function testRight()
+    {
+        $this->joystick->pressKey('right');
+        $this->assertEquals(new Point(2, 1), $this->field->getPlayer());
+    }
+
+    public function testTop()
+    {
+        $this->joystick->pressKey('top');
+        $this->assertEquals(new Point(1, 0), $this->field->getPlayer());
+    }
+
+    public function testBottom()
+    {
+        $this->joystick->pressKey('bottom');
+        $this->assertEquals(new Point(1, 2), $this->field->getPlayer());
+    }
+
+    public function testUndo()
+    {
+        $this->joystick->pressKey('bottom');
+        $this->assertEquals(new Point(1, 2), $this->field->getPlayer());
+
+        $this->joystick->undo();
+        $this->assertEquals(new Point(1, 1), $this->field->getPlayer());
+    }
+
     public function testReachGoal()
     {
         $this->assertFalse($this->field->checkGoal());
 
-        $this->joystick->pressKey('bottom');
-        $this->assertEquals(new Point(0, 1), $this->field->getPlayer());
+        $this->joystick->pressKey('bottom'); // 1, 2
         $this->assertFalse($this->field->checkGoal());
 
-        $this->joystick->pressKey('bottom');
-        $this->assertEquals(new Point(0, 2), $this->field->getPlayer());
+        $this->joystick->pressKey('bottom'); // 1, 3
         $this->assertFalse($this->field->checkGoal());
 
-        $this->joystick->pressKey('top');
-        $this->assertEquals(new Point(0, 1), $this->field->getPlayer());
+        $this->joystick->pressKey('right'); // 2, 3
         $this->assertFalse($this->field->checkGoal());
 
-        $this->joystick->undo();
-        $this->assertEquals(new Point(0, 2), $this->field->getPlayer());
+        $this->joystick->pressKey('right'); // 3, 3
         $this->assertFalse($this->field->checkGoal());
 
-        $this->joystick->pressKey('right');
-        $this->assertEquals(new Point(1, 2), $this->field->getPlayer());
+        $this->joystick->pressKey('top'); // 3, 2
         $this->assertFalse($this->field->checkGoal());
 
-        $this->joystick->pressKey('right');
-        $this->assertEquals(new Point(2, 2), $this->field->getPlayer());
+        $this->joystick->pressKey('left'); // 2, 2
         $this->assertTrue($this->field->checkGoal());
     }
 }

@@ -63,9 +63,10 @@ Note that `Joystick` is coupled only with `Command` interface and calls its gene
 
 This example can be enhanced by macro commands.
 
-[Field]: (Field.php)
-[Command]: (Command.php)
-[LeftCommand]: (Command/BottomCommand.php)
-[BottomCommand]: (Command/BottomCommand.php)
-[RightCommand]: (Command/RightCommand.php)
-[TopCommand]: (Command/TopCommand.php)
+[Field]: Field.php
+[Command]: Command.php
+[LeftCommand]: Command/BottomCommand.php
+[BottomCommand]: Command/BottomCommand.php
+[RightCommand]: Command/RightCommand.php
+[TopCommand]: Command/TopCommand.php
+[Joystick]: Joystick.php

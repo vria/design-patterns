@@ -7,6 +7,9 @@ use DesignPatterns\Behavioral\Observer\LoggerObserver;
 use DesignPatterns\Behavioral\Observer\PersisterObserver;
 use DesignPatterns\Behavioral\Observer\SendEmailObserver;
 
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class ObserverTest extends \PHPUnit_Framework_TestCase
 {
     /**

@@ -3,7 +3,9 @@
 namespace DesignPatterns\Behavioral\Observer;
 
 /**
- * PersisterObserver is a listener that reacts to any state change of Order object and "persists" it's new state
+ * PersisterObserver is a listener that reacts to any state change of Order object and "persists" it's new state.
+ *
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class PersisterObserver implements \SplObserver
 {

@@ -12,6 +12,7 @@ namespace DesignPatterns\Behavioral\Observer;
  * Note that Order knows nothing about its Observers but the fact that they implements \SplObserver interface.
  * This allows better reusability both the Order class and observers
  *
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class Order implements \SplSubject
 {

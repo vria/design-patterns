@@ -3,47 +3,55 @@
   <ID>PHP</ID>
   <OriginalElement>\DesignPatterns\Behavioral\Command\Field</OriginalElement>
   <nodes>
-    <node x="116.0" y="141.0">\DesignPatterns\Behavioral\Command\Commands\RightCommand</node>
-    <node x="-33.0" y="141.0">\DesignPatterns\Behavioral\Command\Commands\BottomCommand</node>
-    <node x="43.5" y="62.0">\DesignPatterns\Behavioral\Command\Commands\MoveCommand</node>
-    <node x="253.0" y="141.0">\DesignPatterns\Behavioral\Command\Commands\TopCommand</node>
-    <node x="-162.0" y="141.0">\DesignPatterns\Behavioral\Command\Commands\LeftCommand</node>
-    <node x="58.5" y="-17.0">\DesignPatterns\Behavioral\Command\Command</node>
+    <node x="292.0" y="226.0">\DesignPatterns\Behavioral\Command\Command\TopCommand</node>
+    <node x="141.0" y="226.0">\DesignPatterns\Behavioral\Command\Command\BottomCommand</node>
+    <node x="-318.0" y="8.0">\DesignPatterns\Behavioral\Command\Field</node>
+    <node x="433.0" y="226.0">\DesignPatterns\Behavioral\Command\Command\LeftCommand</node>
+    <node x="-155.0" y="6.0">\DesignPatterns\Behavioral\Command\Joystick</node>
+    <node x="219.0" y="124.0">\DesignPatterns\Behavioral\Command\Command\MoveCommand</node>
+    <node x="0.0" y="226.0">\DesignPatterns\Behavioral\Command\Command\RightCommand</node>
+    <node x="219.0" y="0.0">\DesignPatterns\Behavioral\Command\Command</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="\DesignPatterns\Behavioral\Command\Commands\BottomCommand" target="\DesignPatterns\Behavioral\Command\Commands\MoveCommand">
-      <point x="0.0" y="-14.5" />
-      <point x="31.5" y="121.0" />
-      <point x="88.125" y="121.0" />
-      <point x="-14.875" y="14.5" />
+    <edge source="\DesignPatterns\Behavioral\Command\Command\TopCommand" target="\DesignPatterns\Behavioral\Command\Command\MoveCommand">
+      <point x="0.0" y="-37.0" />
+      <point x="352.5" y="206.0" />
+      <point x="294.625" y="206.0" />
+      <point x="15.125" y="26.0" />
     </edge>
-    <edge source="\DesignPatterns\Behavioral\Command\Commands\TopCommand" target="\DesignPatterns\Behavioral\Command\Commands\MoveCommand">
-      <point x="0.0" y="-14.5" />
-      <point x="307.5" y="111.0" />
-      <point x="147.625" y="111.0" />
-      <point x="44.625" y="14.5" />
+    <edge source="\DesignPatterns\Behavioral\Command\Command\RightCommand" target="\DesignPatterns\Behavioral\Command\Command\MoveCommand">
+      <point x="0.0" y="-37.0" />
+      <point x="60.5" y="196.0" />
+      <point x="234.125" y="196.0" />
+      <point x="-45.375" y="26.0" />
     </edge>
-    <edge source="\DesignPatterns\Behavioral\Command\Commands\LeftCommand" target="\DesignPatterns\Behavioral\Command\Commands\MoveCommand">
-      <point x="0.0" y="-14.5" />
-      <point x="-107.5" y="111.0" />
-      <point x="58.375" y="111.0" />
-      <point x="-44.625" y="14.5" />
+    <edge source="\DesignPatterns\Behavioral\Command\Command\MoveCommand" target="\DesignPatterns\Behavioral\Command\Command">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="37.0" />
     </edge>
-    <edge source="\DesignPatterns\Behavioral\Command\Commands\MoveCommand" target="\DesignPatterns\Behavioral\Command\Command">
-      <point x="0.0" y="-14.5" />
-      <point x="0.0" y="14.5" />
+    <edge source="\DesignPatterns\Behavioral\Command\Command\BottomCommand" target="\DesignPatterns\Behavioral\Command\Command\MoveCommand">
+      <point x="0.0" y="-37.0" />
+      <point x="206.5" y="206.0" />
+      <point x="264.375" y="206.0" />
+      <point x="-15.125" y="26.0" />
     </edge>
-    <edge source="\DesignPatterns\Behavioral\Command\Commands\RightCommand" target="\DesignPatterns\Behavioral\Command\Commands\MoveCommand">
-      <point x="0.0" y="-14.5" />
-      <point x="174.5" y="121.0" />
-      <point x="117.875" y="121.0" />
-      <point x="14.875" y="14.5" />
+    <edge source="\DesignPatterns\Behavioral\Command\Command\LeftCommand" target="\DesignPatterns\Behavioral\Command\Command\MoveCommand">
+      <point x="0.0" y="-37.0" />
+      <point x="493.5" y="196.0" />
+      <point x="324.875" y="196.0" />
+      <point x="45.375" y="26.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="95.0" y="89.0" />
-  <SelectedNodes />
-  <Categories />
+  <settings layout="Hierarchic Group" zoom="1.0" x="95.5" y="129.0" />
+  <SelectedNodes>
+    <node>\DesignPatterns\Behavioral\Command\Field</node>
+    <node>\DesignPatterns\Behavioral\Command\Joystick</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>
 
