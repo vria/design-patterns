@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Behavioral\Command\Commands;
+namespace DesignPatterns\Behavioral\Command\Command;
 
 /**
  * Move to top

@@ -1,20 +1,20 @@
 <?php
 
-namespace DesignPatterns\Behavioral\Command\Commands;
+namespace DesignPatterns\Behavioral\Command\Command;
 
 /**
- * Move to left
+ * Move to right
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class LeftCommand extends MoveCommand
+class RightCommand extends MoveCommand
 {
     /**
      * @inheritdoc
      */
     public function move()
     {
-        $this->field->toLeft();
+        $this->field->toRight();
     }
 
     /**
@@ -22,6 +22,6 @@ class LeftCommand extends MoveCommand
      */
     public function moveBack()
     {
-        $this->field->toRight();
+        $this->field->toLeft();
     }
 }

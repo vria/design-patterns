@@ -37,24 +37,35 @@ CommandReceiver extends Command {
 
 Encapsulating a specific method call in a generic object `Command`, you get the opportunity to parametrize the `Invoker` 
 with absolutely any commands that result to calling an any specific `Receiver` method. 
-The command pattern also brings additional opportunities like conserving the historiy of executed commands or undoing commands.
+The command pattern also brings additional opportunities like conserving the historiy of executed commands 
+or undoing commands.
 
 The interesting fact is that commands are an object-oriented replacement for callbacks.
 
-Example implementation simulates a game control schema: player aims to reach a goal by moving to left, right, top, bottom. 
-The client issues requests that are represented by strings "left", "right", "top", "bottom". 
-Each request is parametrized with a Command.
+Example implementation simulates a simple game control schema: 
+a player aims to reach a goal by moving to left, right, top, bottom. 
+The Joystick issues requests that are represented by strings "left", "right", "top", "bottom".
+These strings are mapped to `Commands` that transmit the the joystick's requests to the `Field`.
+The field stores the internal state of the game changing under the influence by joystick's requests.
 
 Participants:
-- Command (`Command`): declares an interface for executing an operation `move` and undoing operation `moveBack`.
-- ConcreteCommand (`BottomCommand`, `LeftCommand`, `RightCommand`, `TopCommand`): defines a binding between 
-the `Receiver` (`Field`) and an action ("left", "right", "top", "bottom").
-- Client (`GameApp`): creates and holds concrete commands (`GameApp::keyboard`), 
-issues a requests ("left", "right", "top", "bottom"), usually holds receiver (Field)
-- Invoker (`GameApp::keyboard`): asks the command to carry out the request
-- Receiver (`Field`): knows how to perform the operations associated with carrying out a request. 
-Any class may serve as a Receiver.
+- [Field] (`Receiver`) really performs the operations and holds the current state of the game that changes when 
+one of its methods are called `toLeft`, `toRight`, `toTop`, `toBottom`. This class knows nothing about other classes.
+- [Command] (`Command`) declares the interface a generic operation `move` 
+and the operation of undoing the last executed operation `moveBack`.
+- [LeftCommand], [RightCommand], [BottomCommand], [TopCommand] (`ConcreteCommand`) 
+are classes that directly call the methods of the `Field` and 
+plays the role of a link between the `Joystick` and the `Field`.
+- [Joystick] (`Invoker`): holds a mapping between the requests "left", "right", etc and the commands.
+Note that `Joystick` is coupled only with `Command` interface and calls its generic methods `move` and `moveBack`.
 
 ![Command UML](doc/Command.png)
 
-An example can be enhanced by macro commands.
+This example can be enhanced by macro commands.
+
+[Field]: (Field.php)
+[Command]: (Command.php)
+[LeftCommand]: (Command/BottomCommand.php)
+[BottomCommand]: (Command/BottomCommand.php)
+[RightCommand]: (Command/RightCommand.php)
+[TopCommand]: (Command/TopCommand.php)

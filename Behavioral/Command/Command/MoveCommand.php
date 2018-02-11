@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Behavioral\Command\Commands;
+namespace DesignPatterns\Behavioral\Command\Command;
 
 use DesignPatterns\Behavioral\Command\Command;
 use DesignPatterns\Behavioral\Command\Field;

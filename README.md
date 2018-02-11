@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/vria/design-patterns.svg?branch=master)](https://travis-ci.org/vria/design-patterns)
 
-Exemples of Gang of Four's design patterns in PHP.
+The examples of the Gang of Four's design patterns in PHP.
 
 ## Creational
 

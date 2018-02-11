@@ -19,6 +19,6 @@
         "phpunit/phpunit": "^4.7"
     },
     "suggest": {
-        "ext-gmp": "Install the GMP (GNU Multiple Precision) extension required by Bridge pattern."
+        "ext-gmp": "Install the GMP (GNU Multiple Precision) extension required by the Bridge pattern."
     }
 }
