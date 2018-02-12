@@ -5,10 +5,10 @@ namespace DesignPatterns\Creational\AbstractFactory;
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface PageInterface extends ElementInferface
+interface PageInterface extends ElementInterface
 {
     /**
-     * @param ElementInferface $element
+     * @param ElementInterface $element
      */
-    public function addElement(ElementInferface $element);
+    public function addElement(ElementInterface $element);
 }

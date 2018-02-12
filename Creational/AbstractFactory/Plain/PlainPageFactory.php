@@ -2,12 +2,12 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Plain;
 
-use DesignPatterns\Creational\AbstractFactory\HTMLFactory;
+use DesignPatterns\Creational\AbstractFactory\HTMLFactoryInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class PlainPageFactory implements HTMLFactory
+class PlainPageFactory implements HTMLFactoryInterface
 {
     /**
      * @return PlainPage

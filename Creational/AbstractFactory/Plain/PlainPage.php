@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Plain;
 
-use DesignPatterns\Creational\AbstractFactory\ElementInferface;
+use DesignPatterns\Creational\AbstractFactory\ElementInterface;
 use DesignPatterns\Creational\AbstractFactory\PageInterface;
 
 /**
@@ -11,7 +11,7 @@ use DesignPatterns\Creational\AbstractFactory\PageInterface;
 class PlainPage implements PageInterface
 {
     /**
-     * @var ElementInferface[]
+     * @var ElementInterface[]
      */
     private $elements = [];
 
@@ -23,7 +23,7 @@ class PlainPage implements PageInterface
         echo '<!doctype html><html lang="en"><body>';
 
         foreach ($this->elements as $e) {
-            /* @var $e ElementInferface */
+            /* @var $e ElementInterface */
             $e->render();
         }
 
@@ -31,11 +31,11 @@ class PlainPage implements PageInterface
     }
 
     /**
-     * @param ElementInferface $element
+     * @param ElementInterface $element
      *
      * @return $this
      */
-    public function addElement(ElementInferface $element)
+    public function addElement(ElementInterface $element)
     {
         $this->elements[] = $element;
 

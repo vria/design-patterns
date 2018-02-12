@@ -5,7 +5,7 @@ namespace DesignPatterns\Creational\AbstractFactory;
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface HTMLFactory
+interface HTMLFactoryInterface
 {
     /**
      * @return PageInterface

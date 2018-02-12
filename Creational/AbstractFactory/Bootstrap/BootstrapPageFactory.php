@@ -2,12 +2,12 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 
-use DesignPatterns\Creational\AbstractFactory\HTMLFactory;
+use DesignPatterns\Creational\AbstractFactory\HTMLFactoryInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class BootstrapPageFactory implements HTMLFactory
+class BootstrapPageFactory implements HTMLFactoryInterface
 {
     /**
      * @return BootstrapPage
