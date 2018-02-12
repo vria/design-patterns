@@ -1,6 +1,7 @@
 {
     "name": "vria/design-patterns",
     "description": "Gang of four design patterns in PHP",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Riabchenko Vlad",

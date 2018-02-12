@@ -24,7 +24,9 @@ class ParameterController
      */
     public static function articlesAction(ParameterRequestInterface $request)
     {
-        return sprintf("<h1>Showing articles of %s category with filter %s</h1>",
-            $request->getQueryParameter('category'), $request->getQueryParameter('filter'));
+        return sprintf(
+            "<h1>Showing articles of %s category with filter %s</h1>",
+            $request->getQueryParameter('category'), $request->getQueryParameter('filter')
+        );
     }
 }

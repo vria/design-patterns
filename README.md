@@ -1,6 +1,7 @@
 # design-patterns
 
 [![Build Status](https://travis-ci.org/vria/design-patterns.svg?branch=master)](https://travis-ci.org/vria/design-patterns)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0005c125-73a6-4ea7-bac1-8a07dd41a902/mini.png)](https://insight.sensiolabs.com/projects/0005c125-73a6-4ea7-bac1-8a07dd41a902)
 
 The examples of the Gang of Four's design patterns in PHP.
 
