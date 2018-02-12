@@ -3,14 +3,14 @@
 namespace DesignPatterns\Structural\Bridge\Math;
 
 /**
- * Class GMPMathImpl
- * @package DesignPatterns\Structural\Bridge\Math
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
-class GMPMathImpl implements MathImpl
+class GMPMathImpl implements MathImplInterface
 {
     /**
-     * @param $number
-     * @return mixed
+     * @param mixed $number
+     *
+     * @return string
      */
     public function neg($number)
     {
@@ -18,9 +18,10 @@ class GMPMathImpl implements MathImpl
     }
 
     /**
-     * @param $augend
-     * @param $addend
-     * @return mixed
+     * @param mixed $augend
+     * @param mixed $addend
+     *
+     * @return string
      */
     public function add($augend, $addend)
     {
@@ -28,9 +29,10 @@ class GMPMathImpl implements MathImpl
     }
 
     /**
-     * @param $minuend
-     * @param $subtrahend
-     * @return mixed
+     * @param mixed $minuend
+     * @param mixed $subtrahend
+     *
+     * @return string
      */
     public function sub($minuend, $subtrahend)
     {
@@ -38,9 +40,10 @@ class GMPMathImpl implements MathImpl
     }
 
     /**
-     * @param $multiplicand
-     * @param $multiplier
-     * @return mixed
+     * @param mixed $multiplicand
+     * @param mixed $multiplier
+     *
+     * @return string
      */
     public function mul($multiplicand, $multiplier)
     {
@@ -48,9 +51,10 @@ class GMPMathImpl implements MathImpl
     }
 
     /**
-     * @param $dividend
-     * @param $divisor
-     * @return mixed
+     * @param mixed $dividend
+     * @param mixed $divisor
+     *
+     * @return string
      */
     public function div($dividend, $divisor)
     {
@@ -58,24 +62,27 @@ class GMPMathImpl implements MathImpl
     }
 
     /**
-     * @param $first
-     * @param $second
-     * @return mixed
+     * @param mixed $first
+     * @param mixed $second
+     *
+     * @return int
      */
     public function cmp($first, $second)
     {
         $result = gmp_cmp($first, $second);
         if ($result == 0) {
-            return MathImpl::EQUALS;
+            return MathImplInterface::EQUALS;
         }
         if ($result > 0) {
-            return MathImpl::GREATER;
+            return MathImplInterface::GREATER;
         }
-        return MathImpl::LOWER;
+
+        return MathImplInterface::LOWER;
     }
 
     /**
-     * @param $number
+     * @param mixed $number
+     *
      * @return string
      */
     public function sqrt($number)

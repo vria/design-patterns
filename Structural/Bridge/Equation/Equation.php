@@ -2,23 +2,22 @@
 
 namespace DesignPatterns\Structural\Bridge\Equation;
 
-use DesignPatterns\Structural\Bridge\Math\MathImpl;
+use DesignPatterns\Structural\Bridge\Math\MathImplInterface;
 
 /**
- * Class Equation
- * @package DesignPatterns\Structural\Bridge\Equation
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 abstract class Equation
 {
     /**
-     * @var MathImpl
+     * @var MathImplInterface
      */
     protected $mathImpl;
 
     /**
-     * @param MathImpl $mathImpl
+     * @param MathImplInterface $mathImpl
      */
-    public function setMathImpl(MathImpl $mathImpl)
+    public function setMathImpl(MathImplInterface $mathImpl)
     {
         $this->mathImpl = $mathImpl;
     }

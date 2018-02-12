@@ -2,23 +2,30 @@
 
 namespace DesignPatterns\Structural\Bridge\Equation;
 
-use DesignPatterns\Structural\Bridge\Math\MathImpl;
+use DesignPatterns\Structural\Bridge\Math\MathImplInterface;
 
 /**
  * Class LinearEquation
  *
  * ax + b = 0
  *
- * @package DesignPatterns\Structural\Bridge\Equation
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class LinearEquation extends Equation
 {
+    /**
+     * @var mixed
+     */
     private $a;
+
+    /**
+     * @var mixed
+     */
     private $b;
 
     /**
-     * @param $a
-     * @param $b
+     * @param mixed $a
+     * @param mixed $b
      */
     public function __construct($a, $b)
     {
@@ -33,7 +40,7 @@ class LinearEquation extends Equation
      */
     public function solve()
     {
-        if (!$this->mathImpl instanceof MathImpl) {
+        if (!$this->mathImpl instanceof MathImplInterface) {
             throw new \LogicException("Math engine should be set via setMathImpl method");
         }
 

@@ -2,14 +2,14 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 
-use DesignPatterns\Creational\FactoryMethod\Request;
+use DesignPatterns\Creational\FactoryMethod\RequestInterface;
 
 /**
  * Concrete product
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class SimpleRequest implements Request
+class SimpleRequestInterface implements RequestInterface
 {
     /**
      * @var string

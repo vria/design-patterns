@@ -22,7 +22,7 @@ class SimpleApplicationTest extends \PHPUnit_Framework_TestCase
     public function testRouterClass()
     {
         $this->assertInstanceOf(
-            'DesignPatterns\Creational\FactoryMethod\SimpleApplication\SimpleRouter',
+            'DesignPatterns\Creational\FactoryMethod\SimpleApplication\SimpleRouterInterface',
             $this->application->createRouter()
         );
     }
@@ -30,7 +30,7 @@ class SimpleApplicationTest extends \PHPUnit_Framework_TestCase
     public function testRequestClass()
     {
         $this->assertInstanceOf(
-            'DesignPatterns\Creational\FactoryMethod\Request',
+            'DesignPatterns\Creational\FactoryMethod\RequestInterface',
             $this->application->createRequest('/url')
         );
     }

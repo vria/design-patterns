@@ -5,11 +5,10 @@ namespace DesignPatterns\Creational\FactoryMethod;
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface Router
+interface RequestInterface
 {
     /**
-     * @param Request $request
-     * @return callable
+     * @return string
      */
-    public function resolveHandler(Request $request);
+    public function getRequestURL();
 }

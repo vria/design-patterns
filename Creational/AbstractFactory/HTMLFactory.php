@@ -8,7 +8,7 @@ namespace DesignPatterns\Creational\AbstractFactory;
 interface HTMLFactory
 {
     /**
-     * @return Page
+     * @return PageInterface
      */
     public function createPage();
 
@@ -16,14 +16,14 @@ interface HTMLFactory
      * @param string $name
      * @param string $label
      *
-     * @return TextInput
+     * @return TextInputInterface
      */
     public function createTextInput($name, $label);
 
     /**
      * @param string $label
      *
-     * @return Button
+     * @return ButtonInterface
      */
     public function createButton($label);
 }

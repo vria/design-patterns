@@ -3,8 +3,11 @@
 namespace DesignPatterns\Structural\Bridge\Test;
 
 use DesignPatterns\Structural\Bridge\Math\GMPMathImpl;
-use DesignPatterns\Structural\Bridge\Math\MathImpl;
+use DesignPatterns\Structural\Bridge\Math\MathImplInterface;
 
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class GMPMathImplTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -40,9 +43,9 @@ class GMPMathImplTest extends \PHPUnit_Framework_TestCase
 
     public function testCmp()
     {
-        $this->assertEquals(MathImpl::EQUALS, $this->GMPMathImpl->cmp("11485526", "11485526"));
-        $this->assertEquals(MathImpl::GREATER, $this->GMPMathImpl->cmp("514783", "-22114"));
-        $this->assertEquals(MathImpl::LOWER, $this->GMPMathImpl->cmp("55596", "55597"));
+        $this->assertEquals(MathImplInterface::EQUALS, $this->GMPMathImpl->cmp("11485526", "11485526"));
+        $this->assertEquals(MathImplInterface::GREATER, $this->GMPMathImpl->cmp("514783", "-22114"));
+        $this->assertEquals(MathImplInterface::LOWER, $this->GMPMathImpl->cmp("55596", "55597"));
     }
 
     public function testSqrt()

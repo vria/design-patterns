@@ -7,7 +7,9 @@ use DesignPatterns\Structural\Bridge\Equation\QuadraticEquation;
 use DesignPatterns\Structural\Bridge\Math\GMPMathImpl;
 use DesignPatterns\Structural\Bridge\Math\TrivialMathImpl;
 
-
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class EquationTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -53,13 +55,13 @@ class EquationTest extends \PHPUnit_Framework_TestCase
     {
         $eq = new QuadraticEquation(1, -7, 12);
         $eq->setMathImpl($this->trivialImpl);
-        $this->assertEquals(array(4, 3), $eq->solve());
+        $this->assertEquals([4, 3], $eq->solve());
     }
 
     public function testQuadraticGMP()
     {
         $eq = new QuadraticEquation(1, -2, -15);
         $eq->setMathImpl($this->GMPMathImpl);
-        $this->assertEquals(array(5, -3), $eq->solve());
+        $this->assertEquals([5, -3], $eq->solve());
     }
 }

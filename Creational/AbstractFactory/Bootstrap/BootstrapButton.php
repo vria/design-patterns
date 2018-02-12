@@ -2,12 +2,12 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 
-use DesignPatterns\Creational\AbstractFactory\Button;
+use DesignPatterns\Creational\AbstractFactory\ButtonInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class BootstrapButton implements Button
+class BootstrapButton implements ButtonInterface
 {
     /**
      * @var string

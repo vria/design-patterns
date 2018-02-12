@@ -5,7 +5,7 @@ namespace DesignPatterns\Creational\Prototype;
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface Element
+interface ElementInterface
 {
     /**
      * Display element

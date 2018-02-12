@@ -20,7 +20,7 @@ class SplDoublyLinkedListVoter extends AbstractVoter
      */
     protected function supportedAttributes()
     {
-        return array('shift', 'unshift', 'pop', 'push');
+        return ['shift', 'unshift', 'pop', 'push'];
     }
 
     /**

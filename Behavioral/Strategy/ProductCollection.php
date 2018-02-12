@@ -13,7 +13,7 @@ class ProductCollection
     private $products;
 
     /**
-     * @var ProductFilter
+     * @var ProductFilterInterface
      */
     private $filter;
 
@@ -26,9 +26,9 @@ class ProductCollection
     }
 
     /**
-     * @param ProductFilter $filter
+     * @param ProductFilterInterface $filter
      */
-    public function setFilter(ProductFilter $filter)
+    public function setFilter(ProductFilterInterface $filter)
     {
         $this->filter = $filter;
     }
@@ -40,7 +40,7 @@ class ProductCollection
      */
     public function filterElements()
     {
-        if (!$this->filter instanceof ProductFilter) {
+        if (!$this->filter instanceof ProductFilterInterface) {
             throw new \LogicException("Filter is not set");
         }
 

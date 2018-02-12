@@ -6,12 +6,12 @@ use DesignPatterns\Behavioral\Visitor\FormField;
 use DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField;
 use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
-use DesignPatterns\Behavioral\Visitor\Visitor;
+use DesignPatterns\Behavioral\Visitor\VisitorInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class ValidatorVisitor implements Visitor
+class ValidatorVisitor implements VisitorInterface
 {
     /**
      * @param FormField $formField

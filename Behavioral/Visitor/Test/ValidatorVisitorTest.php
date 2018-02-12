@@ -78,7 +78,7 @@ class ValidatorVisitorTest extends \PHPUnit_Framework_TestCase
     public function testChoiceValid()
     {
         $choiceField = new ChoiceField();
-        $choiceField->setChoices(array('red' => 'Red', 'blue' => 'Blue', 'green' => 'Green'));
+        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
         $choiceField->setViewValue("Blue");
         $choiceField->accept($this->validatorVisitor);
 
@@ -88,7 +88,7 @@ class ValidatorVisitorTest extends \PHPUnit_Framework_TestCase
     public function testChoiceNotValid()
     {
         $choiceField = new ChoiceField();
-        $choiceField->setChoices(array('red' => 'Red', 'blue' => 'Blue', 'green' => 'Green'));
+        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
         $choiceField->setViewValue("Yellow");
         $choiceField->accept($this->validatorVisitor);
 

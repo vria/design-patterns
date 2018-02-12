@@ -5,7 +5,7 @@ namespace DesignPatterns\Behavioral\Strategy;
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class PriceFilter implements ProductFilter
+class PriceFilter implements ProductFilterInterface
 {
     const SUPERIOR = "SUPERIOR";
     const INFERIOR = "INFERIOR";
@@ -21,7 +21,7 @@ class PriceFilter implements ProductFilter
     private $compareWay;
 
     /**
-     * @param $threshold
+     * @param double $threshold
      * @param string $compareWay
      */
     public function __construct($threshold, $compareWay = self::INFERIOR)
@@ -32,6 +32,7 @@ class PriceFilter implements ProductFilter
 
     /**
      * @param array $products
+     *
      * @return array
      */
     public function filter(array $products)

@@ -10,20 +10,11 @@ class Form extends FormView
     /**
      * @var array
      */
-    protected $children;
-
-    /**
-     * @param string $name
-     */
-    public function __construct($name)
-    {
-        parent::__construct($name);
-
-        $this->children = array();
-    }
+    protected $children = [];
 
     /**
      * @param FormView $child
+     *
      * @return $this
      */
     public function add(FormView $child)
@@ -35,6 +26,7 @@ class Form extends FormView
 
     /**
      * @param $name
+     *
      * @return FormView
      */
     public function get($name)
@@ -51,16 +43,12 @@ class Form extends FormView
      */
     public function render()
     {
-        if (!$this->parent) {
-            echo "<form>";
-        }
+        echo "<form>";
 
         foreach($this->children as $child) {
             $child->render();
         }
 
-        if (!$this->parent) {
-            echo "</form>";
-        }
+        echo "</form>";
     }
 }

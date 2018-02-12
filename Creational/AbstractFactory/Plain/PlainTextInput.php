@@ -2,12 +2,12 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Plain;
 
-use DesignPatterns\Creational\AbstractFactory\TextInput;
+use DesignPatterns\Creational\AbstractFactory\TextInputInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class PlainTextInput implements TextInput
+class PlainTextInput implements TextInputInterface
 {
     /**
      * @var string

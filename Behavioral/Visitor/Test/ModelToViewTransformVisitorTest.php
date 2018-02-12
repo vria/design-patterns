@@ -43,7 +43,7 @@ class ModelToViewTransformVisitorTest extends \PHPUnit_Framework_TestCase
     public function testChoiceField()
     {
         $choiceField = new ChoiceField();
-        $choiceField->setChoices(array('red' => 'Red', 'blue' => 'Blue', 'green' => 'Green'));
+        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
         $choiceField->setValue('green');
         $choiceField->accept($this->modelToViewTransformVisitor);
 

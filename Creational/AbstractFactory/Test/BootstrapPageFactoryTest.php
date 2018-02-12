@@ -7,7 +7,9 @@ use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPage;
 use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPageFactory;
 use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapTextInput;
 
-
+/**
+ * @author Vlad Riabchenko <contact@vria.eu>
+ */
 class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -27,7 +29,7 @@ class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $button = self::$factory->createButton("Submit");
 
-        $this->assertInstanceOf("DesignPatterns\\Creational\\AbstractFactory\\Bootstrap\\BootstrapButton", $button);
+        $this->assertInstanceOf(BootstrapButton::class, $button);
 
         return $button;
     }
@@ -39,7 +41,7 @@ class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $textInput = self::$factory->createTextInput("firstname", "Your name");
 
-        $this->assertInstanceOf("DesignPatterns\\Creational\\AbstractFactory\\Bootstrap\\BootstrapTextInput", $textInput);
+        $this->assertInstanceOf(BootstrapTextInput::class, $textInput);
 
         return $textInput;
     }
@@ -51,7 +53,7 @@ class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $page = self::$factory->createPage();
 
-        $this->assertInstanceOf("DesignPatterns\\Creational\\AbstractFactory\\Bootstrap\\BootstrapPage", $page);
+        $this->assertInstanceOf(BootstrapPage::class, $page);
 
         return $page;
     }

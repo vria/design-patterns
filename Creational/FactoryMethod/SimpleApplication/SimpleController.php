@@ -9,6 +9,7 @@ class SimpleController
 {
     /**
      * Respond to a "/" route
+     *
      * @return string
      */
     public static function homeAction()
@@ -18,6 +19,7 @@ class SimpleController
 
     /**
      * Respond to a "/" route
+     *
      * @return string
      */
     public static function contactAction()

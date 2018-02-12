@@ -2,24 +2,24 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
-use DesignPatterns\Creational\FactoryMethod\Request;
-use DesignPatterns\Creational\FactoryMethod\Router;
+use DesignPatterns\Creational\FactoryMethod\RequestInterface;
+use DesignPatterns\Creational\FactoryMethod\RouterInterface;
 
 /**
  * Concrete product
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class ParameterRouter implements Router
+class ParameterRouterInterface implements RouterInterface
 {
     /**
-     * @param Request $request
+     * @param RequestInterface $request
      * @return callable
      * @throws \Exception
      */
-    public function resolveHandler(Request $request)
+    public function resolveHandler(RequestInterface $request)
     {
-        if (!$request instanceof ParameterRequest) {
+        if (!$request instanceof ParameterRequestInterface) {
             throw new \InvalidArgumentException;
         }
 

@@ -3,7 +3,7 @@
 namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 
 use DesignPatterns\Creational\FactoryMethod\Application;
-use DesignPatterns\Creational\FactoryMethod\Request;
+use DesignPatterns\Creational\FactoryMethod\RequestInterface;
 
 /**
  * Concrete creator
@@ -13,19 +13,20 @@ use DesignPatterns\Creational\FactoryMethod\Request;
 class SimpleApplication extends Application
 {
     /**
-     * @return SimpleRouter
+     * @return SimpleRouterInterface
      */
-    function createRouter()
+    public function createRouter()
     {
-        return new SimpleRouter();
+        return new SimpleRouterInterface();
     }
 
     /**
      * @param $requestURL
-     * @return Request
+     *
+     * @return RequestInterface
      */
-    function createRequest($requestURL)
+    public function createRequest($requestURL)
     {
-        return new SimpleRequest($requestURL);
+        return new SimpleRequestInterface($requestURL);
     }
 }

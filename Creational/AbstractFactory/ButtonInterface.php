@@ -5,7 +5,7 @@ namespace DesignPatterns\Creational\AbstractFactory;
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface Button extends Element
+interface ButtonInterface extends ElementInferface
 {
     /**
      * @param string $label

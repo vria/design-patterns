@@ -21,7 +21,6 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
         $this->products = new ProductCollection([
             ['name' => 'Grand Prime', 'price' => 184.90, 'in_stock' => true],
             ['name' => 'Core Prime',  'price' => 138.00, 'in_stock' => false],
-            ['name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true],
             ['name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true]
         ]);
     }
@@ -36,10 +35,10 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
 
     public function testInStockStrategy()
     {
-        $expected = array(
-            array('name' => 'Grand Prime', 'price' => 184.90, 'in_stock' => true),
-            array('name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true)
-        );
+        $expected = [
+            ['name' => 'Grand Prime', 'price' => 184.90, 'in_stock' => true],
+            ['name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true]
+        ];
 
         $this->products->setFilter(new InStockFilter());
         $actual = $this->products->filterElements();
@@ -49,9 +48,9 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
 
     public function testCheapProducts()
     {
-        $expected = array(
-            array('name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true)
-        );
+        $expected = [
+            ['name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true]
+        ];
 
         $this->products->setFilter(new PriceFilter(70));
         $actual = $this->products->filterElements();
@@ -61,10 +60,10 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
 
     public function testExpensive()
     {
-        $expected = array(
-            array('name' => 'Grand Prime', 'price' => 184.90, 'in_stock' => true),
-            array('name' => 'Core Prime',  'price' => 138.00, 'in_stock' => false)
-        );
+        $expected = [
+            ['name' => 'Grand Prime', 'price' => 184.90, 'in_stock' => true],
+            ['name' => 'Core Prime',  'price' => 138.00, 'in_stock' => false]
+        ];
 
         $this->products->setFilter(new PriceFilter(120, PriceFilter::SUPERIOR));
         $actual = $this->products->filterElements();

@@ -2,10 +2,10 @@
 
 namespace DesignPatterns\Behavioral\Command;
 
-use DesignPatterns\Behavioral\Command\Commands\BottomCommand;
-use DesignPatterns\Behavioral\Command\Commands\LeftCommand;
-use DesignPatterns\Behavioral\Command\Commands\RightCommand;
-use DesignPatterns\Behavioral\Command\Commands\TopCommand;
+use DesignPatterns\Behavioral\Command\Command\BottomCommand;
+use DesignPatterns\Behavioral\Command\Command\LeftCommand;
+use DesignPatterns\Behavioral\Command\Command\RightCommand;
+use DesignPatterns\Behavioral\Command\Command\TopCommand;
 
 /**
  * The receiver. When player wants to move it must call one of these operaions

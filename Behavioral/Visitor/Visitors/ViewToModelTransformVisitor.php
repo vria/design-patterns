@@ -5,12 +5,12 @@ namespace DesignPatterns\Behavioral\Visitor\Visitors;
 use DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField;
 use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
-use DesignPatterns\Behavioral\Visitor\Visitor;
+use DesignPatterns\Behavioral\Visitor\VisitorInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class ViewToModelTransformVisitor implements Visitor
+class ViewToModelTransformVisitor implements VisitorInterface
 {
     /**
      * @param EmailField $emailField

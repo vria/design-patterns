@@ -13,18 +13,18 @@ abstract class Application
     /**
      * This is the factory method.
      *
-     * @return Router
+     * @return RouterInterface
      */
-    abstract function createRouter();
+    public abstract function createRouter();
 
     /**
      * This is another factory method.
      *
      * @param $requestURL
      *
-     * @return Request
+     * @return RequestInterface
      */
-    abstract function createRequest($requestURL);
+    public abstract function createRequest($requestURL);
 
     /**
      * @param $requestURL

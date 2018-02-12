@@ -3,14 +3,14 @@
 namespace DesignPatterns\Behavioral\Strategy;
 
 /**
- * Interface ProductFilter
- * @package DesignPatterns\Behavioral\Strategy
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface ProductFilter
+interface ProductFilterInterface
 {
     /**
      * @param array $product
-     * @return mixed
+     *
+     * @return array
      */
     public function filter(array $product);
 }

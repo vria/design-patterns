@@ -30,9 +30,9 @@ class Joystick
      * Add a new key to the joystick
      *
      * @param $key
-     * @param Command $command
+     * @param CommandInterface $command
      */
-    public function addKey($key, Command $command)
+    public function addKey($key, CommandInterface $command)
     {
         $this->keyboard[$key] = $command;
     }

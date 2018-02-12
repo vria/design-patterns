@@ -2,12 +2,12 @@
 
 namespace DesignPatterns\Creational\Prototype\Plain;
 
-use DesignPatterns\Creational\Prototype\Element;
+use DesignPatterns\Creational\Prototype\ElementInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class PlainButton implements Element
+class PlainButton implements ElementInterface
 {
     /**
      * @var string

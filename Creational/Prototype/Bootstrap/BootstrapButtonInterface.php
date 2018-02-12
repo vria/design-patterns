@@ -2,12 +2,12 @@
 
 namespace DesignPatterns\Creational\Prototype\Bootstrap;
 
-use DesignPatterns\Creational\Prototype\Element;
+use DesignPatterns\Creational\Prototype\ElementInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class BootstrapButton implements Element
+class BootstrapButton implements ElementInterface
 {
     /**
      * @var string

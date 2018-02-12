@@ -20,7 +20,7 @@ class SplFixedArrayVoter extends AbstractVoter
      */
     protected function supportedAttributes()
     {
-        return array('toArray');
+        return ['toArray'];
     }
 
     /**

@@ -1,13 +1,13 @@
 <?php
 
-namespace DesignPatterns\Creational\Prototype\Plain;
+namespace DesignPatterns\Creational\Prototype\Bootstrap;
 
-use DesignPatterns\Creational\Prototype\Element;
+use DesignPatterns\Creational\Prototype\ElementInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class PlainTextInput implements Element
+class BootstrapTextInput implements ElementInterface
 {
     /**
      * @var string
@@ -36,8 +36,10 @@ class PlainTextInput implements Element
     {
         echo
 <<<EOT
+    <div class="form-group">
         <label for="{$this->name}">{$this->label}</label>
-        <input type="text" id="{$this->name}" name="{$this->name}">
+        <input class="form-control" id="{$this->name}" name="{$this->name}">
+    </div>
 EOT;
     }
 }

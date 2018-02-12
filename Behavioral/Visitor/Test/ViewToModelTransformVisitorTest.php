@@ -63,7 +63,7 @@ class ViewToModelTransformVisitorTest extends \PHPUnit_Framework_TestCase
     public function testChoiceValid()
     {
         $choiceField = new ChoiceField();
-        $choiceField->setChoices(array('red' => 'Red', 'blue' => 'Blue', 'green' => 'Green'));
+        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
         $choiceField->setViewValue('Red');
         $choiceField->accept($this->viewToModelTransformVisitor);
 
@@ -74,7 +74,7 @@ class ViewToModelTransformVisitorTest extends \PHPUnit_Framework_TestCase
     public function testChoiceNotValid()
     {
         $choiceField = new ChoiceField();
-        $choiceField->setChoices(array('red' => 'Red', 'blue' => 'Blue', 'green' => 'Green'));
+        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
         $choiceField->setViewValue('Pink');
         $choiceField->setError('choice is not valid');
         $choiceField->accept($this->viewToModelTransformVisitor);

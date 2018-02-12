@@ -2,12 +2,12 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Plain;
 
-use DesignPatterns\Creational\AbstractFactory\Button;
+use DesignPatterns\Creational\AbstractFactory\ButtonInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class PlainButton implements Button
+class PlainButton implements ButtonInterface
 {
     /**
      * @var string

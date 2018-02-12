@@ -9,7 +9,7 @@ use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface Visitor
+interface VisitorInterface
 {
     /**
      * @param EmailField $emailField

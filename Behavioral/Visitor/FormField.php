@@ -28,9 +28,9 @@ abstract class FormField
     private $error;
 
     /**
-     * @param Visitor $visitor
+     * @param VisitorInterface $visitor
      */
-    public abstract function accept(Visitor $visitor);
+    public abstract function accept(VisitorInterface $visitor);
 
     /**
      * @return string

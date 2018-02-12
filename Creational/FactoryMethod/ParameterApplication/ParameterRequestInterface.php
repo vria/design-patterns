@@ -2,14 +2,14 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 
-use DesignPatterns\Creational\FactoryMethod\Request;
+use DesignPatterns\Creational\FactoryMethod\RequestInterface;
 
 /**
  * Concrete product
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class ParameterRequest implements Request
+class ParameterRequestInterface implements RequestInterface
 {
     /**
      * @var string

@@ -8,22 +8,22 @@ namespace DesignPatterns\Creational\Prototype;
 class ElementCreator
 {
     /**
-     * @var Element
+     * @var ElementInterface
      */
     private $prototype;
 
     /**
      * Constructeur
      *
-     * @param Element $prototype
+     * @param ElementInterface $prototype
      */
-    public function __construct(Element $prototype)
+    public function __construct(ElementInterface $prototype)
     {
         $this->prototype = $prototype;
     }
 
     /**
-     * @return Element
+     * @return ElementInterface
      */
     public function create()
     {

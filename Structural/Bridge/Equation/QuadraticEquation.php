@@ -2,14 +2,14 @@
 
 namespace DesignPatterns\Structural\Bridge\Equation;
 
-use DesignPatterns\Structural\Bridge\Math\MathImpl;
+use DesignPatterns\Structural\Bridge\Math\MathImplInterface;
 
 /**
  * Class QuadraticEquation
  *
  * ax^2 + bx + c = 0
  *
- * @package DesignPatterns\Structural\Bridge\Equation
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class QuadraticEquation extends Equation
 {
@@ -47,10 +47,11 @@ class QuadraticEquation extends Equation
      */
     public function solve()
     {
-        if (!$this->mathImpl instanceof MathImpl) {
+        if (!$this->mathImpl instanceof MathImplInterface) {
             throw new \LogicException("Math engine should be set via setMathImpl method");
         }
-        $D = $this->mathImpl->sub(
+
+        $d = $this->mathImpl->sub(
             $this->mathImpl->mul($this->b, $this->b),
             $this->mathImpl->mul(4, $this->mathImpl->mul($this->a, $this->c))
         );
@@ -59,22 +60,21 @@ class QuadraticEquation extends Equation
         $minusB = $this->mathImpl->neg($this->b);
 
         // Two solutions
-        if ($this->mathImpl->cmp($D, 0) == MathImpl::GREATER) {
-            $sqrtD = $this->mathImpl->sqrt($D);
+        if ($this->mathImpl->cmp($d, 0) == MathImplInterface::GREATER) {
+            $sqrtD = $this->mathImpl->sqrt($d);
 
-            return array(
+            return [
                 $this->mathImpl->div($this->mathImpl->add($minusB, $sqrtD), $twoTimesA),
                 $this->mathImpl->div($this->mathImpl->sub($minusB, $sqrtD), $twoTimesA)
-            );
+            ];
         }
 
         // Single solution
-        if ($this->mathImpl->cmp($D, 0) == MathImpl::EQUALS) {
-
-            return array($this->mathImpl->div($minusB, $twoTimesA));
+        if ($this->mathImpl->cmp($d, 0) == MathImplInterface::EQUALS) {
+            return [$this->mathImpl->div($minusB, $twoTimesA)];
         }
 
         // No real solution
-        return array();
+        return [];
     }
 }

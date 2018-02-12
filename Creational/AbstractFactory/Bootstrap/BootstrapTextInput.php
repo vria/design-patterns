@@ -2,12 +2,12 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 
-use DesignPatterns\Creational\AbstractFactory\TextInput;
+use DesignPatterns\Creational\AbstractFactory\TextInputInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class BootstrapTextInput implements TextInput
+class BootstrapTextInput implements TextInputInterface
 {
     /**
      * @var string

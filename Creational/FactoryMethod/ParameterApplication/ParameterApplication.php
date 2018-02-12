@@ -12,27 +12,38 @@ use DesignPatterns\Creational\FactoryMethod\Application;
 class ParameterApplication extends Application
 {
     /**
-     * @return ParameterRouter
+     * @return ParameterRouterInterface
      */
-    function createRouter()
+    public function createRouter()
     {
-        return new ParameterRouter();
+        return new ParameterRouterInterface();
     }
 
     /**
      * @param $requestURL
-     * @return ParameterRequest
+     *
+     * @return ParameterRequestInterface
      */
-    function createRequest($requestURL)
+    public function createRequest($requestURL)
     {
-        return new ParameterRequest($requestURL);
+        return new ParameterRequestInterface($requestURL);
     }
 
+    /**
+     * @param $request
+     *
+     * @return string
+     */
     public function searchAction($request)
     {
         return 'Search page. Parameters: ' . json_encode($request);
     }
 
+    /**
+     * @param $params
+     *
+     * @return string
+     */
     public function viewAction($params)
     {
         return "View {$params['className']} object of id {$params['id']}";

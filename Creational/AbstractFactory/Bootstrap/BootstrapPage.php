@@ -2,18 +2,18 @@
 
 namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 
-use DesignPatterns\Creational\AbstractFactory\Element;
-use DesignPatterns\Creational\AbstractFactory\Page;
+use DesignPatterns\Creational\AbstractFactory\ElementInferface;
+use DesignPatterns\Creational\AbstractFactory\PageInterface;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class BootstrapPage implements Page
+class BootstrapPage implements PageInterface
 {
     /**
-     * @var Element[]
+     * @var ElementInferface[]
      */
-    private $elements = array();
+    private $elements = [];
 
     /**
      * @inheritdoc
@@ -38,11 +38,11 @@ EOT;
     }
 
     /**
-     * @param Element $element
+     * @param ElementInferface $element
      *
      * @return $this
      */
-    public function addElement(Element $element)
+    public function addElement(ElementInferface $element)
     {
         $this->elements[] = $element;
 

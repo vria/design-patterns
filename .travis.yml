@@ -1,8 +1,19 @@
 language: php
+
+sudo: false
+
 php:
-- 5.6
-- 7.1
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
 
-install: composer update
+before_install:
+  - composer self-update
+  - composer validate
 
-script: phpunit --configuration phpunit.xml
+install:
+  - composer update --prefer-dist --no-interaction
+
+script:
+  - vendor/bin/phpunit

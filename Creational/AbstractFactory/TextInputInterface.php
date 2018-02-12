@@ -5,7 +5,7 @@ namespace DesignPatterns\Creational\AbstractFactory;
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface TextInput extends Element
+interface TextInputInterface extends ElementInferface
 {
     /**
      * @param string $name

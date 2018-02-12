@@ -7,7 +7,7 @@ namespace DesignPatterns\Behavioral\Command;
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface Command
+interface CommandInterface
 {
     /**
      * Doing command

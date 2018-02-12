@@ -5,7 +5,7 @@ namespace DesignPatterns\Creational\AbstractFactory;
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-interface Element
+interface ElementInferface
 {
     /**
      * Display element

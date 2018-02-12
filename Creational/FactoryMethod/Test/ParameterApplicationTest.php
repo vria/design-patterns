@@ -22,7 +22,7 @@ class ParameterApplicationTest extends \PHPUnit_Framework_TestCase
     public function testRouterClass()
     {
         $this->assertInstanceOf(
-            'DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRouter',
+            'DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRouterInterface',
             $this->application->createRouter()
         );
     }
@@ -30,7 +30,7 @@ class ParameterApplicationTest extends \PHPUnit_Framework_TestCase
     public function testRequestClass()
     {
         $this->assertInstanceOf(
-            'DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRequest',
+            'DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRequestInterface',
             $this->application->createRequest('/url')
         );
     }

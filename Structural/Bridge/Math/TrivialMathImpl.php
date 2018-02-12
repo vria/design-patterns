@@ -3,13 +3,13 @@
 namespace DesignPatterns\Structural\Bridge\Math;
 
 /**
- * Class TrivialMathImpl
- * @package DesignPatterns\Structural\Bridge\Math
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
-class TrivialMathImpl implements MathImpl
+class TrivialMathImpl implements MathImplInterface
 {
     /**
-     * @param $number
+     * @param mixed $number
+     *
      * @return mixed
      */
     public function neg($number)
@@ -18,8 +18,9 @@ class TrivialMathImpl implements MathImpl
     }
 
     /**
-     * @param $augend
-     * @param $addend
+     * @param mixed $augend
+     * @param mixed $addend
+     *
      * @return mixed
      */
     public function add($augend, $addend)
@@ -28,8 +29,9 @@ class TrivialMathImpl implements MathImpl
     }
 
     /**
-     * @param $minuend
-     * @param $subtrahend
+     * @param mixed $minuend
+     * @param mixed $subtrahend
+     *
      * @return mixed
      */
     public function sub($minuend, $subtrahend)
@@ -38,8 +40,9 @@ class TrivialMathImpl implements MathImpl
     }
 
     /**
-     * @param $multiplicand
-     * @param $multiplier
+     * @param mixed $multiplicand
+     * @param mixed $multiplier
+     *
      * @return mixed
      */
     public function mul($multiplicand, $multiplier)
@@ -48,8 +51,9 @@ class TrivialMathImpl implements MathImpl
     }
 
     /**
-     * @param $dividend
-     * @param $divisor
+     * @param mixed $dividend
+     * @param mixed $divisor
+     *
      * @return mixed
      */
     public function div($dividend, $divisor)
@@ -58,23 +62,26 @@ class TrivialMathImpl implements MathImpl
     }
 
     /**
-     * @param $first
-     * @param $second
+     * @param mixed $first
+     * @param mixed $second
+     *
      * @return mixed
      */
     public function cmp($first, $second)
     {
         if ($first == $second) {
-            return MathImpl::EQUALS;
+            return MathImplInterface::EQUALS;
         }
         if ($first > $second) {
-            return MathImpl::GREATER;
+            return MathImplInterface::GREATER;
         }
-        return MathImpl::LOWER;
+
+        return MathImplInterface::LOWER;
     }
 
     /**
-     * @param $number
+     * @param mixed $number
+     *
      * @return float
      */
     public function sqrt($number)

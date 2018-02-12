@@ -85,8 +85,8 @@ Two variants of **Application** are implemented:
     - [ParameterRouter](ParameterApplication/ParameterRouter.php)
     - [ParameterRequest](ParameterApplication/ParameterRequest.php)
 
-[https://en.wikipedia.org/wiki/Factory_method_pattern]: (https://en.wikipedia.org/wiki/Factory_method_pattern)
-[Application]: (Application.php)
-[Router]: (Router.php)
-[Request]: (Request.php)
-[Template method]: (/vria/design-patterns/tree/master/Behavioral/TemplateMethod)
+[https://en.wikipedia.org/wiki/Factory_method_pattern]: https://en.wikipedia.org/wiki/Factory_method_pattern
+[Application]: Application.php
+[Router]: RouterInterface.php
+[Request]: RequestInterface.php
+[Template method]: /vria/design-patterns/tree/master/Behavioral/TemplateMethod

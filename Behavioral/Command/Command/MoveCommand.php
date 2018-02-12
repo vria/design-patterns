@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\Behavioral\Command\Command;
 
-use DesignPatterns\Behavioral\Command\Command;
+use DesignPatterns\Behavioral\Command\CommandInterface;
 use DesignPatterns\Behavioral\Command\Field;
 
 /**
@@ -10,7 +10,7 @@ use DesignPatterns\Behavioral\Command\Field;
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-abstract class MoveCommand implements Command
+abstract class MoveCommand implements CommandInterface
 {
     /**
      * Receiver of requests
@@ -24,7 +24,7 @@ abstract class MoveCommand implements Command
      *
      * @param Field $field
      */
-    function __construct(Field $field)
+    public function __construct(Field $field)
     {
         $this->field = $field;
     }
