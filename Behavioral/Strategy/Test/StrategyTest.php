@@ -25,12 +25,17 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
         ]);
     }
 
-    /**
-     * @expectedException \LogicException
-     */
-    public function testFilterNotSetException()
+    public function testNoStrategy()
     {
-        $this->products->filterElements();
+        $expected = [
+            ['name' => 'Grand Prime', 'price' => 184.90, 'in_stock' => true],
+            ['name' => 'Core Prime',  'price' => 138.00, 'in_stock' => false],
+            ['name' => 'Trend Lite',  'price' => 69.90,  'in_stock' => true]
+        ];
+
+        $actual = $this->products->filterElements();
+
+        $this->assertEquals(array_values($expected), array_values($actual));
     }
 
     public function testInStockStrategy()

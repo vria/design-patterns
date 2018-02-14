@@ -3,31 +3,31 @@
   <ID>PHP</ID>
   <OriginalElement>\DesignPatterns\Behavioral\Strategy\PriceFilter</OriginalElement>
   <nodes>
-    <node x="10.0" y="112.5">\DesignPatterns\Behavioral\Strategy\InStockFilter</node>
-    <node x="-106.75" y="0.0">\DesignPatterns\Behavioral\Strategy\ProductFilter</node>
-    <node x="239.0" y="38.0">\DesignPatterns\Behavioral\Strategy\ProductCollection</node>
-    <node x="-296.0" y="101.0">\DesignPatterns\Behavioral\Strategy\PriceFilter</node>
+    <node x="173.0" y="102.0">\DesignPatterns\Behavioral\Strategy\PriceFilter</node>
+    <node x="0.0" y="124.5">\DesignPatterns\Behavioral\Strategy\InStockFilter</node>
+    <node x="-198.0" y="0.0">\DesignPatterns\Behavioral\Strategy\ProductCollection</node>
+    <node x="89.0" y="0.0">\DesignPatterns\Behavioral\Strategy\ProductFilterInterface</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="\DesignPatterns\Behavioral\Strategy\InStockFilter" target="\DesignPatterns\Behavioral\Strategy\ProductFilter">
-      <point x="0.0" y="-25.5" />
-      <point x="85.5" y="76.0" />
-      <point x="2.75" y="76.0" />
-      <point x="36.5" y="25.5" />
+    <edge source="\DesignPatterns\Behavioral\Strategy\PriceFilter" target="\DesignPatterns\Behavioral\Strategy\ProductFilterInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="249.5" y="77.0" />
+      <point x="200.0" y="77.0" />
+      <point x="37.0" y="26.0" />
     </edge>
-    <edge source="\DesignPatterns\Behavioral\Strategy\PriceFilter" target="\DesignPatterns\Behavioral\Strategy\ProductFilter">
-      <point x="0.0" y="-37.0" />
-      <point x="-153.0" y="76.0" />
-      <point x="-70.25" y="76.0" />
-      <point x="-36.5" y="25.5" />
+    <edge source="\DesignPatterns\Behavioral\Strategy\InStockFilter" target="\DesignPatterns\Behavioral\Strategy\ProductFilterInterface">
+      <point x="0.0" y="-26.0" />
+      <point x="76.5" y="77.0" />
+      <point x="126.0" y="77.0" />
+      <point x="-37.0" y="26.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="100.5" y="91.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="64.0" y="99.5" />
   <SelectedNodes />
   <Categories>
     <Category>Methods</Category>
-    <Category>Constructors</Category>
+    <Category>Fields</Category>
   </Categories>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>

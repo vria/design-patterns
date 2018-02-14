@@ -3,6 +3,8 @@
 namespace DesignPatterns\Behavioral\Strategy;
 
 /**
+ * Concrete strategy to filter products by the criteria of being in stock.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class InStockFilter implements ProductFilterInterface

@@ -10,18 +10,18 @@ usually called `*notify`* or `*update`* or `*onEventName`*.
 
 See [https://en.wikipedia.org/wiki/Observer_pattern] for more information.
 
-## Notes
+Notes:
 
 1. *Event*. The Subject evolves over the time, therefore the events that change the Subject's state
 and provokes the notification of observers are always differents. 
 It is a quite rare situation when an observer needs to be notified on all subject's events.
-Mostly each particular observer should be attached to a particular subject (e.g. *Order*) 
-AND a particular event (*Order::CREATED*, *Order::PAYED*, *Order::REFUSED*, *Order::SENT*, ...).
+Mostly each particular observer should be attached to a particular subject (e.g. `Order`) 
+AND a particular event (`Order::CREATED`, `Order::PAYED`, `Order::REFUSED`, `Order::SENT`, ...).
 
 2. *Context*. An observer is permitted to observe any number of Subjects, therefore when the Observer
 is called it must know a Subject that emitted the notification or any other useful information.
 In the first case the observer's method `notify` must accept the only parameter of Subject's type.
-In the second case the observer's method `notify` accepts en *Event* object the incapsulates the
+In the second case the observer's method `notify` accepts en `Event` object the incapsulates the
 information about the event (FormEvent, LifecycleEventArgs, GetResponseForExceptionEvent, ...).
 
 3. *Infinite loop*. Make sure that your code doesn't run to infinite loop when the `notify` method 
@@ -29,7 +29,7 @@ of Observer calls some method of Subject that in turn broadcasts the notificatio
 
 ## Implementation
 
-Proposed implementation makes use of two SPL interfaces: [SplSubject] and [SplObserver].
+This example makes use of two SPL interfaces: [SplSubject] and [SplObserver].
 
 ![Command UML](doc/Observer.png)
 
@@ -54,6 +54,8 @@ for exemple `SendEmailObserver` needs to be called only on `Order`'s finalizatio
 variation of Observer pattern assumes that `Observers` are subscribed to receive notifications
 about particular event.
 
+Check out [ObserverTest] the see the proper use of these classes.
+
 [https://en.wikipedia.org/wiki/Observer_pattern]: (https://en.wikipedia.org/wiki/Observer_pattern)
 [SplSubject]: (http://php.net/manual/fr/class.splsubject.php)
 [SplObserver]: (http://php.net/manual/fr/class.splobserver.php)
@@ -61,3 +63,4 @@ about particular event.
 [PersisterObserver]: PersisterObserver.php
 [SendEmailObserver]: SendEmailObserver.php
 [LoggerObserver]: SendEmailObserver.php
+[ObserverTest]: Test/ObserverTest.php

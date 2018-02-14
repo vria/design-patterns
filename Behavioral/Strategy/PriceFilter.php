@@ -3,6 +3,8 @@
 namespace DesignPatterns\Behavioral\Strategy;
 
 /**
+ * Concrete strategy to filter products by the price.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class PriceFilter implements ProductFilterInterface
@@ -11,16 +13,25 @@ class PriceFilter implements ProductFilterInterface
     const INFERIOR = "INFERIOR";
 
     /**
+     * The threshold to compare to
+     *
      * @var double
      */
     private $threshold;
 
     /**
+     * Whether to filter above or below the threshold
+     *
+     * @see PriceFilter::SUPERIOR
+     * @see PriceFilter::INFERIOR
+     *
      * @var string
      */
     private $compareWay;
 
     /**
+     * Constructor
+     *
      * @param double $threshold
      * @param string $compareWay
      */

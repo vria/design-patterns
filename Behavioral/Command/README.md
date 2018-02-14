@@ -1,17 +1,21 @@
 Command pattern
 ========================================
 
-See [https://en.wikipedia.org/wiki/Command_pattern](https://en.wikipedia.org/wiki/Command_pattern) for more information.
-
-Given that one object (`Invoker`) calls a method of another object (`Receiver`), 
+Given that one object `Invoker` calls a method of another object `Receiver`, 
 it is possible to decouple `Invoker` and `Receiver` by means of `Command` object. 
 The `Receiver`'s method that the `Invoker` wants to call (and the `Receiver` itself) is hidden behind `Command` object.
 
-So instead of 
+So instead of this situation where `Invoker` knows about `Receiver` class and its `someMethod` method :
 ```
-Invoker {
-    function() {
-        /** @var $receiver Receiver */
+Invoker 
+{
+    public function do() 
+    {
+        
+        /**
+         * Invoker is coupled directly with Receiver 
+         * @var $receiver Receiver 
+         */
         $receiver->someMethod();
     }
 }
@@ -20,15 +24,28 @@ Invoker {
 you get
 
 ```
-Invoker {
-    function() {
-        /** @var $command Command */
-        $command->execute();
+Invoker 
+{
+    public function do() 
+    {
+        /**
+         * Invoker is coupled only with generic interface Command
+         * This could be any subclass of Command coupled with any receiver 
+         * @var $command Command 
+         */
+        $command->execute(); // Invoker is 
     }
 }
 
-CommandReceiver extends Command {
-    function execute() {
+interface Command 
+{
+    public function execute();
+}
+
+CommandReceiver extends Command 
+{
+    public function execute() 
+    {
         /** @var $receiver Receiver */
         $receiver->someMethod();
     }
@@ -40,13 +57,17 @@ with absolutely any commands that result to calling an any specific `Receiver` m
 The command pattern also brings additional opportunities like conserving the historiy of executed commands 
 or undoing commands.
 
-The interesting fact is that commands are an object-oriented replacement for callbacks.
+See [https://en.wikipedia.org/wiki/Command_pattern](https://en.wikipedia.org/wiki/Command_pattern) for more information.
+
+## Implementation
 
 Example implementation simulates a simple game control schema: 
 a player aims to reach a goal by moving to left, right, top, bottom. 
 The Joystick issues requests that are represented by strings "left", "right", "top", "bottom".
 These strings are mapped to `Commands` that transmit the the joystick's requests to the `Field`.
 The field stores the internal state of the game changing under the influence by joystick's requests.
+
+![Command UML](doc/Command.png)
 
 Participants:
 - [Field] (`Receiver`) really performs the operations and holds the current state of the game that changes when 
@@ -59,9 +80,9 @@ plays the role of a link between the `Joystick` and the `Field`.
 - [Joystick] (`Invoker`): holds a mapping between the requests "left", "right", etc and the commands.
 Note that `Joystick` is coupled only with `Command` interface and calls its generic methods `move` and `moveBack`.
 
-![Command UML](doc/Command.png)
-
 This example can be enhanced by macro commands.
+
+Check out [CommandTest] the see the proper use of these classes.
 
 [Field]: Field.php
 [Command]: Command.php
@@ -70,3 +91,4 @@ This example can be enhanced by macro commands.
 [RightCommand]: Command/RightCommand.php
 [TopCommand]: Command/TopCommand.php
 [Joystick]: Joystick.php
+[CommandTest]: Test/CommandTest.php
