@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>D:/my_projects/design-patterns/Creational/Prototype/doc</OriginalElement>
+  <nodes>
+    <node x="0.0" y="113.0">\DesignPatterns\Creational\Prototype\Plain\PlainButton</node>
+    <node x="277.0" y="102.0">\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapTextInput</node>
+    <node x="-167.0" y="9.0">\DesignPatterns\Creational\Prototype\ElementCreator</node>
+    <node x="208.99999999999997" y="0.0">\DesignPatterns\Creational\Prototype\ElementInterface</node>
+    <node x="432.0" y="102.0">\DesignPatterns\Creational\Prototype\Plain\PlainTextInput</node>
+    <node x="135.99999999999997" y="113.0">\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapButton</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\DesignPatterns\Creational\Prototype\Plain\PlainButton" target="\DesignPatterns\Creational\Prototype\ElementInterface">
+      <point x="0.0" y="-37.5" />
+      <point x="58.0" y="72.0" />
+      <point x="224.37499999999997" y="72.0" />
+      <point x="-46.125" y="26.0" />
+    </edge>
+    <edge source="\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapButton" target="\DesignPatterns\Creational\Prototype\ElementInterface">
+      <point x="0.0" y="-37.5" />
+      <point x="196.49999999999997" y="82.0" />
+      <point x="255.12499999999997" y="82.0" />
+      <point x="-15.375" y="26.0" />
+    </edge>
+    <edge source="\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapTextInput" target="\DesignPatterns\Creational\Prototype\ElementInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="344.5" y="82.0" />
+      <point x="285.875" y="82.0" />
+      <point x="15.375" y="26.0" />
+    </edge>
+    <edge source="\DesignPatterns\Creational\Prototype\Plain\PlainTextInput" target="\DesignPatterns\Creational\Prototype\ElementInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="490.0" y="72.0" />
+      <point x="316.625" y="72.0" />
+      <point x="46.125" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="274.0" y="159.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
