@@ -1,5 +1,6 @@
 # design-patterns
 
+[![GitHub license](https://img.shields.io/github/license/vria/design-patterns.svg?style=flat-square)](https://github.com/vria/design-patterns/blob/master/LICENCE)
 [![Build Status](https://travis-ci.org/vria/design-patterns.svg?branch=master)](https://travis-ci.org/vria/design-patterns)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0005c125-73a6-4ea7-bac1-8a07dd41a902/mini.png)](https://insight.sensiolabs.com/projects/0005c125-73a6-4ea7-bac1-8a07dd41a902)
 

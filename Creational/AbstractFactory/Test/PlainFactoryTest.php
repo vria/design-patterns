@@ -4,22 +4,22 @@ namespace DesignPatterns\Creational\AbstractFactory\Test;
 
 use DesignPatterns\Creational\AbstractFactory\Plain\PlainButton;
 use DesignPatterns\Creational\AbstractFactory\Plain\PlainPage;
-use DesignPatterns\Creational\AbstractFactory\Plain\PlainPageFactory;
+use DesignPatterns\Creational\AbstractFactory\Plain\PlainHTMLFactory;
 use DesignPatterns\Creational\AbstractFactory\Plain\PlainTextInput;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class PlainPageFactoryTest extends \PHPUnit_Framework_TestCase
+class PlainFactoryTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var PlainPageFactory
+     * @var PlainHTMLFactory
      */
     protected static $factory;
 
     public static function setUpBeforeClass()
     {
-        self::$factory = new PlainPageFactory();
+        self::$factory = new PlainHTMLFactory();
     }
 
     /**

@@ -5,6 +5,8 @@ namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 use DesignPatterns\Creational\AbstractFactory\ButtonInterface;
 
 /**
+ * Concrete button that is created by @see BootstrapHTMLFactory::createButton()
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class BootstrapButton implements ButtonInterface

@@ -4,22 +4,22 @@ namespace DesignPatterns\Creational\AbstractFactory\Test;
 
 use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapButton;
 use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPage;
-use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPageFactory;
+use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapHTMLFactory;
 use DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapTextInput;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
+class BootstrapFactoryTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var BootstrapPageFactory
+     * @var BootstrapHTMLFactory
      */
     protected static $factory;
 
     public static function setUpBeforeClass()
     {
-        self::$factory = new BootstrapPageFactory();
+        self::$factory = new BootstrapHTMLFactory();
     }
 
     /**
@@ -57,7 +57,6 @@ class BootstrapPageFactoryTest extends \PHPUnit_Framework_TestCase
 
         return $page;
     }
-
 
     /**
      * @depends testTextPageCreation

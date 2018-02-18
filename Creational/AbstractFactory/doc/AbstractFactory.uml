@@ -1,92 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>PHP</ID>
-  <OriginalElement>\DesignPatterns\Creational\AbstractFactory\Page</OriginalElement>
+  <OriginalElement>D:/my_projects/design-patterns/Creational/AbstractFactory/doc</OriginalElement>
   <nodes>
-    <node x="581.0" y="213.0">\DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainTextInput</node>
-    <node x="398.85" y="112.0">\DesignPatterns\Creational\AbstractFactory\Button</node>
-    <node x="715.0" y="213.0">\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapTextInput</node>
-    <node x="668.3500000000001" y="112.0">\DesignPatterns\Creational\AbstractFactory\TextInput</node>
-    <node x="381.1382405745063" y="446.9012567324955">\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPageFactory</node>
-    <node x="579.1382405745063" y="446.9012567324955">\DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainPageFactory</node>
-    <node x="308.0" y="213.0">\DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainButton</node>
-    <node x="154.0" y="202.0">\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPage</node>
-    <node x="480.1382405745063" y="301.9012567324955">\DesignPatterns\Creational\AbstractFactory\HTMLPageFactory</node>
-    <node x="442.0" y="213.0">\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapButton</node>
-    <node x="376.25" y="0.0">\DesignPatterns\Creational\AbstractFactory\Element</node>
-    <node x="0.0" y="202.0">\DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainPage</node>
-    <node x="50.60000000000002" y="101.0">\DesignPatterns\Creational\AbstractFactory\Page</node>
+    <node x="-301.0" y="389.0">\DesignPatterns\Creational\AbstractFactory\Plain\PlainButton</node>
+    <node x="104.0" y="287.0">\DesignPatterns\Creational\AbstractFactory\PageInterface</node>
+    <node x="245.0" y="146.0">\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapHTMLFactory</node>
+    <node x="583.0" y="389.0">\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapTextInput</node>
+    <node x="447.0" y="389.0">\DesignPatterns\Creational\AbstractFactory\Plain\PlainTextInput</node>
+    <node x="208.0" y="389.0">\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPage</node>
+    <node x="-165.0" y="389.0">\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapButton</node>
+    <node x="122.5" y="0.0">\DesignPatterns\Creational\AbstractFactory\HTMLFactoryInterface</node>
+    <node x="512.75" y="309.0">\DesignPatterns\Creational\AbstractFactory\TextInputInterface</node>
+    <node x="0.0" y="146.0">\DesignPatterns\Creational\AbstractFactory\Plain\PlainHTMLFactory</node>
+    <node x="-231.75" y="309.0">\DesignPatterns\Creational\AbstractFactory\ButtonInterface</node>
+    <node x="0.0" y="389.0">\DesignPatterns\Creational\AbstractFactory\Plain\PlainPage</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\Page" target="\DesignPatterns\Creational\AbstractFactory\Element">
-      <point x="0.0" y="-25.5" />
-      <point x="143.60000000000002" y="76.0" />
-      <point x="395.25" y="76.0" />
-      <point x="-38.0" y="25.5" />
+    <edge source="\DesignPatterns\Creational\AbstractFactory\Plain\PlainPage" target="\DesignPatterns\Creational\AbstractFactory\PageInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="94.0" y="364.0" />
+      <point x="151.0" y="364.0" />
+      <point x="-47.0" y="26.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainPage" target="\DesignPatterns\Creational\AbstractFactory\Page">
-      <point x="0.0" y="-36.5" />
-      <point x="67.0" y="177.0" />
-      <point x="97.10000000000002" y="177.0" />
-      <point x="-46.5" y="25.5" />
+    <edge source="\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapButton" target="\DesignPatterns\Creational\AbstractFactory\ButtonInterface">
+      <point x="0.0" y="-37.5" />
+      <point x="-104.5" y="364.0" />
+      <point x="-144.75" y="364.0" />
+      <point x="29.0" y="15.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPage" target="\DesignPatterns\Creational\AbstractFactory\Page">
-      <point x="0.0" y="-36.5" />
-      <point x="221.0" y="177.0" />
-      <point x="190.10000000000002" y="177.0" />
-      <point x="46.5" y="25.5" />
+    <edge source="\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPage" target="\DesignPatterns\Creational\AbstractFactory\PageInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="302.0" y="364.0" />
+      <point x="245.0" y="364.0" />
+      <point x="47.0" y="26.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\TextInput" target="\DesignPatterns\Creational\AbstractFactory\Element">
-      <point x="-2.8421709430404007E-14" y="-14.5" />
-      <point x="709.3500000000001" y="76.0" />
-      <point x="471.25" y="76.0" />
-      <point x="38.0" y="25.5" />
+    <edge source="\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapHTMLFactory" target="\DesignPatterns\Creational\AbstractFactory\HTMLFactoryInterface">
+      <point x="0.0" y="-48.0" />
+      <point x="357.5" y="121.0" />
+      <point x="291.25" y="121.0" />
+      <point x="56.25" y="48.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapPageFactory" target="\DesignPatterns\Creational\AbstractFactory\HTMLPageFactory">
-      <point x="0.0" y="-47.5" />
-      <point x="470.1382405745063" y="421.9012567324955" />
-      <point x="524.6382405745063" y="421.9012567324955" />
-      <point x="-44.5" y="47.5" />
+    <edge source="\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapTextInput" target="\DesignPatterns\Creational\AbstractFactory\TextInputInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="650.5" y="364.0" />
+      <point x="610.25" y="364.0" />
+      <point x="32.5" y="15.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapButton" target="\DesignPatterns\Creational\AbstractFactory\Button">
-      <point x="0.0" y="-25.5" />
-      <point x="501.5" y="177.0" />
-      <point x="449.85" y="177.0" />
-      <point x="17.0" y="14.5" />
+    <edge source="\DesignPatterns\Creational\AbstractFactory\Plain\PlainButton" target="\DesignPatterns\Creational\AbstractFactory\ButtonInterface">
+      <point x="0.0" y="-37.5" />
+      <point x="-243.0" y="364.0" />
+      <point x="-202.75" y="364.0" />
+      <point x="-29.0" y="15.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainTextInput" target="\DesignPatterns\Creational\AbstractFactory\TextInput">
-      <point x="0.0" y="-25.5" />
-      <point x="638.0" y="177.0" />
-      <point x="688.8500000000001" y="177.0" />
-      <point x="-20.5" y="14.5" />
+    <edge source="\DesignPatterns\Creational\AbstractFactory\Plain\PlainHTMLFactory" target="\DesignPatterns\Creational\AbstractFactory\HTMLFactoryInterface">
+      <point x="0.0" y="-48.0" />
+      <point x="112.5" y="121.0" />
+      <point x="178.75" y="121.0" />
+      <point x="-56.25" y="48.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapTextInput" target="\DesignPatterns\Creational\AbstractFactory\TextInput">
-      <point x="0.0" y="-25.5" />
-      <point x="781.5" y="177.0" />
-      <point x="729.8500000000001" y="177.0" />
-      <point x="20.5" y="14.5" />
-    </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\Button" target="\DesignPatterns\Creational\AbstractFactory\Element">
-      <point x="0.0" y="-14.5" />
-      <point x="0.0" y="25.5" />
-    </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainPageFactory" target="\DesignPatterns\Creational\AbstractFactory\HTMLPageFactory">
-      <point x="0.0" y="-47.5" />
-      <point x="668.1382405745063" y="421.9012567324955" />
-      <point x="613.6382405745063" y="421.9012567324955" />
-      <point x="44.5" y="47.5" />
-    </edge>
-    <edge source="\DesignPatterns\Creational\AbstractFactory\PlainHTML\PlainButton" target="\DesignPatterns\Creational\AbstractFactory\Button">
-      <point x="0.0" y="-25.5" />
-      <point x="365.0" y="177.0" />
-      <point x="415.85" y="177.0" />
-      <point x="-17.0" y="14.5" />
+    <edge source="\DesignPatterns\Creational\AbstractFactory\Plain\PlainTextInput" target="\DesignPatterns\Creational\AbstractFactory\TextInputInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="505.0" y="364.0" />
+      <point x="545.25" y="364.0" />
+      <point x="-32.5" y="15.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="424.0" y="271.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="208.5" y="243.0" />
   <SelectedNodes />
   <Categories>
+    <Category>Fields</Category>
     <Category>Methods</Category>
   </Categories>
   <VISIBILITY>private</VISIBILITY>

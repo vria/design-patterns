@@ -5,6 +5,8 @@ namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 use DesignPatterns\Creational\AbstractFactory\TextInputInterface;
 
 /**
+ * Concrete page that is created by @see BootstrapHTMLFactory::createTextInput()
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class BootstrapTextInput implements TextInputInterface

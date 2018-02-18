@@ -5,12 +5,14 @@ namespace DesignPatterns\Creational\AbstractFactory\Plain;
 use DesignPatterns\Creational\AbstractFactory\HTMLFactoryInterface;
 
 /**
+ * Concrete factory that creates plain HTML elements
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class PlainPageFactory implements HTMLFactoryInterface
+class PlainHTMLFactory implements HTMLFactoryInterface
 {
     /**
-     * @return PlainPage
+     * @inheritdoc
      */
     public function createPage()
     {
@@ -18,10 +20,7 @@ class PlainPageFactory implements HTMLFactoryInterface
     }
 
     /**
-     * @param string $name
-     * @param string $label
-     *
-     * @return PlainTextInput
+     * @inheritdoc
      */
     public function createTextInput($name, $label)
     {
@@ -29,9 +28,7 @@ class PlainPageFactory implements HTMLFactoryInterface
     }
 
     /**
-     * @param string $label
-     *
-     * @return PlainButton
+     * @inheritdoc
      */
     public function createButton($label)
     {

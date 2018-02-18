@@ -5,6 +5,8 @@ namespace DesignPatterns\Creational\AbstractFactory\Plain;
 use DesignPatterns\Creational\AbstractFactory\TextInputInterface;
 
 /**
+ * Concrete plain HTML text input that is created by @see PlainHTMLFactory::createTextInput()
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class PlainTextInput implements TextInputInterface

@@ -5,12 +5,14 @@ namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 use DesignPatterns\Creational\AbstractFactory\HTMLFactoryInterface;
 
 /**
+ * Concrete factory that creates bootstrap HTML elements
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class BootstrapPageFactory implements HTMLFactoryInterface
+class BootstrapHTMLFactory implements HTMLFactoryInterface
 {
     /**
-     * @return BootstrapPage
+     * @inheritdoc
      */
     public function createPage()
     {
@@ -18,10 +20,7 @@ class BootstrapPageFactory implements HTMLFactoryInterface
     }
 
     /**
-     * @param string $name
-     * @param string $label
-     *
-     * @return BootstrapTextInput
+     * @inheritdoc
      */
     public function createTextInput($name, $label)
     {
@@ -29,9 +28,7 @@ class BootstrapPageFactory implements HTMLFactoryInterface
     }
 
     /**
-     * @param string $label
-     *
-     * @return BootstrapButton
+     * @inheritdoc
      */
     public function createButton($label)
     {

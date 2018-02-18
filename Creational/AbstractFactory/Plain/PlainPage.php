@@ -6,6 +6,8 @@ use DesignPatterns\Creational\AbstractFactory\ElementInterface;
 use DesignPatterns\Creational\AbstractFactory\PageInterface;
 
 /**
+ * Concrete plain HTML page that is created by @see PlainHTMLFactory::createPage()
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class PlainPage implements PageInterface
