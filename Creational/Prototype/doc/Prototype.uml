@@ -3,41 +3,57 @@
   <ID>PHP</ID>
   <OriginalElement>D:/my_projects/design-patterns/Creational/Prototype/doc</OriginalElement>
   <nodes>
-    <node x="0.0" y="113.0">\DesignPatterns\Creational\Prototype\Plain\PlainButton</node>
-    <node x="277.0" y="102.0">\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapTextInput</node>
-    <node x="-167.0" y="9.0">\DesignPatterns\Creational\Prototype\ElementCreator</node>
-    <node x="208.99999999999997" y="0.0">\DesignPatterns\Creational\Prototype\ElementInterface</node>
-    <node x="432.0" y="102.0">\DesignPatterns\Creational\Prototype\Plain\PlainTextInput</node>
-    <node x="135.99999999999997" y="113.0">\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapButton</node>
+    <node x="-45.0" y="187.0">\DesignPatterns\Creational\Prototype\HTMLFactory</node>
+    <node x="478.5" y="307.0">\DesignPatterns\Creational\Prototype\Button</node>
+    <node x="359.0" y="453.0">\DesignPatterns\Creational\Prototype\Plain\PlainButton</node>
+    <node x="632.0" y="453.0">\DesignPatterns\Creational\Prototype\Foundation\FoundationButton</node>
+    <node x="468.0" y="0.0">\DesignPatterns\Creational\Prototype\TextInput</node>
+    <node x="638.0" y="190.0">\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapTextInput</node>
+    <node x="475.0" y="190.0">\DesignPatterns\Creational\Prototype\Foundation\FoundationTextInput</node>
+    <node x="341.0" y="190.0">\DesignPatterns\Creational\Prototype\Plain\PlainTextInput</node>
+    <node x="22.0" y="64.0">\DesignPatterns\Creational\Prototype\HTMLFactoryInterface</node>
+    <node x="493.0" y="453.0">\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapButton</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="\DesignPatterns\Creational\Prototype\Plain\PlainButton" target="\DesignPatterns\Creational\Prototype\ElementInterface">
-      <point x="0.0" y="-37.5" />
-      <point x="58.0" y="72.0" />
-      <point x="224.37499999999997" y="72.0" />
-      <point x="-46.125" y="26.0" />
+    <edge source="\DesignPatterns\Creational\Prototype\Plain\PlainButton" target="\DesignPatterns\Creational\Prototype\Button">
+      <point x="0.0" y="-25.5" />
+      <point x="416.0" y="428.0" />
+      <point x="503.16666666666663" y="428.0" />
+      <point x="-49.33333333333334" y="48.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapButton" target="\DesignPatterns\Creational\Prototype\ElementInterface">
-      <point x="0.0" y="-37.5" />
-      <point x="196.49999999999997" y="82.0" />
-      <point x="255.12499999999997" y="82.0" />
-      <point x="-15.375" y="26.0" />
+    <edge source="\DesignPatterns\Creational\Prototype\Foundation\FoundationButton" target="\DesignPatterns\Creational\Prototype\Button">
+      <point x="0.0" y="-25.5" />
+      <point x="696.5" y="428.0" />
+      <point x="601.8333333333334" y="428.0" />
+      <point x="49.33333333333334" y="48.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapTextInput" target="\DesignPatterns\Creational\Prototype\ElementInterface">
-      <point x="0.0" y="-48.5" />
-      <point x="344.5" y="82.0" />
-      <point x="285.875" y="82.0" />
-      <point x="15.375" y="26.0" />
+    <edge source="\DesignPatterns\Creational\Prototype\Plain\PlainTextInput" target="\DesignPatterns\Creational\Prototype\TextInput">
+      <point x="0.0" y="-25.5" />
+      <point x="398.0" y="165.0" />
+      <point x="494.1666666666667" y="165.0" />
+      <point x="-52.333333333333314" y="70.0" />
     </edge>
-    <edge source="\DesignPatterns\Creational\Prototype\Plain\PlainTextInput" target="\DesignPatterns\Creational\Prototype\ElementInterface">
-      <point x="0.0" y="-48.5" />
-      <point x="490.0" y="72.0" />
-      <point x="316.625" y="72.0" />
-      <point x="46.125" y="26.0" />
+    <edge source="\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapButton" target="\DesignPatterns\Creational\Prototype\Button">
+      <point x="0.0" y="-25.5" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="\DesignPatterns\Creational\Prototype\Foundation\FoundationTextInput" target="\DesignPatterns\Creational\Prototype\TextInput">
+      <point x="0.0" y="-25.5" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="\DesignPatterns\Creational\Prototype\Bootstrap\BootstrapTextInput" target="\DesignPatterns\Creational\Prototype\TextInput">
+      <point x="0.0" y="-25.5" />
+      <point x="704.5" y="165.0" />
+      <point x="598.8333333333334" y="165.0" />
+      <point x="52.33333333333337" y="70.0" />
+    </edge>
+    <edge source="\DesignPatterns\Creational\Prototype\HTMLFactory" target="\DesignPatterns\Creational\Prototype\HTMLFactoryInterface">
+      <point x="0.0" y="-81.0" />
+      <point x="0.0" y="36.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="274.0" y="159.5" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="363.0" y="252.0" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>

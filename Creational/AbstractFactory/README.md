@@ -15,18 +15,25 @@ See [https://en.wikipedia.org/wiki/Abstract_factory_pattern](https://en.wikipedi
 
 ![Abstract factory UML](doc/AbstractFactory.png)
 
-Imagine that some html renderer needs to create a set of these objects : 
-- [ButtonInterface] that is either [PlainButton] or [BootstrapButton],
-- [TextInputInterface] that is either [PlainTextInput] or [BootstrapTextInput],
-- [PageInterface] that is either [PlainPage] or [BootstrapPage]. 
+Imagine that some html renderer or any other client code needs to create a set of these html entities : 
+- [ButtonInterface] that can be [PlainButton], [BootstrapButton], etc.
+- [TextInputInterface] that can be [PlainTextInput], [BootstrapTextInput], etc.
+- [PageInterface] that can be [PlainPage], [BootstrapPage], etc.
 
-The client code asks any object that implements [HTMLFactoryInterface] to create the objects of [ButtonInterface],
-[TextInputInterface] or [PageInterface]. In place of abstract factory [HTMLFactoryInterface] could be:
-- [PlainHTMLFactory] that creates [PlainButton], [PlainTextInput] and [PlainPage]
-- [BootstrapHTMLFactory] that creates [BootstrapButton], [BootstrapTextInput] and [BootstrapPage]
+Tha client code should not be aware of concrete class implementing these interfaces. 
+To acheive this the client code does not create these objects directly, instead it asks any object that implements 
+[HTMLFactoryInterface] (`AbstractFactory`) to do it. This interface has methods to create:
+- [ButtonInterface] (`AbstractProductA`),
+- [TextInputInterface] (`AbstractProductB`),
+- [PageInterface] (`AbstractProductC`).
+While [HTMLFactoryInterface] is an abstract factory, a concrete factory is any object that implements that interface, for example:
+- [PlainHTMLFactory] (`ConcreteFactory1`) that creates [PlainButton] (`ProductA1`), [PlainTextInput] (`ProductB1`) 
+and [PlainPage] (`ProductC1`)
+- [BootstrapHTMLFactory] (`ConcreteFactory2`) that creates [BootstrapButton] (`ProductB1`), 
+[BootstrapTextInput] (`ProductB2`) and [BootstrapPage] (`ProductB3`).
 
-The point is that the client code is not aware of the concrete class of the factory. Neither it is aware of concrete 
-classes of objects it asks the factory to create.
+Как и для хтмл сущностей, клиентский код связан только с абстрактной фабрикой, а не с конкретной ее имплиментацией.
+Это позволяет передать в клиент любую фабрику для создания любых типов хтмл сущностей. Например, фоундейшн, бустрап4.
 
 [ButtonInterface]: ButtonInterface.php
 [PlainButton]: Plain/PlainButton.php

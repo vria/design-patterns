@@ -8,8 +8,12 @@
         </testsuite>
     </testsuites>
     <filter>
-        <blacklist>
-            <directory>./vendor</directory>
-        </blacklist>
+        <whitelist>
+            <directory>./</directory>
+            <exclude>
+                <directory>./*/*/Tests</directory>
+                <directory>./vendor</directory>
+            </exclude>
+        </whitelist>
     </filter>
 </phpunit>
