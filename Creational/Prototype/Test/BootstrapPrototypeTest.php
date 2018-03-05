@@ -2,15 +2,15 @@
 
 namespace DesignPatterns\Creational\Prototype\Test;
 
-use DesignPatterns\Creational\Prototype\Plain\PlainButton;
-use DesignPatterns\Creational\Prototype\Plain\PlainPage;
-use DesignPatterns\Creational\Prototype\Plain\PlainTextInput;
+use DesignPatterns\Creational\Prototype\Bootstrap\BootstrapButton;
+use DesignPatterns\Creational\Prototype\Bootstrap\BootstrapPage;
+use DesignPatterns\Creational\Prototype\Bootstrap\BootstrapTextInput;
 use DesignPatterns\Creational\Prototype\Renderer;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class PlainPrototypeTest extends \PHPUnit_Framework_TestCase
+class BootstrapPrototypeTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var Renderer
@@ -18,27 +18,27 @@ class PlainPrototypeTest extends \PHPUnit_Framework_TestCase
     private static $renderer;
 
     /**
-     * @var PlainButton
+     * @var BootstrapButton
      */
     private static $buttonPrototype;
 
     /**
-     * @var PlainTextInput
+     * @var BootstrapTextInput
      */
     private static $textInputPrototype;
 
     /**
-     * @var PlainPage
+     * @var BootstrapPage
      */
     private static $pagePrototype;
 
     public static function setUpBeforeClass()
     {
-        self::$buttonPrototype = new PlainButton('Submit');
+        self::$buttonPrototype = new BootstrapButton('Submit');
 
-        self::$textInputPrototype = new PlainTextInput('first_name', 'Input your first name');
+        self::$textInputPrototype = new BootstrapTextInput('first_name', 'Input your first name');
 
-        self::$pagePrototype = (new PlainPage)
+        self::$pagePrototype = (new BootstrapPage)
             ->addElement(self::$buttonPrototype)
             ->addElement(self::$textInputPrototype)
         ;
@@ -47,13 +47,13 @@ class PlainPrototypeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Check that a plain html button is created properly
+     * Check that a bootstrap html button is created properly
      */
-    public function testPlainButtonCreation()
+    public function testBootstrapButtonCreation()
     {
         $button = self::$renderer->createButton();
 
-        $this->assertInstanceOf(PlainButton::class, $button, "Plain html button must be created");
+        $this->assertInstanceOf(BootstrapButton::class, $button, "Bootstrap html button must be created");
         $this->assertNotEquals(
             spl_object_hash(self::$buttonPrototype),
             spl_object_hash($button),
@@ -61,17 +61,17 @@ class PlainPrototypeTest extends \PHPUnit_Framework_TestCase
         );
 
         $button->render();
-        $this->expectOutputString('<button>Submit</button>');
+        $this->expectOutputString('<button class="btn btn-primary">Submit</button>');
     }
 
     /**
-     * Check that a plain html text input is created properly
+     * Check that a bootstrap html text input is created properly
      */
     public function testTextInputCreation()
     {
         $textInput = self::$renderer->createTextInput();
 
-        $this->assertInstanceOf(PlainTextInput::class, $textInput, "Plain html text input must be created");
+        $this->assertInstanceOf(BootstrapTextInput::class, $textInput, "Bootstrap html text input must be created");
         $this->assertNotEquals(
             spl_object_hash(self::$textInputPrototype),
             spl_object_hash($textInput),
@@ -80,20 +80,22 @@ class PlainPrototypeTest extends \PHPUnit_Framework_TestCase
 
         $textInput->render();
         $expectedOutput = <<<EOT
-<label for="first_name">Input your first name</label>
-<input id="first_name" name="first_name">
+<div class="form-group">
+    <label for="first_name">Input your first name</label>
+    <input class="form-control" id="first_name" name="first_name">
+</div>
 EOT;
         $this->expectOutputString($expectedOutput);
     }
 
     /**
-     * Check that a plain html page is created properly
+     * Check that a bootstrap html page is created properly
      */
     public function testPageCreation()
     {
         $page = self::$renderer->createPage();
 
-        $this->assertInstanceOf(PlainPage::class, $page, "Plain html page must be created");
+        $this->assertInstanceOf(BootstrapPage::class, $page, "Bootstrap html page must be created");
         $this->assertNotEquals(
             spl_object_hash(self::$pagePrototype),
             spl_object_hash($page),
@@ -103,14 +105,14 @@ EOT;
         // Check out that children elements are cloned successfully
         $elements = $page->getElements();
 
-        $this->assertInstanceOf(PlainButton::class, $elements[0], "The first element of a new page must be a plain button");
+        $this->assertInstanceOf(BootstrapButton::class, $elements[0], "The first element of a new page must be a bootstrap button");
         $this->assertNotEquals(
             spl_object_hash(self::$buttonPrototype),
             spl_object_hash($elements[0]),
             "A new page must hold a new button element"
         );
 
-        $this->assertInstanceOf(PlainTextInput::class, $elements[1], "The second element of a new page must be a plain text input");
+        $this->assertInstanceOf(BootstrapTextInput::class, $elements[1], "The second element of a new page must be a bootstrap text input");
         $this->assertNotEquals(
             spl_object_hash(self::$textInputPrototype),
             spl_object_hash($elements[1]),

@@ -2,6 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/vria/design-patterns.svg?style=flat-square)](https://github.com/vria/design-patterns/blob/master/LICENCE)
 [![Build Status](https://travis-ci.org/vria/design-patterns.svg?branch=master)](https://travis-ci.org/vria/design-patterns)
+[![codecov](https://codecov.io/gh/vria/design-patterns/branch/master/graph/badge.svg)](https://codecov.io/gh/vria/design-patterns)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0005c125-73a6-4ea7-bac1-8a07dd41a902/mini.png)](https://insight.sensiolabs.com/projects/0005c125-73a6-4ea7-bac1-8a07dd41a902)
 
 The examples of the Gang of Four's design patterns in PHP.
@@ -24,3 +25,5 @@ The examples of the Gang of Four's design patterns in PHP.
 * [Strategy](Behavioral/Strategy) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Strategy_pattern)
 * [TemplateMethod](Behavioral/TemplateMethod) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Template_method_pattern)
 * [Visitor](Behavioral/Visitor) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Visitor_pattern)
+
+Don't forget to check out test cases in order to fully understand the patterns.

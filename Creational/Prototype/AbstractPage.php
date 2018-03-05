@@ -28,6 +28,16 @@ abstract class AbstractPage implements ElementInterface
         return $this;
     }
 
+    /**
+     * Get elements
+     *
+     * @return ElementInterface[]
+     */
+    public function getElements()
+    {
+        return $this->elements;
+    }
+
     public function __clone()
     {
         $this->elements = array_map(
