@@ -5,7 +5,8 @@ namespace DesignPatterns\Creational\Prototype\Plain;
 use DesignPatterns\Creational\Prototype\AbstractButton;
 
 /**
- * Concrete plain HTML button that is created by @see PlainHTMLFactory::createButton()
+ * Concrete plain HTML button.
+ * The `Renderer` (`Client`) doesn't depends on it.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

@@ -5,7 +5,8 @@ namespace DesignPatterns\Creational\Prototype\Bootstrap;
 use DesignPatterns\Creational\Prototype\AbstractButton;
 
 /**
- * Concrete button that is created by @see BootstrapHTMLFactory::createButton()
+ * Concrete Bootstrap button.
+ * The `Renderer` (`Client`) doesn't depends on it.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

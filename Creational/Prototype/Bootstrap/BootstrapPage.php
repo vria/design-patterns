@@ -5,7 +5,8 @@ namespace DesignPatterns\Creational\Prototype\Bootstrap;
 use DesignPatterns\Creational\Prototype\AbstractPage;
 
 /**
- * Concrete page that is created by @see BootstrapHTMLFactory::createPage()
+ * Concrete Bootstrap HTML page.
+ * The `Renderer` (`Client`) doesn't depends on it.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

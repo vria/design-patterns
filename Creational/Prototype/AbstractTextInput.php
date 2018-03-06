@@ -6,6 +6,8 @@ namespace DesignPatterns\Creational\Prototype;
  * An interface for all concrete text inputs:
  * - @see \DesignPatterns\Creational\Prototype\Bootstrap\BootstrapTextInput
  * - @see \DesignPatterns\Creational\Prototype\Plain\PlainTextInput
+ * This is a `Prototype` constraint (interface or abstract class) in terms of the prototype pattern.
+ * The `Renderer` (`Client`) depends on it.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

@@ -5,7 +5,8 @@ namespace DesignPatterns\Creational\Prototype\Plain;
 use DesignPatterns\Creational\Prototype\AbstractPage;
 
 /**
- * Concrete plain HTML page that is created by @see PlainHTMLFactory::createPage()
+ * Concrete plain HTML page.
+ * The `Renderer` (`Client`) doesn't depends on it.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

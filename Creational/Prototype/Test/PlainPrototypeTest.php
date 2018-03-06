@@ -39,8 +39,8 @@ class PlainPrototypeTest extends \PHPUnit_Framework_TestCase
         self::$textInputPrototype = new PlainTextInput('first_name', 'Input your first name');
 
         self::$pagePrototype = (new PlainPage)
-            ->addElement(self::$buttonPrototype)
             ->addElement(self::$textInputPrototype)
+            ->addElement(self::$buttonPrototype)
         ;
 
         self::$renderer = new Renderer(self::$buttonPrototype, self::$textInputPrototype, self::$pagePrototype);
@@ -103,18 +103,25 @@ EOT;
         // Check out that children elements are cloned successfully
         $elements = $page->getElements();
 
-        $this->assertInstanceOf(PlainButton::class, $elements[0], "The first element of a new page must be a plain button");
+        $this->assertInstanceOf(PlainTextInput::class, $elements[0], "The first element of a new page must be a plain text input");
+        $this->assertNotEquals(
+            spl_object_hash(self::$textInputPrototype),
+            spl_object_hash($elements[0]),
+            "A new page must hold a new text input"
+        );
+
+        $this->assertInstanceOf(PlainButton::class, $elements[1], "The second element of a new page must be a plain button");
         $this->assertNotEquals(
             spl_object_hash(self::$buttonPrototype),
-            spl_object_hash($elements[0]),
+            spl_object_hash($elements[1]),
             "A new page must hold a new button element"
         );
 
-        $this->assertInstanceOf(PlainTextInput::class, $elements[1], "The second element of a new page must be a plain text input");
-        $this->assertNotEquals(
-            spl_object_hash(self::$textInputPrototype),
-            spl_object_hash($elements[1]),
-            "A new page must hold a new text input"
-        );
+        $page->render();
+        $expectedOutput = <<<EOT
+<!doctype html><html lang="en"><body><label for="first_name">Input your first name</label>
+<input id="first_name" name="first_name"><button>Submit</button></body></html>
+EOT;
+        $this->expectOutputString($expectedOutput);
     }
 }

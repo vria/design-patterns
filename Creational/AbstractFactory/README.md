@@ -21,7 +21,7 @@ Imagine that some html renderer or any other client code needs to create a set o
 - [PageInterface] that can be [PlainPage], [BootstrapPage], etc.
 
 Tha client code should not be aware of concrete class implementing these interfaces. 
-To acheive this the client code does not create these objects directly, instead it asks any object that implements 
+To achieve this the client code does not create these objects directly, instead it asks any object that implements 
 [HTMLFactoryInterface] (`AbstractFactory`) to do it. This interface has methods to create:
 - [ButtonInterface] (`AbstractProductA`),
 - [TextInputInterface] (`AbstractProductB`),
@@ -44,8 +44,8 @@ and [PlainPage] (`ProductC1`)
 [BootstrapTextInput]: Bootstrap/BootstrapTextInput.php
 
 [PageInterface]: PageInterface.php
-[PlainPage]: Plain/PlainPage.php
-[BootstrapPage]: Bootstrap/BootstrapPage.php
+_[PlainPage]: Plain/PlainPage.php
+[BootstrapPage]: Bootstrap/BootstrapPage.php_
 
 [HTMLFactoryInterface]: HTMLFactoryInterface.php
 [PlainHTMLFactory]: Plain/PlainHTMLFactory.php

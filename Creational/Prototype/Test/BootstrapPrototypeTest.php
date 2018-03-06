@@ -39,8 +39,8 @@ class BootstrapPrototypeTest extends \PHPUnit_Framework_TestCase
         self::$textInputPrototype = new BootstrapTextInput('first_name', 'Input your first name');
 
         self::$pagePrototype = (new BootstrapPage)
-            ->addElement(self::$buttonPrototype)
             ->addElement(self::$textInputPrototype)
+            ->addElement(self::$buttonPrototype)
         ;
 
         self::$renderer = new Renderer(self::$buttonPrototype, self::$textInputPrototype, self::$pagePrototype);
@@ -105,18 +105,33 @@ EOT;
         // Check out that children elements are cloned successfully
         $elements = $page->getElements();
 
-        $this->assertInstanceOf(BootstrapButton::class, $elements[0], "The first element of a new page must be a bootstrap button");
+        $this->assertInstanceOf(BootstrapTextInput::class, $elements[0], "The first element of a new page must be a bootstrap text input");
+        $this->assertNotEquals(
+            spl_object_hash(self::$textInputPrototype),
+            spl_object_hash($elements[0]),
+            "A new page must hold a new text input"
+        );
+
+        $this->assertInstanceOf(BootstrapButton::class, $elements[1], "The second element of a new page must be a bootstrap button");
         $this->assertNotEquals(
             spl_object_hash(self::$buttonPrototype),
-            spl_object_hash($elements[0]),
+            spl_object_hash($elements[1]),
             "A new page must hold a new button element"
         );
 
-        $this->assertInstanceOf(BootstrapTextInput::class, $elements[1], "The second element of a new page must be a bootstrap text input");
-        $this->assertNotEquals(
-            spl_object_hash(self::$textInputPrototype),
-            spl_object_hash($elements[1]),
-            "A new page must hold a new text input"
-        );
+        $page->render();
+        $expectedOutput = <<<EOT
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body class="container"><div class="form-group">
+    <label for="first_name">Input your first name</label>
+    <input class="form-control" id="first_name" name="first_name">
+</div><button class="btn btn-primary">Submit</button></body></html>
+EOT;
+        $this->expectOutputString($expectedOutput);
     }
 }

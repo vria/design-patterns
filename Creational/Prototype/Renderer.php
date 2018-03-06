@@ -3,29 +3,38 @@
 namespace DesignPatterns\Creational\Prototype;
 
 /**
- * Client
+ * The renderer of HTML elements. The actual useful code is omitted in order to concentrate on the creation of HTML elements.
+ * This is a `Client` code in terms of the prototype pattern.
+ * It holds prototype of HTML elements and clones them when a new instance is needed.
  *
  * @author Vlad Riabchenko <vriabchenko@webnet.fr>
  */
 class Renderer
 {
     /**
+     * The prototype of an HTML button.
+     *
      * @var AbstractButton
      */
     private $buttonPrototype;
 
     /**
+     * The prototype of an HTML text input.
+     *
      * @var AbstractTextInput
      */
     private $textInputPrototype;
 
     /**
+     * The prototype of an HTML page.
+     *
      * @var AbstractPage
      */
     private $pagePrototype;
 
     /**
-     * Constructeur
+     * Constructor.
+     * The renderer gets parametrized with prototypes.
      *
      * @param AbstractButton $buttonPrototype
      * @param AbstractTextInput $textInputPrototype
@@ -42,6 +51,8 @@ class Renderer
     }
 
     /**
+     * Create a new HTML button.
+     *
      * @return AbstractButton
      */
     public function createButton()
@@ -50,6 +61,8 @@ class Renderer
     }
 
     /**
+     * Create a new HTML text input.
+     *
      * @return AbstractTextInput
      */
     public function createTextInput()
@@ -58,6 +71,10 @@ class Renderer
     }
 
     /**
+     * Create a new HTML page.
+     * Note that all children elements of the prototype page are cloned as well:
+     * @see AbstractPage::__clone().
+     *
      * @return AbstractPage
      */
     public function createPage()

@@ -5,7 +5,8 @@ namespace DesignPatterns\Creational\Prototype\Plain;
 use DesignPatterns\Creational\Prototype\AbstractTextInput;
 
 /**
- * Concrete plain HTML text input that is created by @see PlainHTMLFactory::createTextInput()
+ * Concrete plain HTML text input.
+ * The `Renderer` (`Client`) doesn't depends on it.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

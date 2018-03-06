@@ -5,7 +5,8 @@ namespace DesignPatterns\Creational\Prototype\Bootstrap;
 use DesignPatterns\Creational\Prototype\AbstractTextInput;
 
 /**
- * Concrete page that is created by @see BootstrapHTMLFactory::createTextInput()
+ * Concrete Bootstrap HTML text input.
+ * The `Renderer` (`Client`) doesn't depends on it.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
