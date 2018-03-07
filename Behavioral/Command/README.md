@@ -1,19 +1,19 @@
-Command pattern
-========================================
+Command pattern (Action, Transaction)
+=====================================
 
 Given that one object `Invoker` calls a method of another object `Receiver`, 
 it is possible to decouple `Invoker` and `Receiver` by means of `Command` object. 
 The `Receiver`'s method that the `Invoker` wants to call (and the `Receiver` itself) is hidden behind `Command` object.
 
-So instead of this situation where `Invoker` knows about `Receiver` class and its `someMethod` method :
+So instead of the situation where `Invoker` knows about `Receiver` class and its `someMethod` method :
 ```
 Invoker 
 {
     public function do() 
     {
-        
         /**
-         * Invoker is coupled directly with Receiver 
+         * Invoker is coupled directly with Receiver.
+         *
          * @var $receiver Receiver 
          */
         $receiver->someMethod();
@@ -29,33 +29,42 @@ Invoker
     public function do() 
     {
         /**
-         * Invoker is coupled only with generic interface Command
-         * This could be any subclass of Command coupled with any receiver 
-         * @var $command Command 
+         * Invoker is coupled only with generic interface Command.
+         * This could be any subclass of Command coupled with any receiver.
+         *  
+         * @var $command Command
          */
-        $command->execute(); // Invoker is 
+        $command->execute();
     }
 }
 
+/**
+ * A generic command interface. The invoker is coupled only with this interface.
+ */
 interface Command 
 {
     public function execute();
 }
 
-CommandReceiver extends Command 
+/**
+ * A concreate command that can be coupled with anything (Receiver in this case).
+ **/
+ReceiverCommand extends Command 
 {
     public function execute() 
     {
-        /** @var $receiver Receiver */
+        /**
+         * The concreate commend is coupled with receiver.
+         * @var $receiver Receiver 
+         */
         $receiver->someMethod();
     }
 }
 ```
 
-Encapsulating a specific method call in a generic object `Command`, you get the opportunity to parametrize the `Invoker` 
-with absolutely any commands that result to calling an any specific `Receiver` method. 
-The command pattern also brings additional opportunities like conserving the historiy of executed commands 
-or undoing commands.
+By encapsulating a specific method call `Receiver::someMethod()` in a generic interface `Command` 
+you get the opportunity to parametrize the `Invoker` with absolutely any commands that result in calling any method of any recipient. 
+The command pattern also brings additional opportunities like conserving the history of executed commands or undoing commands.
 
 See [https://en.wikipedia.org/wiki/Command_pattern](https://en.wikipedia.org/wiki/Command_pattern) for more information.
 

@@ -7,7 +7,7 @@ namespace DesignPatterns\Creational\Prototype;
  * This is a `Client` code in terms of the prototype pattern.
  * It holds prototype of HTML elements and clones them when a new instance is needed.
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class Renderer
 {

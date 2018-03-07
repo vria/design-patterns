@@ -3,39 +3,42 @@
 namespace DesignPatterns\Behavioral\TemplateMethod;
 
 /**
+ * Voter to check if the methods of @see \SplDoublyLinkedList could be called.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SplDoublyLinkedListVoter extends AbstractVoter
 {
     /**
-     * @return string
+     * @inheritdoc
      */
-    protected function supportedClass()
+    protected function supportsObject($object)
     {
-        return 'SplDoublyLinkedList';
+        return $object instanceof \SplDoublyLinkedList;
     }
 
     /**
-     * @return array
+     * @inheritdoc
      */
-    protected function supportedAttributes()
+    protected function supportsAttribute($attribute)
     {
-        return ['shift', 'unshift', 'pop', 'push'];
+        return in_array($attribute, ['shift', 'unshift', 'pop', 'push']);
     }
 
     /**
-     * @param \SplDoublyLinkedList $object
-     * @param $attribute
-     *
-     * @return bool
+     * @inheritdoc
      */
     protected function hasAccess($object, $attribute)
     {
+        /** @var $object \SplDoublyLinkedList */
+
+        // Always wllow to push and unshift
         if ($attribute == "unshift" || $attribute == "push") {
             return true;
         }
 
-        if ($object->count() > 0 && ($attribute == "shift" || $attribute == "pop") ) {
+        // Allow to shift and pop only when the double linked list is not empty
+        if (($attribute == "shift" || $attribute == "pop") && $object->count() > 0) {
             return true;
         }
 

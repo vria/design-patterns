@@ -3,34 +3,37 @@
 namespace DesignPatterns\Behavioral\TemplateMethod;
 
 /**
+ * Voter to check if the methods of @see \SplFixedArray could be called.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SplFixedArrayVoter extends AbstractVoter
 {
     /**
-     * @return string
+     * @inheritdoc
      */
-    protected function supportedClass()
+    protected function supportsObject($object)
     {
-        return 'SplFixedArray';
+        return $object instanceof \SplFixedArray;
     }
 
     /**
-     * @return array
+     * @inheritdoc
      */
-    protected function supportedAttributes()
+    protected function supportsAttribute($attribute)
     {
-        return ['toArray'];
+        // Other methods could be added
+        return $attribute === 'toArray';
     }
 
     /**
-     * @param \SplFixedArray $object
-     * @param $attribute
-     *
-     * @return bool
+     * @inheritdoc
      */
     protected function hasAccess($object, $attribute)
     {
+        /** @var $object \SplFixedArray */
+
+        // Let call `toArray` method only if the fixed array object is not empty
         return $object->count() > 0;
     }
 }

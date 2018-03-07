@@ -6,6 +6,8 @@ use DesignPatterns\Behavioral\TemplateMethod\SplFixedArrayVoter;
 use DesignPatterns\Behavioral\TemplateMethod\AbstractVoter;
 
 /**
+ * Test @see SplFixedArrayVoter
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SplFixedArrayVoterTest extends \PHPUnit_Framework_TestCase

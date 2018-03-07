@@ -5,6 +5,8 @@ use DesignPatterns\Behavioral\TemplateMethod\AbstractVoter;
 use DesignPatterns\Behavioral\TemplateMethod\SplDoublyLinkedListVoter;
 
 /**
+ * Test @see SplDoublyLinkedListVoterTest
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SplDoublyLinkedListVoterTest extends \PHPUnit_Framework_TestCase

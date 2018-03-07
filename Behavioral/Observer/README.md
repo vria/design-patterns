@@ -1,4 +1,5 @@
-# Observer
+Observer pattern (Dependents, Publish-Subscribe)
+================================================
 
 Observer pattern defines the interaction between a `Subject` and its `Observers` in a way that the `Subject` 
 keeps the list of `Observers` and notifies them when the event that they listen to happens.
@@ -29,7 +30,7 @@ of Observer calls some method of Subject that in turn broadcasts the notificatio
 
 This example makes use of two SPL interfaces: [SplSubject] and [SplObserver].
 
-![Command UML](doc/Observer.png)
+![Observer UML](doc/Observer.png)
 
 In this case [Order] class as a `Subject` that evolves over the time: from `INITIALIZED` to `FINALIZED` state.
 
