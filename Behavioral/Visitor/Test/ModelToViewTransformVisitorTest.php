@@ -2,10 +2,10 @@
 
 namespace DesignPatterns\Behavioral\Visitor\Test;
 
-use DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField;
+use DesignPatterns\Behavioral\Visitor\FormFields\CheckboxesField;
 use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
-use DesignPatterns\Behavioral\Visitor\Visitors\ModelToViewTransformVisitor;
+use DesignPatterns\Behavioral\Visitor\Visitors\ModelToViewTransformerVisitor;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
@@ -13,13 +13,13 @@ use DesignPatterns\Behavioral\Visitor\Visitors\ModelToViewTransformVisitor;
 class ModelToViewTransformVisitorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var ModelToViewTransformVisitor
+     * @var ModelToViewTransformerVisitor
      */
     private $modelToViewTransformVisitor;
 
     protected function setUp()
     {
-        $this->modelToViewTransformVisitor = new ModelToViewTransformVisitor();
+        $this->modelToViewTransformVisitor = new ModelToViewTransformerVisitor();
     }
 
     public function testEmailField()
@@ -42,11 +42,11 @@ class ModelToViewTransformVisitorTest extends \PHPUnit_Framework_TestCase
 
     public function testChoiceField()
     {
-        $choiceField = new ChoiceField();
-        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
-        $choiceField->setValue('green');
+        $choiceField = new CheckboxesField();
+        $choiceField->setChoices(['Red' => 1, 'Blue' => 2, 'Green' => 3]);
+        $choiceField->setValue([1, 3]);
         $choiceField->accept($this->modelToViewTransformVisitor);
 
-        $this->assertEquals('Green', $choiceField->getViewValue());
+        $this->assertEquals(['Red', 'Green'], $choiceField->getViewValue());
     }
 }

@@ -2,27 +2,37 @@
 
 namespace DesignPatterns\Behavioral\Visitor;
 
-use DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField;
+use DesignPatterns\Behavioral\Visitor\FormFields\CheckboxesField;
 use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
 use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 
 /**
+ * Declares a visit operation for each form field. These form field are not required to extend @see FormField,
+ * visitor pattern doesn't require their class hierarchies to be related.
+ * The method's name and signature determines the class that sends the visit request.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 interface VisitorInterface
 {
     /**
+     * Visit @see EmailField object
+     *
      * @param EmailField $emailField
      */
     public function visitEmail(EmailField $emailField);
 
     /**
+     * Visit @see IntegerField object
+     *
      * @param IntegerField $integerField
      */
     public function visitInteger(IntegerField $integerField);
 
     /**
-     * @param ChoiceField $choiceField
+     * Visit @see CheckboxesField object
+     *
+     * @param CheckboxesField $checkboxesField
      */
-    public function visitChoice(ChoiceField $choiceField);
+    public function visitCheckboxes(CheckboxesField $checkboxesField);
 }

@@ -2,10 +2,10 @@
 
 namespace DesignPatterns\Behavioral\Visitor\Test;
 
-use DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField;
+use DesignPatterns\Behavioral\Visitor\FormFields\CheckboxesField;
 use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
-use DesignPatterns\Behavioral\Visitor\Visitors\ViewToModelTransformVisitor;
+use DesignPatterns\Behavioral\Visitor\Visitors\ViewToModelTransformerVisitor;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
@@ -13,13 +13,13 @@ use DesignPatterns\Behavioral\Visitor\Visitors\ViewToModelTransformVisitor;
 class ViewToModelTransformVisitorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var ViewToModelTransformVisitor
+     * @var ViewToModelTransformerVisitor
      */
     private $viewToModelTransformVisitor;
 
     protected function setUp()
     {
-        $this->viewToModelTransformVisitor = new ViewToModelTransformVisitor();
+        $this->viewToModelTransformVisitor = new ViewToModelTransformerVisitor();
     }
 
     public function testEmailValid()
@@ -35,7 +35,7 @@ class ViewToModelTransformVisitorTest extends \PHPUnit_Framework_TestCase
     {
         $emailField = new EmailField();
         $emailField->setViewValue('user@examplecom');
-        $emailField->setError('email is not valid');
+        $emailField->setError('Email is not valid.');
 
         $emailField->accept($this->viewToModelTransformVisitor);
         $this->assertNull($emailField->getValue());
@@ -47,14 +47,14 @@ class ViewToModelTransformVisitorTest extends \PHPUnit_Framework_TestCase
         $integerField->setViewValue("335");
 
         $integerField->accept($this->viewToModelTransformVisitor);
-        $this->assertEquals(335, $integerField->getValue());
+        $this->assertSame(335, $integerField->getValue());
     }
 
     public function testIntegerNotValid()
     {
         $integerField = new IntegerField();
         $integerField->setViewValue('552.57');
-        $integerField->setError('integer is not valid');
+        $integerField->setError('Integer is not valid.');
 
         $integerField->accept($this->viewToModelTransformVisitor);
         $this->assertNull($integerField->getValue());
@@ -62,24 +62,22 @@ class ViewToModelTransformVisitorTest extends \PHPUnit_Framework_TestCase
 
     public function testChoiceValid()
     {
-        $choiceField = new ChoiceField();
-        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
-        $choiceField->setViewValue('Red');
-        $choiceField->accept($this->viewToModelTransformVisitor);
+        $choiceField = new CheckboxesField();
+        $choiceField->setChoices(['Red' => 1, 'Blue' => 2, 'Green' => 3]);
+        $choiceField->setViewValue(['Red', 'Blue']);
 
         $choiceField->accept($this->viewToModelTransformVisitor);
-        $this->assertEquals('red', $choiceField->getValue());
+        $this->assertEquals([1, 2], $choiceField->getValue());
     }
 
     public function testChoiceNotValid()
     {
-        $choiceField = new ChoiceField();
-        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
-        $choiceField->setViewValue('Pink');
-        $choiceField->setError('choice is not valid');
-        $choiceField->accept($this->viewToModelTransformVisitor);
+        $choiceField = new CheckboxesField();
+        $choiceField->setChoices(['Red' => 1, 'Blue' => 2, 'Green' => 3]);
+        $choiceField->setViewValue(['Pink']);
+        $choiceField->setError('Choice is not allowed.');
 
         $choiceField->accept($this->viewToModelTransformVisitor);
-        $this->assertNull($choiceField->getValue());
+        $this->assertEmpty($choiceField->getValue());
     }
 }

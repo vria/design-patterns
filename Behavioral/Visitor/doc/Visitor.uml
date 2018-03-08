@@ -1,55 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>PHP</ID>
-  <OriginalElement>\DesignPatterns\Behavioral\Visitor\Visitor</OriginalElement>
+  <OriginalElement>\DesignPatterns\Behavioral\Visitor\FormFields\CheckboxesField</OriginalElement>
   <nodes>
-    <node x="169.0" y="300.0">\DesignPatterns\Behavioral\Visitor\FormFields\IntegerField</node>
-    <node x="291.0" y="419.0">\DesignPatterns\Behavioral\Visitor\Visitor</node>
-    <node x="338.0" y="278.0">\DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField</node>
-    <node x="0.0" y="300.0">\DesignPatterns\Behavioral\Visitor\FormFields\EmailField</node>
-    <node x="537.0" y="576.0">\DesignPatterns\Behavioral\Visitor\Visitors\ViewToModelTransformVisitor</node>
-    <node x="291.0" y="576.0">\DesignPatterns\Behavioral\Visitor\Visitors\ModelToViewTransformVisitor</node>
-    <node x="89.0" y="0.0">\DesignPatterns\Behavioral\Visitor\FormField</node>
-    <node x="0.0" y="565.0">\DesignPatterns\Behavioral\Visitor\Visitors\ValidatorVisitor</node>
+    <node x="336.0" y="400.5">\DesignPatterns\Behavioral\Visitor\FormFields\IntegerField</node>
+    <node x="0.0" y="367.0">\DesignPatterns\Behavioral\Visitor\FormFields\CheckboxesField</node>
+    <node x="0.0" y="677.0">\DesignPatterns\Behavioral\Visitor\Visitors\ModelToViewTransformerVisitor</node>
+    <node x="256.0" y="677.0">\DesignPatterns\Behavioral\Visitor\Visitors\ViewToModelTransformerVisitor</node>
+    <node x="183.0" y="400.5">\DesignPatterns\Behavioral\Visitor\FormFields\EmailField</node>
+    <node x="256.0" y="531.0">\DesignPatterns\Behavioral\Visitor\VisitorInterface</node>
+    <node x="512.0" y="677.0">\DesignPatterns\Behavioral\Visitor\Visitors\ValidatorVisitor</node>
+    <node x="155.5" y="0.0">\DesignPatterns\Behavioral\Visitor\FormField</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="\DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField" target="\DesignPatterns\Behavioral\Visitor\FormField">
-      <point x="0.0" y="-48.0" />
-      <point x="432.5" y="253.0" />
-      <point x="346.5" y="253.0" />
-      <point x="103.0" y="114.0" />
-    </edge>
-    <edge source="\DesignPatterns\Behavioral\Visitor\Visitors\ValidatorVisitor" target="\DesignPatterns\Behavioral\Visitor\Visitor">
-      <point x="0.0" y="-59.0" />
-      <point x="135.5" y="540.0" />
-      <point x="328.6666666666667" y="540.0" />
-      <point x="-75.33333333333331" y="48.0" />
-    </edge>
-    <edge source="\DesignPatterns\Behavioral\Visitor\Visitors\ModelToViewTransformVisitor" target="\DesignPatterns\Behavioral\Visitor\Visitor">
+    <edge source="\DesignPatterns\Behavioral\Visitor\Visitors\ViewToModelTransformerVisitor" target="\DesignPatterns\Behavioral\Visitor\VisitorInterface">
       <point x="0.0" y="-48.0" />
       <point x="0.0" y="48.0" />
     </edge>
     <edge source="\DesignPatterns\Behavioral\Visitor\FormFields\EmailField" target="\DesignPatterns\Behavioral\Visitor\FormField">
       <point x="0.0" y="-26.0" />
-      <point x="74.5" y="253.0" />
-      <point x="140.5" y="253.0" />
-      <point x="-103.0" y="114.0" />
+      <point x="0.0" y="158.5" />
     </edge>
-    <edge source="\DesignPatterns\Behavioral\Visitor\Visitors\ViewToModelTransformVisitor" target="\DesignPatterns\Behavioral\Visitor\Visitor">
+    <edge source="\DesignPatterns\Behavioral\Visitor\FormFields\CheckboxesField" target="\DesignPatterns\Behavioral\Visitor\FormField">
+      <point x="0.0" y="-59.5" />
+      <point x="81.5" y="342.0" />
+      <point x="186.83333333333334" y="342.0" />
+      <point x="-62.66666666666666" y="158.5" />
+    </edge>
+    <edge source="\DesignPatterns\Behavioral\Visitor\Visitors\ModelToViewTransformerVisitor" target="\DesignPatterns\Behavioral\Visitor\VisitorInterface">
       <point x="0.0" y="-48.0" />
-      <point x="650.0" y="540.0" />
-      <point x="479.3333333333333" y="540.0" />
-      <point x="75.33333333333331" y="48.0" />
+      <point x="118.0" y="652.0" />
+      <point x="295.3333333333333" y="652.0" />
+      <point x="-78.66666666666669" y="48.0" />
     </edge>
     <edge source="\DesignPatterns\Behavioral\Visitor\FormFields\IntegerField" target="\DesignPatterns\Behavioral\Visitor\FormField">
       <point x="0.0" y="-26.0" />
-      <point x="0.0" y="114.0" />
+      <point x="402.5" y="342.0" />
+      <point x="312.16666666666663" y="342.0" />
+      <point x="62.66666666666663" y="158.5" />
+    </edge>
+    <edge source="\DesignPatterns\Behavioral\Visitor\Visitors\ValidatorVisitor" target="\DesignPatterns\Behavioral\Visitor\VisitorInterface">
+      <point x="0.0" y="-48.0" />
+      <point x="630.0" y="652.0" />
+      <point x="452.6666666666667" y="652.0" />
+      <point x="78.66666666666669" y="48.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0856135401974614" x="275.0926334935689" y="253.5369624529037" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="374.0" y="386.5" />
   <SelectedNodes />
   <Categories>
+    <Category>Fields</Category>
+    <Category>Constants</Category>
+    <Category>Constructors</Category>
     <Category>Methods</Category>
   </Categories>
   <VISIBILITY>private</VISIBILITY>

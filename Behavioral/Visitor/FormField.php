@@ -3,37 +3,56 @@
 namespace DesignPatterns\Behavioral\Visitor;
 
 /**
+ * Basic class for a form field.
+ * It defines common properties and methods to all form fields.
+ * On top of that there is an abstract @see FormField::accept method that takes a visitor as an argument.
+ * Through this method the form fields can be extended by introducing a new concrete visitor.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 abstract class FormField
 {
     /**
-     * @var string
-     */
-    private $viewValue = "";
-
-    /**
+     * Model value for PHP processing.
+     *
      * @var mixed
      */
     private $value;
 
     /**
+     * View value for HTML page.
+     *
+     * @var mixed
+     */
+    private $viewValue;
+
+    /**
+     * Required flag.
+     *
      * @var boolean
      */
     private $required = false;
 
     /**
+     * Error message.
+     *
      * @var string
      */
     private $error;
 
     /**
+     * Accept a visitor.
+     * A concrete form field will request the visitor to perform its operation.
+     * The name of requested operation depends on the concrete form field class.
+     *
      * @param VisitorInterface $visitor
      */
     public abstract function accept(VisitorInterface $visitor);
 
     /**
-     * @return string
+     * Get view value.
+     *
+     * @return mixed
      */
     public function getViewValue()
     {
@@ -41,7 +60,9 @@ abstract class FormField
     }
 
     /**
-     * @param string $viewValue
+     * Set view value.
+     *
+     * @param mixed $viewValue
      */
     public function setViewValue($viewValue)
     {
@@ -49,7 +70,9 @@ abstract class FormField
     }
 
     /**
-     * @return mixed
+     * Get value.
+     *
+     * @return mixed|null
      */
     public function getValue()
     {
@@ -57,6 +80,8 @@ abstract class FormField
     }
 
     /**
+     * Set value.
+     *
      * @param mixed $value
      */
     public function setValue($value)
@@ -65,6 +90,8 @@ abstract class FormField
     }
 
     /**
+     * Check if the field is required.
+     *
      * @return boolean
      */
     public function isRequired()
@@ -73,6 +100,8 @@ abstract class FormField
     }
 
     /**
+     * Set required flag.
+     *
      * @param boolean $required
      */
     public function setRequired($required)
@@ -81,7 +110,9 @@ abstract class FormField
     }
 
     /**
-     * @return string
+     * Get error message.
+     *
+     * @return string|null
      */
     public function getError()
     {
@@ -89,6 +120,8 @@ abstract class FormField
     }
 
     /**
+     * Set error message.
+     *
      * @param string $error
      */
     public function setError($error)

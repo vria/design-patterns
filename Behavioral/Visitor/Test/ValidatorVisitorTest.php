@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\Behavioral\Visitor\Test;
 
-use DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField;
+use DesignPatterns\Behavioral\Visitor\FormFields\CheckboxesField;
 use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
 use DesignPatterns\Behavioral\Visitor\Visitors\ValidatorVisitor;
@@ -22,7 +22,7 @@ class ValidatorVisitorTest extends \PHPUnit_Framework_TestCase
         $this->validatorVisitor = new ValidatorVisitor();
     }
 
-    public function testEmailFieldValid()
+    public function testEmailValid()
     {
         $emailField = new EmailField();
         $emailField->setViewValue('email@example.com');
@@ -31,27 +31,28 @@ class ValidatorVisitorTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($emailField->getError());
     }
 
-    public function testEmailFieldNotValid()
+    public function testEmailNotValid()
     {
         $emailField = new EmailField();
         $emailField->setViewValue('email@examplecom');
         $emailField->accept($this->validatorVisitor);
 
-        $this->assertEquals('email is not valid', $emailField->getError());
+        $this->assertEquals('Email is not valid.', $emailField->getError());
     }
 
-    public function testEmailFieldRequiredEmpty()
+    public function testEmailRequiredEmpty()
     {
         $emailField = new EmailField();
         $emailField->setRequired(true);
         $emailField->accept($this->validatorVisitor);
 
-        $this->assertEquals("field is required", $emailField->getError());
+        $this->assertEquals("Field is required.", $emailField->getError());
     }
 
-    public function testEmailFieldNonRequiredEmpty()
+    public function testEmailNotRequiredEmptyValid()
     {
         $emailField = new EmailField();
+        $emailField->setViewValue('');
         $emailField->accept($this->validatorVisitor);
 
         $this->assertNull($emailField->getError());
@@ -72,26 +73,66 @@ class ValidatorVisitorTest extends \PHPUnit_Framework_TestCase
         $integerField->setViewValue("35.55");
         $integerField->accept($this->validatorVisitor);
 
-        $this->assertEquals('integer is not valid', $integerField->getError());
+        $this->assertEquals('Integer is not valid.', $integerField->getError());
+    }
+
+    public function testIntegerRequiredEmpty()
+    {
+        $integerField = new IntegerField();
+        $integerField->setViewValue('');
+        $integerField->setRequired(true);
+        $integerField->accept($this->validatorVisitor);
+
+        $this->assertEquals('Field is required.', $integerField->getError());
+    }
+
+    public function testIntegerNotRequiredEmptyValid()
+    {
+        $integerField = new EmailField();
+        $integerField->setViewValue('');
+        $integerField->accept($this->validatorVisitor);
+
+        $this->assertNull($integerField->getError());
     }
 
     public function testChoiceValid()
     {
-        $choiceField = new ChoiceField();
-        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
-        $choiceField->setViewValue("Blue");
+        $choiceField = new CheckboxesField();
+        $choiceField->setChoices(['Red' => 1, 'Blue' => 2, 'Green' => 3]);
+        $choiceField->setViewValue(['Blue', 'Green']);
         $choiceField->accept($this->validatorVisitor);
 
         $this->assertNull($choiceField->getError());
     }
 
-    public function testChoiceNotValid()
+    public function testChoiceValueNotAllowed()
     {
-        $choiceField = new ChoiceField();
-        $choiceField->setChoices(['red' => 'Red', 'blue' => 'Blue', 'green' => 'Green']);
-        $choiceField->setViewValue("Yellow");
+        $choiceField = new CheckboxesField();
+        $choiceField->setChoices(['Red' => 1, 'Blue' => 2, 'Green' => 3]);
+        $choiceField->setViewValue(['Yellow']);
         $choiceField->accept($this->validatorVisitor);
 
-        $this->assertEquals('choice is not valid', $choiceField->getError());
+        $this->assertEquals('Choice is not allowed.', $choiceField->getError());
+    }
+
+    public function testChoiceRequiredEmpty()
+    {
+        $choiceField = new CheckboxesField();
+        $choiceField->setChoices(['Red' => 1, 'Blue' => 2, 'Green' => 3]);
+        $choiceField->setRequired(true);
+        $choiceField->setViewValue([]);
+        $choiceField->accept($this->validatorVisitor);
+
+        $this->assertEquals('At least one choice is required.', $choiceField->getError());
+    }
+
+    public function testChoiceNotRequiredEmpty()
+    {
+        $choiceField = new CheckboxesField();
+        $choiceField->setChoices(['Red' => 1, 'Blue' => 2, 'Green' => 3]);
+        $choiceField->setViewValue([]);
+        $choiceField->accept($this->validatorVisitor);
+
+        $this->assertNull($choiceField->getError());
     }
 }

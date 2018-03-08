@@ -2,68 +2,91 @@
 
 namespace DesignPatterns\Behavioral\Visitor\Visitors;
 
-use DesignPatterns\Behavioral\Visitor\FormField;
-use DesignPatterns\Behavioral\Visitor\FormFields\ChoiceField;
+use DesignPatterns\Behavioral\Visitor\FormFields\CheckboxesField;
 use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
 use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
 use DesignPatterns\Behavioral\Visitor\VisitorInterface;
 
 /**
+ * Validate the view value of form fields.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class ValidatorVisitor implements VisitorInterface
 {
     /**
-     * @param FormField $formField
-     * @return bool
-     */
-    private function checkRequired(FormField $formField)
-    {
-        if ($formField->isRequired() && strlen($formField->getViewValue()) == 0) {
-            $formField->setError('field is required');
-
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
+     * Check that view value:
+     * - is not empty when it is required,
+     * - is a valid email address (empty value is ok when allowed).
+     *
      * @param EmailField $emailField
      */
     public function visitEmail(EmailField $emailField)
     {
-        if ($this->checkRequired($emailField)
-            && strlen($emailField->getViewValue()) > 0
-            && filter_var($emailField->getViewValue(), FILTER_VALIDATE_EMAIL) === false
-        ) {
-            $emailField->setError("email is not valid");
+        $viewValue = $emailField->getViewValue();
+        $empty = strlen($viewValue) === 0;
+
+        if ($emailField->isRequired() && $empty) {
+            $emailField->setError("Field is required.");
+
+            return;
+        }
+
+        if (!$empty && filter_var($viewValue, FILTER_VALIDATE_EMAIL) === false) {
+            $emailField->setError("Email is not valid.");
         }
     }
 
     /**
+     * Check that view value:
+     * - is not empty when it is required,
+     * - is a valid integer (empty value is ok when allowed).
+     *
      * @param IntegerField $integerField
      */
     public function visitInteger(IntegerField $integerField)
     {
-        if ($this->checkRequired($integerField)
-            && strlen($integerField->getViewValue()) > 0
-            && filter_var($integerField->getViewValue(), FILTER_VALIDATE_INT) === false
-        ) {
-            $integerField->setError("integer is not valid");
+        $viewValue = $integerField->getViewValue();
+        $empty = strlen($viewValue) === 0;
+
+        if ($integerField->isRequired() && $empty) {
+            $integerField->setError("Field is required.");
+
+            return;
+        }
+
+        if (!$empty && filter_var($viewValue, FILTER_VALIDATE_INT) === false) {
+            $integerField->setError("Integer is not valid.");
         }
     }
 
     /**
-     * @param ChoiceField $choiceField
+     * Check that view value:
+     * - is not empty when it is required,
+     * - holds only allowed choices.
+     *
+     * @param CheckboxesField $checkboxesField
      */
-    public function visitChoice(ChoiceField $choiceField)
+    public function visitCheckboxes(CheckboxesField $checkboxesField)
     {
-        if ($this->checkRequired($choiceField)
-            && strlen($choiceField->getViewValue()) > 0
-            && !in_array($choiceField->getViewValue(), $choiceField->getChoices())
-        ) {
-            $choiceField->setError("choice is not valid");
+        $viewValues = $checkboxesField->getViewValue();
+        $choices = array_keys($checkboxesField->getChoices());
+        $empty = empty($viewValues);
+
+        // Verify that field is not empty
+        if ($checkboxesField->isRequired() && $empty) {
+            $checkboxesField->setError("At least one choice is required.");
+
+            return;
+        }
+
+        // Verify that all checked values are in the list of allowed choices
+        foreach ($viewValues as $value) {
+            if (!in_array($value, $choices)) {
+                $checkboxesField->setError("Choice is not allowed.");
+
+                return;
+            }
         }
     }
 }

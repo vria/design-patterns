@@ -6,6 +6,8 @@ use DesignPatterns\Behavioral\Visitor\FormField;
 use DesignPatterns\Behavioral\Visitor\VisitorInterface;
 
 /**
+ * Integer form field.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class IntegerField extends FormField
