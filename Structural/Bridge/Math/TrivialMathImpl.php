@@ -3,14 +3,15 @@
 namespace DesignPatterns\Structural\Bridge\Math;
 
 /**
+ * The native implementation of arithmetic operations: +, -, *, etc.
+ * Corresponds to `ConcreteImplementor` in the Bridge pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class TrivialMathImpl implements MathImplInterface
 {
     /**
-     * @param mixed $number
-     *
-     * @return mixed
+     * @inheritdoc
      */
     public function neg($number)
     {
@@ -18,10 +19,7 @@ class TrivialMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $augend
-     * @param mixed $addend
-     *
-     * @return mixed
+     * @inheritdoc
      */
     public function add($augend, $addend)
     {
@@ -29,10 +27,7 @@ class TrivialMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $minuend
-     * @param mixed $subtrahend
-     *
-     * @return mixed
+     * @inheritdoc
      */
     public function sub($minuend, $subtrahend)
     {
@@ -40,10 +35,7 @@ class TrivialMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $multiplicand
-     * @param mixed $multiplier
-     *
-     * @return mixed
+     * @inheritdoc
      */
     public function mul($multiplicand, $multiplier)
     {
@@ -51,10 +43,7 @@ class TrivialMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $dividend
-     * @param mixed $divisor
-     *
-     * @return mixed
+     * @inheritdoc
      */
     public function div($dividend, $divisor)
     {
@@ -62,10 +51,7 @@ class TrivialMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $first
-     * @param mixed $second
-     *
-     * @return mixed
+     * @inheritdoc
      */
     public function cmp($first, $second)
     {
@@ -80,9 +66,7 @@ class TrivialMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $number
-     *
-     * @return float
+     * @inheritdoc
      */
     public function sqrt($number)
     {

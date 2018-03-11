@@ -5,9 +5,7 @@ namespace DesignPatterns\Structural\Bridge\Equation;
 use DesignPatterns\Structural\Bridge\Math\MathImplInterface;
 
 /**
- * Class LinearEquation
- *
- * ax + b = 0
+ * Linear equation `a * x + b = 0` that corresponds to `RefinedAbstraction` in the Bridge pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

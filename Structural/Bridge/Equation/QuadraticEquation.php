@@ -5,9 +5,7 @@ namespace DesignPatterns\Structural\Bridge\Equation;
 use DesignPatterns\Structural\Bridge\Math\MathImplInterface;
 
 /**
- * Class QuadraticEquation
- *
- * ax^2 + bx + c = 0
+ * Quadratic equation `ax^2 + bx + c = 0` that corresponds to `RefinedAbstraction` in the Bridge pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
@@ -59,7 +57,7 @@ class QuadraticEquation extends Equation
         $twoTimesA = $this->mathImpl->mul(2, $this->a);
         $minusB = $this->mathImpl->neg($this->b);
 
-        // Two solutions
+        // Two real solutions
         if ($this->mathImpl->cmp($d, 0) == MathImplInterface::GREATER) {
             $sqrtD = $this->mathImpl->sqrt($d);
 
@@ -69,7 +67,7 @@ class QuadraticEquation extends Equation
             ];
         }
 
-        // Single solution
+        // Single real solution
         if ($this->mathImpl->cmp($d, 0) == MathImplInterface::EQUALS) {
             return [$this->mathImpl->div($minusB, $twoTimesA)];
         }

@@ -3,6 +3,9 @@
 namespace DesignPatterns\Structural\Bridge\Math;
 
 /**
+ * The interface for defining primitive arithmetic operations: adding, subtracting, negation, comparing, etc.
+ * Corresponds to `Implementor` in the Bridge pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 interface MathImplInterface
@@ -12,6 +15,8 @@ interface MathImplInterface
     const LOWER = -1;
 
     /**
+     * Negation -$number.
+     *
      * @param mixed $number
      *
      * @return mixed
@@ -19,6 +24,8 @@ interface MathImplInterface
     public function neg($number);
 
     /**
+     * Adding $augend + $addend.
+     *
      * @param mixed $augend
      * @param mixed $addend
      *
@@ -27,6 +34,8 @@ interface MathImplInterface
     public function add($augend, $addend);
 
     /**
+     * Subtracting $minuend - $subtrahend.
+     *
      * @param mixed $minuend
      * @param mixed $subtrahend
      *
@@ -35,6 +44,8 @@ interface MathImplInterface
     public function sub($minuend, $subtrahend);
 
     /**
+     * Multiplication $multiplicand * $multiplier.
+     *
      * @param mixed $multiplicand
      * @param mixed $multiplier
      *
@@ -43,6 +54,8 @@ interface MathImplInterface
     public function mul($multiplicand, $multiplier);
 
     /**
+     * Division $dividend / $divisor.
+     *
      * @param mixed $dividend
      * @param mixed $divisor
      *
@@ -51,6 +64,8 @@ interface MathImplInterface
     public function div($dividend, $divisor);
 
     /**
+     * Comparing $first == $second.
+     *
      * @param mixed $first
      * @param mixed $second
      *
@@ -59,6 +74,8 @@ interface MathImplInterface
     public function cmp($first, $second);
 
     /**
+     * Square root √$number.
+     *
      * @param mixed $number
      *
      * @return mixed

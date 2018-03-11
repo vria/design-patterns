@@ -24,6 +24,8 @@ In this case the Prototype pattern allows to avoid the subclassing of client cla
 
 See [https://en.wikipedia.org/wiki/Prototype_pattern](https://en.wikipedia.org/wiki/Prototype_pattern) for more information.
 
+## Implementation
+
 ![Prototype UML](doc/Prototype.png)
 
 The implementation of this pattern is from the same area as for the [Abstract factory pattern].

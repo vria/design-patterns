@@ -3,14 +3,16 @@
 namespace DesignPatterns\Structural\Bridge\Math;
 
 /**
+ * The gmp implementation of arithmetic operations that allows calculations with large numbers represented as strings:
+ * http://php.net/manual/en/book.gmp.php
+ * Corresponds to `ConcreteImplementor` in the Bridge pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class GMPMathImpl implements MathImplInterface
 {
     /**
-     * @param mixed $number
-     *
-     * @return string
+     * @inheritdoc
      */
     public function neg($number)
     {
@@ -18,10 +20,7 @@ class GMPMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $augend
-     * @param mixed $addend
-     *
-     * @return string
+     * @inheritdoc
      */
     public function add($augend, $addend)
     {
@@ -29,10 +28,7 @@ class GMPMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $minuend
-     * @param mixed $subtrahend
-     *
-     * @return string
+     * @inheritdoc
      */
     public function sub($minuend, $subtrahend)
     {
@@ -40,10 +36,7 @@ class GMPMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $multiplicand
-     * @param mixed $multiplier
-     *
-     * @return string
+     * @inheritdoc
      */
     public function mul($multiplicand, $multiplier)
     {
@@ -51,10 +44,7 @@ class GMPMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $dividend
-     * @param mixed $divisor
-     *
-     * @return string
+     * @inheritdoc
      */
     public function div($dividend, $divisor)
     {
@@ -62,18 +52,15 @@ class GMPMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $first
-     * @param mixed $second
-     *
-     * @return int
+     * @inheritdoc
      */
     public function cmp($first, $second)
     {
         $result = gmp_cmp($first, $second);
+
         if ($result == 0) {
             return MathImplInterface::EQUALS;
-        }
-        if ($result > 0) {
+        } elseif ($result > 0) {
             return MathImplInterface::GREATER;
         }
 
@@ -81,9 +68,7 @@ class GMPMathImpl implements MathImplInterface
     }
 
     /**
-     * @param mixed $number
-     *
-     * @return string
+     * @inheritdoc
      */
     public function sqrt($number)
     {
