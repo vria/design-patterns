@@ -1,0 +1,44 @@
+@startuml
+
+class LoggerWithDateDecorator {
+    -datetime : DateTime
+	+__construct(message : LoggerInterface, datetime : DateTime)
+    +log()
+}
+
+class LoggerWithDateDecorator extends LoggerDecorator
+
+class LoggerDecorator {
+    #decoratedLogger : LoggerInterface
+	+__construct(message : LoggerInterface)
+    +log()
+}
+
+class LoggerDecorator implements LoggerInterface
+
+class Logger {
+    -message : string
+	+__construct(message : string)
+    +log()
+}
+
+class Logger implements LoggerInterface
+
+class LoggerWithErrorLevelDecorator {
+    +{static}ERROR = "#ff0000"
+    +{static}INFO = "#0000ff"
+    +{static}WARNING = "#ffbb00"
+    -errorLevel : string
+	+__construct(message : LoggerInterface, errorLevel : string = "#0000ff")
+    +log()
+}
+
+class LoggerWithErrorLevelDecorator extends LoggerDecorator
+
+interface LoggerInterface {
+    +log()
+}
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

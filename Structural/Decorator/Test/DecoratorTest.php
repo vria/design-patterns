@@ -2,9 +2,9 @@
 
 namespace DesignPatterns\Structural\Decorator\Test;
 
-use DesignPatterns\Structural\Decorator\LogMessage;
-use DesignPatterns\Structural\Decorator\LogMessageWithDateDecorator;
-use DesignPatterns\Structural\Decorator\LogMessageWithErrorLevelDecorator;
+use DesignPatterns\Structural\Decorator\Logger;
+use DesignPatterns\Structural\Decorator\LoggerWithDateDecorator;
+use DesignPatterns\Structural\Decorator\LoggerWithErrorLevelDecorator;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
@@ -12,50 +12,44 @@ use DesignPatterns\Structural\Decorator\LogMessageWithErrorLevelDecorator;
 class DecoratorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var LogMessage
+     * @var Logger
      */
-    private $message;
+    private $logger;
 
     public function setUp()
     {
-        $this->message = new LogMessage("some message to log");
+        $this->logger = new Logger();
     }
 
-    public function testLogMessage()
+    public function testLog()
     {
-        $this->expectOutputString("some message to log");
+        $this->logger->log('message from testLog');
 
-        $this->message->log();
+        $this->expectOutputString('message from testLog');
     }
 
-    public function testWithDate()
+    public function testLoggerWithDateDecorator()
     {
-        $now = new \DateTime();
-        $message = new LogMessageWithDateDecorator($this->message, $now);
+        $logger = new LoggerWithDateDecorator($this->logger, 'd/m/Y H:i');
+        $logger->log('message from testLoggerWithDateDecorator');
 
-        $this->expectOutputString($now->format("d/m/Y H:i:s") . ": some message to log");
-
-        $message->log();
+        $this->expectOutputString(date("d/m/Y H:i") . ": message from testLoggerWithDateDecorator");
     }
 
-    public function testWithErrorLevel()
+    public function testLoggerWithErrorLevel()
     {
-        $message = new LogMessageWithErrorLevelDecorator($this->message, LogMessageWithErrorLevelDecorator::ERROR);
+        $logger = new LoggerWithErrorLevelDecorator($this->logger, LoggerWithErrorLevelDecorator::ERROR);
+        $logger->log('message from testLoggerWithErrorLevel');
 
-        $this->expectOutputString("<span style='color: #ff0000'>some message to log</span>");
-
-        $message->log();
+        $this->expectOutputString("<span style='color: #ff0000'>message from testLoggerWithErrorLevel</span>");
     }
 
-    public function testWithErrorLevelAndDate()
+    public function testLoggerWithDateDecoratorAndErrorLevel()
     {
-        $now = new \DateTime();
-        $message = new LogMessageWithDateDecorator($this->message, $now);
+        $logger = new LoggerWithDateDecorator($this->logger, 'd/m/Y H:i');
+        $logger = new LoggerWithErrorLevelDecorator($logger, LoggerWithErrorLevelDecorator::INFO);
+        $logger->log('message from testLoggerWithDateDecoratorAndErrorLevel');
 
-        $message = new LogMessageWithErrorLevelDecorator($message, LogMessageWithErrorLevelDecorator::ERROR);
-
-        $this->expectOutputString("<span style='color: #ff0000'>" . $now->format("d/m/Y H:i:s") . ": some message to log</span>");
-
-        $message->log();
+        $this->expectOutputString("<span style='color: #0000ff'>" . date('d/m/Y H:i') . ": message from testLoggerWithDateDecoratorAndErrorLevel</span>");
     }
 }

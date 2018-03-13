@@ -1,0 +1,17 @@
+@startuml
+
+object "logger: Logger" as logger
+logger : message = "some message to log"
+
+object "error_level_logger: ErrorLevelLoggerDecorator" as error_level_logger_decorator
+error_level_logger_decorator : decoratedLogger = logger
+
+object "date_logger: DateLoggerDecorator" as date_logger_decorator
+date_logger_decorator : decoratedLogger = error_level_logger_decorator
+
+error_level_logger_decorator o-- date_logger_decorator
+date_logger_decorator o-- logger
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

@@ -3,32 +3,19 @@
 namespace DesignPatterns\Structural\Decorator;
 
 /**
+ * A simple logger that outputs the message passed to it.
  *
- *
- * Corresponds to `ConcreteComponent` in the Decorator pattern.
+ * It corresponds to `ConcreteComponent` in the Decorator pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class LogMessage implements LogMessageInterface
+class Logger implements LoggerInterface
 {
-    /**
-     * @var string
-     */
-    private $message;
-
-    /**
-     * @param string $message
-     */
-    public function __construct($message)
-    {
-        $this->message = $message;
-    }
-
     /**
      * @inheritdoc
      */
-    public function log()
+    public function log($message)
     {
-        echo $this->message;
+        echo $message;
     }
 }

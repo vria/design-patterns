@@ -3,36 +3,39 @@
 namespace DesignPatterns\Structural\Decorator;
 
 /**
+ * Decorator what adds a current date/time to logged message.
  *
- *
- * Corresponds to `ConcreteDecorator` in the Decorator pattern.
+ * It corresponds to `ConcreteDecorator` in the Decorator pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class LogMessageWithDateDecorator extends LogMessageDecorator
+class LoggerWithDateDecorator extends LoggerDecorator
 {
     /**
-     * @var \DateTime
+     * @var string
      */
-    private $datetime;
+    private $format;
 
     /**
-     * @param LogMessageInterface $message
-     * @param \DateTime $datetime
+     * @param LoggerInterface $logger
+     * @param string $format
      */
-    public function __construct(LogMessageInterface $message, \DateTime $datetime)
+    public function __construct(LoggerInterface $logger, $format)
     {
-        parent::__construct($message);
+        parent::__construct($logger);
 
-        $this->datetime = $datetime;
+        $this->format = $format;
     }
 
     /**
      * @inheritdoc
      */
-    public function log()
+    public function log($message)
     {
-        echo $this->datetime->format("d/m/Y H:i:s") . ": ";
-        parent::log();
+        // Output a current date/time before logging the message.
+        echo date($this->format) . ": ";
+
+        // Forward log request to the wrapped logger. Note that it can also be a decorated logger.
+        parent::log($message);
     }
 }

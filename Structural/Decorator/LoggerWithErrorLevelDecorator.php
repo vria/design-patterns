@@ -3,17 +3,17 @@
 namespace DesignPatterns\Structural\Decorator;
 
 /**
+ * Decorator what allows for error level colored logs.
  *
- *
- * Corresponds to `ConcreteDecorator` in the Decorator pattern.
+ * It corresponds to `ConcreteDecorator` in the Decorator pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class LogMessageWithErrorLevelDecorator extends LogMessageDecorator
+class LoggerWithErrorLevelDecorator extends LoggerDecorator
 {
-    const ERROR = "#ff0000";
+    const ERROR   = "#ff0000";
     const WARNING = "#ffbb00";
-    const INFO = "#0000ff";
+    const INFO    = "#0000ff";
 
     /**
      * @var string
@@ -21,12 +21,12 @@ class LogMessageWithErrorLevelDecorator extends LogMessageDecorator
     private $errorLevel;
 
     /**
-     * @param LogMessageInterface $message
+     * @param LoggerInterface $logger
      * @param string $errorLevel
      */
-    public function __construct(LogMessageInterface $message, $errorLevel = self::INFO)
+    public function __construct(LoggerInterface $logger, $errorLevel = self::INFO)
     {
-        parent::__construct($message);
+        parent::__construct($logger);
 
         $this->errorLevel = $errorLevel;
     }
@@ -34,11 +34,11 @@ class LogMessageWithErrorLevelDecorator extends LogMessageDecorator
     /**
      * @inheritdoc
      */
-    public function log()
+    public function log($message)
     {
         echo "<span style='color: {$this->errorLevel}'>";
 
-        parent::log();
+        parent::log($message);
 
         echo "</span>";
     }

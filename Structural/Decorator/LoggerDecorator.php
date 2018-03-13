@@ -3,32 +3,32 @@
 namespace DesignPatterns\Structural\Decorator;
 
 /**
+ * Abstract decorator of logger object that provides a default implementation of @see LoggerDecorator::log().
  *
- *
- * Corresponds to `Decorator` in the Decorator pattern.
+ * It corresponds to `Decorator` in the Decorator pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class LogMessageDecorator implements LogMessageInterface
+class LoggerDecorator implements LoggerInterface
 {
     /**
-     * @var LogMessageInterface
+     * @var LoggerInterface
      */
-    protected $message;
+    protected $decoratedLogger;
 
     /**
-     * @param LogMessageInterface $message
+     * @param LoggerInterface $logger
      */
-    public function __construct(LogMessageInterface $message)
+    public function __construct(LoggerInterface $logger)
     {
-        $this->message = $message;
+        $this->decoratedLogger = $logger;
     }
 
     /**
      * @inheritdoc
      */
-    public function log()
+    public function log($message)
     {
-        $this->message->log();
+        $this->decoratedLogger->log($message);
     }
 }
