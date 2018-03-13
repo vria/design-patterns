@@ -32,9 +32,6 @@ and [PlainPage] (`ProductC1`)
 - [BootstrapHTMLFactory] (`ConcreteFactory2`) that creates [BootstrapButton] (`ProductB1`), 
 [BootstrapTextInput] (`ProductB2`) and [BootstrapPage] (`ProductB3`).
 
-Как и для хтмл сущностей, клиентский код связан только с абстрактной фабрикой, а не с конкретной ее имплиментацией.
-Это позволяет передать в клиент любую фабрику для создания любых типов хтмл сущностей. Например, фоундейшн, бустрап4.
-
 [ButtonInterface]: ButtonInterface.php
 [PlainButton]: Plain/PlainButton.php
 [BootstrapButton]: Bootstrap/BootstrapButton.php
@@ -44,7 +41,7 @@ and [PlainPage] (`ProductC1`)
 [BootstrapTextInput]: Bootstrap/BootstrapTextInput.php
 
 [PageInterface]: PageInterface.php
-_[PlainPage]: Plain/PlainPage.php
+[PlainPage]: Plain/PlainPage.php
 [BootstrapPage]: Bootstrap/BootstrapPage.php_
 
 [HTMLFactoryInterface]: HTMLFactoryInterface.php
