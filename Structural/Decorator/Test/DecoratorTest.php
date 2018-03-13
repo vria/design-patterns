@@ -42,7 +42,7 @@ class DecoratorTest extends \PHPUnit_Framework_TestCase
     {
         $message = new LogMessageWithErrorLevelDecorator($this->message, LogMessageWithErrorLevelDecorator::ERROR);
 
-        $this->expectOutputString("<span style='color: " . LogMessageWithErrorLevelDecorator::ERROR . "'>some message to log</span>");
+        $this->expectOutputString("<span style='color: #ff0000'>some message to log</span>");
 
         $message->log();
     }
@@ -54,8 +54,7 @@ class DecoratorTest extends \PHPUnit_Framework_TestCase
 
         $message = new LogMessageWithErrorLevelDecorator($message, LogMessageWithErrorLevelDecorator::ERROR);
 
-        $this->expectOutputString("<span style='color: " . LogMessageWithErrorLevelDecorator::ERROR
-            . "'>" . $now->format("d/m/Y H:i:s") . ": some message to log</span>");
+        $this->expectOutputString("<span style='color: #ff0000'>" . $now->format("d/m/Y H:i:s") . ": some message to log</span>");
 
         $message->log();
     }

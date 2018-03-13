@@ -1,0 +1,30 @@
+@startuml
+
+object "client: FormWidget" as client
+object "first_name: TextWidget" as first_name
+object "last_name: TextWidget" as last_name
+object "addresses : FormWidget" as addresses
+object "0: FormWidget" as addresses_0
+object "address: TextWidget" as addresses_0_address
+object "city: TextWidget" as addresses_0_city
+object "country: TextWidget" as addresses_0_country
+object "1: FormWidget" as addresses_1
+object "address: TextWidget" as addresses_1_address
+object "city: TextWidget" as addresses_1_city
+object "country: TextWidget" as addresses_1_country
+object "submit: SubmitWidget" as submit
+
+client o-- first_name
+client o-- last_name
+client o-- addresses
+addresses o-- addresses_0
+addresses_0 o-- addresses_0_address
+addresses_0 o-- addresses_0_city
+addresses_0 o-- addresses_0_country
+addresses o-- addresses_1
+addresses_1 o-- addresses_1_address
+addresses_1 o-- addresses_1_city
+addresses_1 o-- addresses_1_country
+client o-- submit
+
+@enduml

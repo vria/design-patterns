@@ -3,6 +3,10 @@
 namespace DesignPatterns\Structural\Decorator;
 
 /**
+ *
+ *
+ * Corresponds to `ConcreteDecorator` in the Decorator pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class LogMessageWithDateDecorator extends LogMessageDecorator
@@ -19,6 +23,7 @@ class LogMessageWithDateDecorator extends LogMessageDecorator
     public function __construct(LogMessageInterface $message, \DateTime $datetime)
     {
         parent::__construct($message);
+
         $this->datetime = $datetime;
     }
 

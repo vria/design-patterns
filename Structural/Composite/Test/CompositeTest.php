@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\Structural\Composite\Test;
 
-use DesignPatterns\Structural\Composite\Form;
+use DesignPatterns\Structural\Composite\FormWidget;
 use DesignPatterns\Structural\Composite\SubmitWidget;
 use DesignPatterns\Structural\Composite\TextWidget;
 
@@ -16,10 +16,10 @@ class CompositeTest extends \PHPUnit_Framework_TestCase
      */
     public function testTextWidget()
     {
-        $this->expectOutputRegex("/type=\"text\"/");
-
         $text = new TextWidget("firstname");
         $text->render();
+
+        $this->expectOutputRegex('<input type="text" name="firstname">');
 
         return $text;
     }
@@ -29,10 +29,10 @@ class CompositeTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubmitWidget()
     {
-        $this->expectOutputRegex("/type=\"submit\"/");
-
         $submit = new SubmitWidget("ok");
         $submit->render();
+
+        $this->expectOutputRegex('<input type="submit" name="ok">');
 
         return $submit;
     }
@@ -46,12 +46,12 @@ class CompositeTest extends \PHPUnit_Framework_TestCase
      */
     public function testChildOfForm(TextWidget $text, SubmitWidget $submit)
     {
-        $form = new Form("myform");
+        $form = new FormWidget("myform");
         $form->add($text);
         $form->add($submit);
 
-        $this->assertInstanceOf("DesignPatterns\\Structural\\Composite\\TextWidget", $form->get("firstname"));
-        $this->assertInstanceOf("DesignPatterns\\Structural\\Composite\\SubmitWidget", $form->get("ok"));
+        $this->assertInstanceOf(TextWidget::class, $form->get("firstname"));
+        $this->assertInstanceOf(SubmitWidget::class, $form->get("ok"));
     }
 
     /**
@@ -59,7 +59,7 @@ class CompositeTest extends \PHPUnit_Framework_TestCase
      */
     public function testChildNotExists()
     {
-        $form = new Form("myform");
+        $form = new FormWidget("myform");
         $form->get('unexistingChild');
     }
 

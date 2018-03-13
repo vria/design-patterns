@@ -3,19 +3,23 @@
 namespace DesignPatterns\Structural\Decorator;
 
 /**
+ *
+ *
+ * Corresponds to `ConcreteComponent` in the Decorator pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class LogMessageDecorator implements LogMessageInterface
+class LogMessage implements LogMessageInterface
 {
     /**
-     * @var LogMessageInterface
+     * @var string
      */
-    protected $message;
+    private $message;
 
     /**
-     * @param LogMessageInterface $message
+     * @param string $message
      */
-    public function __construct(LogMessageInterface $message)
+    public function __construct($message)
     {
         $this->message = $message;
     }
@@ -25,6 +29,6 @@ class LogMessageDecorator implements LogMessageInterface
      */
     public function log()
     {
-        $this->message->log();
+        echo $this->message;
     }
 }

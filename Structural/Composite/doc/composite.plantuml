@@ -1,0 +1,39 @@
+@startuml
+
+abstract class AbstractWidget << Component >> {
+    #name : string
+    #parent : AbstractWidget
+    +__construct(name : string)
+    +getName() : string
+    +getParent() : AbstractWidget
+    +{abstract}render()
+    +add(child : AbstractWidget)
+    +get(name : string) : AbstractWidget
+}
+
+class FormWidget << Composite >> {
+    #children : AbstractWidget[0..*] = []
+    +add(child : AbstractWidget) : $this
+    +get(name) : AbstractWidget
+    +render()
+}
+
+class TextWidget << Leaf >> {
+    +render()
+}
+
+class SubmitWidget << Leaf >> {
+    +render()
+}
+
+class FormWidget extends AbstractWidget
+FormWidget o-- "0..*" AbstractWidget : children
+AbstractWidget o-- "0..1" FormWidget : parent
+
+class SubmitWidget extends AbstractWidget
+
+class TextWidget extends AbstractWidget
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml
