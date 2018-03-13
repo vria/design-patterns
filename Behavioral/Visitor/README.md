@@ -94,7 +94,7 @@ because visitor's methods may require a lot of privilege.
 
 See [https://en.wikipedia.org/wiki/Visitor_pattern](https://en.wikipedia.org/wiki/Visitor_pattern) for more information.
 
-![Visitor UML](doc/Visitor.png)
+![Visitor pattern class diagram](doc/Visitor.png)
 
 Consider a library for handling web form and its fields (like the Form component of Symfony).
 The idea is that of each field in the form can be configured by an object of one of these classes: 

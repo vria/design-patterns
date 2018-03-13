@@ -3,9 +3,9 @@
 namespace DesignPatterns\Creational\AbstractFactory;
 
 /**
- * An interface for all concrete buttons:
- * - @see \DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapButton
- * - @see \DesignPatterns\Creational\AbstractFactory\Plain\PlainButton
+ * An interface for all HTML buttons.
+ *
+ * It corresponds to `AbstractProductA` in the Abstract Factory pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

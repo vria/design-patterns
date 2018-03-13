@@ -27,4 +27,6 @@ addresses_1 o-- addresses_1_city
 addresses_1 o-- addresses_1_country
 client o-- submit
 
+right footer © Vlad Riabchenko <contact@vria.eu>
+
 @enduml

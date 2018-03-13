@@ -1,0 +1,91 @@
+@startuml
+
+interface HTMLFactoryInterface << AbstractFactory >> {
+    +createButton(label : string) : ButtonInterface
+    +createPage() : PageInterface
+    +createTextInput(name : string, label : string) : TextInputInterface
+}
+
+interface ElementInterface {
+    +render()
+}
+
+interface ButtonInterface << AbstractProductA >> {
+    +__construct(label : string)
+}
+
+interface TextInputInterface << AbstractProductB >> {
+    +__construct(name : string, label : string)
+}
+
+interface PageInterface << AbstractProductC >> {
+    +addElement(element : ElementInterface)
+}
+
+class Plain.PlainButton << ProductA1 >> {
+    -label : string
+    +__construct(label : string)
+    +render()
+}
+
+class Plain.PlainTextInput << ProductB1 >> {
+    -label : string
+    -name : string
+    +__construct(name : string, label : string)
+	+render()
+}
+
+class Plain.PlainPage << ProductC1 >> {
+    -elements : ElementInterface[] = []
+    +addElement(element : ElementInterface) : $this
+    +render()
+}
+
+class Plain.PlainHTMLFactory << ConcreteFactory1 >> {
+    +createButton(label)
+    +createPage()
+    +createTextInput(name, label)
+}
+
+class Bootstrap.BootstrapButton << ProductA2 >> {
+    -label : string
+	+__construct(label : string)
+    +render()
+}
+
+class Bootstrap.BootstrapTextInput << ProductB2 >> {
+    -label : string
+    -name : string
+    +__construct(name : string, label : string)
+	+render()
+}
+
+class Bootstrap.BootstrapPage << ProductC2 >> {
+    -elements : ElementInterface[] = []
+    +addElement(element : ElementInterface) : $this
+    +render()
+}
+
+class Bootstrap.BootstrapHTMLFactory << ConcreteFactory2 >> {
+    +createButton(label)
+    +createPage()
+    +createTextInput(name, label)
+}
+
+"Bootstrap.BootstrapHTMLFactory" .up.|> HTMLFactoryInterface
+"Bootstrap.BootstrapTextInput" .up.|> TextInputInterface
+"Bootstrap.BootstrapPage" .up.|> PageInterface
+"Bootstrap.BootstrapButton" .up.|> ButtonInterface
+
+"Plain.PlainHTMLFactory" .down.|> HTMLFactoryInterface
+"Plain.PlainTextInput" .down.|> TextInputInterface
+"Plain.PlainButton" .down.|> ButtonInterface
+"Plain.PlainPage" .down.|> PageInterface
+
+"TextInputInterface" -up-|> ElementInterface
+"ButtonInterface" -up-|> ElementInterface
+"PageInterface" -up-|> ElementInterface
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

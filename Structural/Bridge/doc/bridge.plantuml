@@ -1,0 +1,66 @@
+@startuml
+
+abstract class Equation.Equation << Abstraction >> {
+    #mathImpl : Math.MathImplInterface
+    +setMathImpl(mathImpl : Math.MathImplInterface)
+    +{abstract}solve() : mixed
+}
+
+class Equation.LinearEquation << RefinedAbstraction >> {
+    -a : mixed
+    -b : mixed
+    +__construct(a : mixed, b : mixed)
+	+solve() : mixed
+}
+
+class Equation.QuadraticEquation << RefinedAbstraction >> {
+    -a : mixed
+    -b : mixed
+    -c : mixed
+    +__construct(a : mixed, b : mixed, c : mixed)
+	+solve() : mixed
+}
+
+interface "Math.MathImplInterface" << Implementor >> {
+    +{static}EQUALS = 0
+    +{static}GREATER = 1
+    +{static}LOWER = -1
+    +add(augend : mixed, addend : mixed) : mixed
+    +cmp(first : mixed, second : mixed) : mixed
+    +div(dividend : mixed, divisor : mixed) : mixed
+    +mul(multiplicand : mixed, multiplier : mixed) : mixed
+    +neg(number : mixed) : mixed
+    +sqrt(number : mixed) : mixed
+    +sub(minuend : mixed, subtrahend : mixed) : mixed
+}
+
+class Math.TrivialMathImpl << ConcreteImplementor >> {
+    +add(augend, addend)
+    +cmp(first, second)
+    +div(dividend, divisor)
+    +mul(multiplicand, multiplier)
+    +neg(number)
+    +sqrt(number)
+    +sub(minuend, subtrahend)
+}
+
+class Math.GMPMathImpl << ConcreteImplementor >> {
+    +add(augend, addend)
+    +cmp(first, second)
+    +div(dividend, divisor)
+    +mul(multiplicand, multiplier)
+    +neg(number)
+    +sqrt(number)
+    +sub(minuend, subtrahend)
+}
+
+class Equation.LinearEquation extends Equation.Equation
+class Equation.QuadraticEquation extends Equation.Equation
+class Math.TrivialMathImpl implements Math.MathImplInterface
+class Math.GMPMathImpl implements Math.MathImplInterface
+
+"Math.MathImplInterface" "1" --* "1" "Equation.Equation"
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

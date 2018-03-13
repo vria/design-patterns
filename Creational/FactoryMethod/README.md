@@ -56,13 +56,13 @@ Fatal error:  Uncaught Error: Call to undefined function createProduct() in [...
 
 Consider a draft of web framework that parses an URL string and invokes a corresponding controller.
 
-![Factory Method UML](doc/FactoryMethod.png)
+![Factory method pattern class diagram](doc/factory_method.png)
 
 In the base level There are three abstractions:
-- [Request] - parses URL string, stores the current URL,
-- [Router] - matches a controller against current URL,
-- [Application] - controls the request-response flow. This class delegates URL parsing 
-to `Request` class and controller resolving to `Router` class.
+- [Request] (`Product`) - parses URL string, stores the current URL,
+- [Router] (`Product`) - matches a controller against current URL,
+- [Application] (`Creator`) - controls the request-response flow. 
+This class delegates URL parsing to `Request` class and controller resolving to `Router` class.
 
 `Application` has two abstract methods `createRouter` and `createRequest` to create 
 `Request` and `Router` respectively. These methods are in fact *factory methods* that must be defined in
@@ -73,14 +73,14 @@ of `Request` and `Router`.
 
 Two variants of `Application` are implemented:
 1. SimpleApplication:
-    - [SimpleApplication](SimpleApplication/SimpleApplication.php)
-    - [SimpleRouter](SimpleApplication/SimpleRouter.php)
-    - [SimpleRequest](SimpleApplication/SimpleRequest.php)
+    - [SimpleApplication] (`ConcreteCreator`)
+    - [SimpleRouter] (`ConcreteProduct`)
+    - [SimpleRequest] (`ConcreteProduct`)
 
 2. ParameterApplication:
-    - [ParameterApplication](ParameterApplication/ParameterApplication.php)
-    - [ParameterRouter](ParameterApplication/ParameterRouter.php)
-    - [ParameterRequest](ParameterApplication/ParameterRequest.php)
+    - [ParameterApplication] (`ConcreteCreator`)
+    - [ParameterRouter] (`ConcreteProduct`)
+    - [ParameterRequest] (`ConcreteProduct`)
 
 Check out [SimpleApplicationTest] and [ParameterApplicationTest] the see the proper use of these classes.
 
@@ -88,6 +88,14 @@ Check out [SimpleApplicationTest] and [ParameterApplicationTest] the see the pro
 [Application]: Application.php
 [Router]: RouterInterface.php
 [Request]: RequestInterface.php
-[Template method]: /vria/design-patterns/tree/master/Behavioral/TemplateMethod
+
+[SimpleApplication]: SimpleApplication/SimpleApplication.php
+[SimpleRouter]: SimpleApplication/SimpleRouter.php
+[SimpleRequest]: SimpleApplication/SimpleRequest.php
+
+[ParameterApplication]: ParameterApplication/ParameterApplication.php
+[ParameterRouter]: ParameterApplication/ParameterRouter.php
+[ParameterRequest]: ParameterApplication/ParameterRequest.php
+    
 [SimpleApplicationTest]: Test/SimpleApplicationTest.php
 [ParameterApplicationTest]: Test/ParameterApplicationTest.php

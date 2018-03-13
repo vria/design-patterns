@@ -5,11 +5,11 @@ namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 use DesignPatterns\Creational\FactoryMethod\RequestInterface;
 
 /**
- * Concrete product
+ * It corresponds to `ConcreteProduct` in the Factory Method pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class SimpleRequestInterface implements RequestInterface
+class SimpleRequest implements RequestInterface
 {
     /**
      * @var string

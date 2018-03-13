@@ -5,7 +5,9 @@ namespace DesignPatterns\Creational\AbstractFactory\Plain;
 use DesignPatterns\Creational\AbstractFactory\TextInputInterface;
 
 /**
- * Concrete plain HTML text input that is created by @see PlainHTMLFactory::createTextInput()
+ * Concrete plain HTML text input that is created by @see PlainHTMLFactory::createTextInput().
+ *
+ * It corresponds to `ProductB1` in the Abstract Factory pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

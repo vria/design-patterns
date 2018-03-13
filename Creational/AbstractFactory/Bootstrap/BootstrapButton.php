@@ -5,7 +5,9 @@ namespace DesignPatterns\Creational\AbstractFactory\Bootstrap;
 use DesignPatterns\Creational\AbstractFactory\ButtonInterface;
 
 /**
- * Concrete button that is created by @see BootstrapHTMLFactory::createButton()
+ * Concrete button that is created by @see BootstrapHTMLFactory::createButton().
+ *
+ * It corresponds to `ProductA2` in the Abstract Factory pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

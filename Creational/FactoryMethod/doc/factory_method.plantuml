@@ -1,0 +1,84 @@
+@startuml
+
+abstract class Application << Creator >> {
+    +{abstract}createRequest(requestURL) : RequestInterface
+    +{abstract}createRouter() : RouterInterface
+    +handle(requestURL) : string
+}
+
+interface RequestInterface << Product >> {
+    +getRequestURL() : string
+}
+
+interface RouterInterface << Product >> {
+    +resolveHandler(request : RequestInterface) : callable
+}
+
+class ParameterApplication.ParameterApplication << ConcreteCreator >> {
+    +createRequest(requestURL) : ParameterRequest
+    +createRouter() : ParameterRouter
+    +searchAction(request) : string
+    +viewAction(params) : string
+}
+
+class ParameterApplication.ParameterRequest << ConcreteProduct >> {
+    -path : string
+    -queryParameters : array
+    -requestURL : string
+	+__construct(requestURL : string)
+    +getPath() : string
+    +getQueryParameter(parameter : string) : string
+    +getQueryParameters() : array
+    +getRequestURL() : string
+}
+
+class ParameterApplication.ParameterRouter << ConcreteProduct >> {
+    +resolveHandler(request : RequestInterface) : callable
+}
+
+class ParameterApplication.ParameterController {
+    +{static}articlesAction(request : ParameterRequest) : string
+    +{static}userAction(request : ParameterRequest) : string
+}
+
+
+class SimpleApplication.SimpleApplication << ConcreteCreator >> {
+    +createRequest(requestURL) : RequestInterface
+    +createRouter() : SimpleRouter
+}
+
+class SimpleApplication.SimpleRequest << ConcreteProduct >> {
+    -requestURL : string
+    +__construct(requestURL : string)
+    +getRequestURL() : string
+}
+
+class SimpleApplication.SimpleRouter << ConcreteProduct >> {
+    +resolveHandler(request : RequestInterface) : callable
+}
+
+class SimpleApplication.SimpleController {
+    +{static}contactAction() : string
+    +{static}homeAction() : string
+}
+
+Application .> RequestInterface : creates
+Application .> RouterInterface : creates
+
+"SimpleApplication.SimpleApplication" -down-|> Application
+"SimpleApplication.SimpleRouter" .down.|> RouterInterface
+"SimpleApplication.SimpleRequest" .down.|> RequestInterface
+
+"SimpleApplication.SimpleApplication" .> "SimpleApplication.SimpleRouter" : creates
+"SimpleApplication.SimpleApplication" .> "SimpleApplication.SimpleRequest" : creates
+
+"ParameterApplication.ParameterApplication" -up-|> Application
+"ParameterApplication.ParameterRequest" .up.|> RequestInterface
+"ParameterApplication.ParameterRouter" .up.|> RouterInterface
+
+"ParameterApplication.ParameterApplication" .> "ParameterApplication.ParameterRouter" : creates
+"ParameterApplication.ParameterApplication" .> "ParameterApplication.ParameterRequest" : creates
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

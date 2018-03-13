@@ -3,8 +3,9 @@
 namespace DesignPatterns\Creational\FactoryMethod;
 
 /**
- * Application abstract base class.
- * Defines a framework for concrete applications.
+ * Application abstract base class. Defines a framework for concrete applications.
+ *
+ * It corresponds to `Creator` in the Factory Method pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

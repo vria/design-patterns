@@ -26,7 +26,7 @@ See [https://en.wikipedia.org/wiki/Prototype_pattern](https://en.wikipedia.org/w
 
 ## Implementation
 
-![Prototype UML](doc/Prototype.png)
+![Prototype pattern class diagram](doc/Prototype.png)
 
 The implementation of this pattern is from the same area as for the [Abstract factory pattern].
 This will emphasize the similarities and differences between these two patterns.

@@ -27,7 +27,7 @@ See [https://en.wikipedia.org/wiki/Decorator_pattern](https://en.wikipedia.org/w
 
 ## Implementation
 
-![Decorator class diagram](doc/decorator.png)
+![Decorator pattern class diagram](doc/decorator.png)
 
 Consider a logging library what provides a logger object with various features like adding a current date/time,
 coloring message, correction of spelling, etc. These features can be applied in arbitrary manner: 
@@ -50,7 +50,7 @@ In this case the single responsibility principle will be sacrificed, at some poi
 In would be better to attach the features dynamically to the logger object by wrapping it with decorators. 
 Here is the object composition to log messages with date/time and error level coloring:
 
-![Decorator class object diagram](doc/decorator_object_diagram.png)
+![Decorator pattern object diagram](doc/decorator_object_diagram.png)
 
 Here:
 

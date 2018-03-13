@@ -13,6 +13,8 @@ namespace DesignPatterns\Creational\AbstractFactory;
  * - @see \DesignPatterns\Creational\AbstractFactory\Bootstrap\BootstrapHTMLFactory
  * - @see \DesignPatterns\Creational\AbstractFactory\Plain\PlainHTMLFactory
  *
+ * It corresponds to `AbstractFactory` in the Abstract Factory pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 interface HTMLFactoryInterface

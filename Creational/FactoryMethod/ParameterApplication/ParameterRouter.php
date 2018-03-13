@@ -6,11 +6,11 @@ use DesignPatterns\Creational\FactoryMethod\RequestInterface;
 use DesignPatterns\Creational\FactoryMethod\RouterInterface;
 
 /**
- * Concrete product
+ * It corresponds to `ConcreteProduct` in the Factory Method pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class ParameterRouterInterface implements RouterInterface
+class ParameterRouter implements RouterInterface
 {
     /**
      * @param RequestInterface $request
@@ -19,7 +19,7 @@ class ParameterRouterInterface implements RouterInterface
      */
     public function resolveHandler(RequestInterface $request)
     {
-        if (!$request instanceof ParameterRequestInterface) {
+        if (!$request instanceof ParameterRequest) {
             throw new \InvalidArgumentException;
         }
 

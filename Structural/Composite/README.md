@@ -20,7 +20,7 @@ See [https://en.wikipedia.org/wiki/Composite_pattern](https://en.wikipedia.org/w
 
 ## Implementation
 
-![Composite UML](doc/composite.png)
+![Composite pattern class diagram](doc/composite.png)
 
 This implementation is inspired by Symfony forms. There are a number of widgets corresponding to various HTML elements: 
 - primitives: text widget, submit button widget, checkbox widget, etc.
@@ -39,7 +39,7 @@ The form can contain another html widgets as children that are both the leaves (
 
 Here is an example of form that can be composed on the defined widgets:
 
-![Composite object diagram UML](doc/composite_object_diagram.png)
+![Composite pattern object diagram](doc/composite_object_diagram.png)
 
 [AbstractWidget]: AbstractWidget.php
 [TextWidget]: TextWidget.php

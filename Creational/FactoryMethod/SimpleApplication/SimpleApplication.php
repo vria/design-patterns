@@ -3,30 +3,29 @@
 namespace DesignPatterns\Creational\FactoryMethod\SimpleApplication;
 
 use DesignPatterns\Creational\FactoryMethod\Application;
-use DesignPatterns\Creational\FactoryMethod\RequestInterface;
 
 /**
- * Concrete creator
+ * The simplest application.
+ *
+ * It corresponds to `ConcreteCreator` in the Factory Method pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SimpleApplication extends Application
 {
     /**
-     * @return SimpleRouterInterface
+     * @inheritdoc
      */
     public function createRouter()
     {
-        return new SimpleRouterInterface();
+        return new SimpleRouter();
     }
 
     /**
-     * @param $requestURL
-     *
-     * @return RequestInterface
+     * @inheritdoc
      */
     public function createRequest($requestURL)
     {
-        return new SimpleRequestInterface($requestURL);
+        return new SimpleRequest($requestURL);
     }
 }

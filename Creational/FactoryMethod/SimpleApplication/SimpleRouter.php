@@ -6,11 +6,11 @@ use DesignPatterns\Creational\FactoryMethod\RequestInterface;
 use DesignPatterns\Creational\FactoryMethod\RouterInterface;
 
 /**
- * Concrete product
+ * It corresponds to `ConcreteProduct` in the Factory Method pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
-class SimpleRouterInterface implements RouterInterface
+class SimpleRouter implements RouterInterface
 {
     /**
      * @param RequestInterface $request

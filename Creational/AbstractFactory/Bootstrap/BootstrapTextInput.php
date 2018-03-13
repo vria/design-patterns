@@ -7,6 +7,8 @@ use DesignPatterns\Creational\AbstractFactory\TextInputInterface;
 /**
  * Concrete page that is created by @see BootstrapHTMLFactory::createTextInput()
  *
+ * It corresponds to `ProductB2` in the Abstract Factory pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class BootstrapTextInput implements TextInputInterface

@@ -1,30 +1,28 @@
 @startuml
 
-class LoggerWithDateDecorator {
-    -datetime : DateTime
-	+__construct(message : LoggerInterface, datetime : DateTime)
+interface LoggerInterface << Component >> {
     +log()
 }
 
-class LoggerWithDateDecorator extends LoggerDecorator
-
-class LoggerDecorator {
-    #decoratedLogger : LoggerInterface
-	+__construct(message : LoggerInterface)
-    +log()
-}
-
-class LoggerDecorator implements LoggerInterface
-
-class Logger {
+class Logger << ConcreteComponent >> {
     -message : string
 	+__construct(message : string)
     +log()
 }
 
-class Logger implements LoggerInterface
+class LoggerDecorator << Decorator >> {
+    #decoratedLogger : LoggerInterface
+	+__construct(message : LoggerInterface)
+    +log()
+}
 
-class LoggerWithErrorLevelDecorator {
+class LoggerWithDateDecorator << ConcreteDecorator >> {
+    -datetime : DateTime
+	+__construct(message : LoggerInterface, datetime : DateTime)
+    +log()
+}
+
+class LoggerWithErrorLevelDecorator << ConcreteDecorator >> {
     +{static}ERROR = "#ff0000"
     +{static}INFO = "#0000ff"
     +{static}WARNING = "#ffbb00"
@@ -33,11 +31,10 @@ class LoggerWithErrorLevelDecorator {
     +log()
 }
 
+class Logger implements LoggerInterface
+class LoggerDecorator implements LoggerInterface
+class LoggerWithDateDecorator extends LoggerDecorator
 class LoggerWithErrorLevelDecorator extends LoggerDecorator
-
-interface LoggerInterface {
-    +log()
-}
 
 right footer © Vlad Riabchenko <contact@vria.eu>
 

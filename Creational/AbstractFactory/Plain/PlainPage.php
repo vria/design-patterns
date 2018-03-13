@@ -6,7 +6,9 @@ use DesignPatterns\Creational\AbstractFactory\ElementInterface;
 use DesignPatterns\Creational\AbstractFactory\PageInterface;
 
 /**
- * Concrete plain HTML page that is created by @see PlainHTMLFactory::createPage()
+ * Concrete plain HTML page that is created by @see PlainHTMLFactory::createPage().
+ *
+ * It corresponds to `ProductC1` in the Abstract Factory pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

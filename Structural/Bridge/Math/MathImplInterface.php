@@ -4,6 +4,7 @@ namespace DesignPatterns\Structural\Bridge\Math;
 
 /**
  * The interface for defining primitive arithmetic operations: adding, subtracting, negation, comparing, etc.
+ *
  * Corresponds to `Implementor` in the Bridge pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>

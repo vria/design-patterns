@@ -13,7 +13,7 @@ See [https://en.wikipedia.org/wiki/Abstract_factory_pattern](https://en.wikipedi
 
 ## Implementation
 
-![Abstract factory UML](doc/AbstractFactory.png)
+![Abstract factory pattern class diagram](doc/abstract_factory.png)
 
 Imagine that some html renderer or any other client code needs to create a set of these html entities : 
 - [ButtonInterface] that can be [PlainButton], [BootstrapButton], etc.

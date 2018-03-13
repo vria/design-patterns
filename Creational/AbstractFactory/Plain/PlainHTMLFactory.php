@@ -5,7 +5,9 @@ namespace DesignPatterns\Creational\AbstractFactory\Plain;
 use DesignPatterns\Creational\AbstractFactory\HTMLFactoryInterface;
 
 /**
- * Concrete factory that creates plain HTML elements
+ * Concrete factory that creates plain HTML elements.
+ *
+ * It corresponds to `ConcreteFactory1` in the Abstract Factory pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

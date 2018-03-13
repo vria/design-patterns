@@ -5,47 +5,27 @@ namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 use DesignPatterns\Creational\FactoryMethod\Application;
 
 /**
- * Concrete creator
+ * Application that accepts parameters in URL.
+ *
+ * It corresponds to `ConcreteCreator` in the Factory Method pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class ParameterApplication extends Application
 {
     /**
-     * @return ParameterRouterInterface
+     * @inheritdoc
      */
     public function createRouter()
     {
-        return new ParameterRouterInterface();
+        return new ParameterRouter();
     }
 
     /**
-     * @param $requestURL
-     *
-     * @return ParameterRequestInterface
+     * @inheritdoc
      */
     public function createRequest($requestURL)
     {
-        return new ParameterRequestInterface($requestURL);
-    }
-
-    /**
-     * @param $request
-     *
-     * @return string
-     */
-    public function searchAction($request)
-    {
-        return 'Search page. Parameters: ' . json_encode($request);
-    }
-
-    /**
-     * @param $params
-     *
-     * @return string
-     */
-    public function viewAction($params)
-    {
-        return "View {$params['className']} object of id {$params['id']}";
+        return new ParameterRequest($requestURL);
     }
 }

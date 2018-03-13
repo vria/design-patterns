@@ -3,6 +3,8 @@
 namespace DesignPatterns\Creational\FactoryMethod\Test;
 
 use DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterApplication;
+use DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRequest;
+use DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRouter;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
@@ -21,18 +23,12 @@ class ParameterApplicationTest extends \PHPUnit_Framework_TestCase
 
     public function testRouterClass()
     {
-        $this->assertInstanceOf(
-            'DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRouterInterface',
-            $this->application->createRouter()
-        );
+        $this->assertInstanceOf(ParameterRouter::class, $this->application->createRouter());
     }
 
     public function testRequestClass()
     {
-        $this->assertInstanceOf(
-            'DesignPatterns\Creational\FactoryMethod\ParameterApplication\ParameterRequestInterface',
-            $this->application->createRequest('/url')
-        );
+        $this->assertInstanceOf(ParameterRequest::class, $this->application->createRequest('/url'));
     }
 
     public function testUserAction()

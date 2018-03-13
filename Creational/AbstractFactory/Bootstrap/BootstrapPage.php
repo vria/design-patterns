@@ -6,7 +6,9 @@ use DesignPatterns\Creational\AbstractFactory\ElementInterface;
 use DesignPatterns\Creational\AbstractFactory\PageInterface;
 
 /**
- * Concrete page that is created by @see BootstrapHTMLFactory::createPage()
+ * Concrete page that is created by @see BootstrapHTMLFactory::createPage().
+ *
+ * It corresponds to `ProductC2` in the Abstract Factory pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

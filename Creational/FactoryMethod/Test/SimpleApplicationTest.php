@@ -2,7 +2,9 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\Test;
 
+use DesignPatterns\Creational\FactoryMethod\RequestInterface;
 use DesignPatterns\Creational\FactoryMethod\SimpleApplication\SimpleApplication;
+use DesignPatterns\Creational\FactoryMethod\SimpleApplication\SimpleRouter;
 
 /**
  * @author Vlad Riabchenko <contact@vria.eu>
@@ -21,18 +23,12 @@ class SimpleApplicationTest extends \PHPUnit_Framework_TestCase
 
     public function testRouterClass()
     {
-        $this->assertInstanceOf(
-            'DesignPatterns\Creational\FactoryMethod\SimpleApplication\SimpleRouterInterface',
-            $this->application->createRouter()
-        );
+        $this->assertInstanceOf(SimpleRouter::class, $this->application->createRouter());
     }
 
     public function testRequestClass()
     {
-        $this->assertInstanceOf(
-            'DesignPatterns\Creational\FactoryMethod\RequestInterface',
-            $this->application->createRequest('/url')
-        );
+        $this->assertInstanceOf(RequestInterface::class,$this->application->createRequest('/url'));
     }
 
     public function testIndexAction()

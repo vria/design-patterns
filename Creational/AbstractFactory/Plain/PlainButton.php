@@ -5,7 +5,9 @@ namespace DesignPatterns\Creational\AbstractFactory\Plain;
 use DesignPatterns\Creational\AbstractFactory\ButtonInterface;
 
 /**
- * Concrete plain HTML button that is created by @see PlainHTMLFactory::createButton()
+ * Concrete plain HTML button that is created by @see PlainHTMLFactory::createButton().
+ *
+ * It corresponds to `ProductA1` in the Abstract Factory pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

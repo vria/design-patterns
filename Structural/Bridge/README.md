@@ -68,15 +68,15 @@ See [https://en.wikipedia.org/wiki/Bridge_pattern](https://en.wikipedia.org/wiki
 
 ## Implementation
 
-![Bridge UML](doc/Bridge.png)
+![Bridge pattern pattern class diagram](doc/bridge.png)
 
 Imagine a variety of equations represented as classes: linear, quadratic, cubic, differential. 
 The method `solve()` returning the root(s) of equation is a unique constraint for these classes. 
 The hierarchy of equations classes is defined as follows:
 
-- [Equation] is an abstract base class for all types of equations,
-- [LinearEquation] is a linear equation `a * x + b = 0`,
-- [QuadraticEquation] is a quadratic equation `ax^2 + bx + c = 0`.
+- [Equation] (`Abstraction`) is an abstract base class for all types of equations,
+- [LinearEquation] (`RefinedAbstraction`) is a linear equation `a * x + b = 0`,
+- [QuadraticEquation] (`RefinedAbstraction`) is a quadratic equation `ax^2 + bx + c = 0`.
 
 These list can be completed by any kind of equation.
 
@@ -87,7 +87,7 @@ So, for example, in place of `+` or `*` operators `gmp_add()` and `gmp_mul()` th
 The simplest solution is to double each equation class and write its internal calculus to use gmp library.
 
 It will be better to abstract out the equations and separate them from basic arithmetic operations. 
-[MathImplInterface] contains a contract for basic arithmetic operations like adding, subtracting, negation, comparing, etc.
+[MathImplInterface] (`Implementor`) contains a contract for basic arithmetic operations like adding, subtracting, negation, comparing, etc.
 Equation classes are coupled to this interface and base the calculation of their roots on abstract operations:
 [LinearEquation::solve()], [QuadraticEquation::solve()]. The implementors are:
 - [TrivialMathImpl] is the native implementation of arithmetic operations: `+`, `-`, `*`, etc.

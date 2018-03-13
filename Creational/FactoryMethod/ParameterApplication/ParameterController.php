@@ -8,21 +8,21 @@ namespace DesignPatterns\Creational\FactoryMethod\ParameterApplication;
 class ParameterController
 {
     /**
-     * @param ParameterRequestInterface $request
+     * @param ParameterRequest $request
      *
      * @return string
      */
-    public static function userAction(ParameterRequestInterface $request)
+    public static function userAction(ParameterRequest $request)
     {
         return sprintf("<h1>Showing user #%s</h1>", $request->getQueryParameter('id'));
     }
 
     /**
-     * @param ParameterRequestInterface $request
+     * @param ParameterRequest $request
      *
      * @return string
      */
-    public static function articlesAction(ParameterRequestInterface $request)
+    public static function articlesAction(ParameterRequest $request)
     {
         return sprintf(
             "<h1>Showing articles of %s category with filter %s</h1>",

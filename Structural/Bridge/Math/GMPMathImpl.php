@@ -5,6 +5,7 @@ namespace DesignPatterns\Structural\Bridge\Math;
 /**
  * The gmp implementation of arithmetic operations that allows calculations with large numbers represented as strings:
  * http://php.net/manual/en/book.gmp.php
+ *
  * Corresponds to `ConcreteImplementor` in the Bridge pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>

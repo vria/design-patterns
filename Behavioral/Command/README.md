@@ -76,7 +76,7 @@ The Joystick issues requests that are represented by strings "left", "right", "t
 These strings are mapped to `Commands` that transmit the the joystick's requests to the `Field`.
 The field stores the internal state of the game changing under the influence by joystick's requests.
 
-![Command UML](doc/Command.png)
+![Command pattern class diagram](doc/Command.png)
 
 Participants:
 - [Field] (`Receiver`) really performs the operations and holds the current state of the game that changes when 

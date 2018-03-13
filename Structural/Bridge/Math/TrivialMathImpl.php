@@ -4,6 +4,7 @@ namespace DesignPatterns\Structural\Bridge\Math;
 
 /**
  * The native implementation of arithmetic operations: +, -, *, etc.
+ *
  * Corresponds to `ConcreteImplementor` in the Bridge pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
