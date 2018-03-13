@@ -68,7 +68,7 @@ See [https://en.wikipedia.org/wiki/Bridge_pattern](https://en.wikipedia.org/wiki
 
 ## Implementation
 
-![Bridge pattern pattern class diagram](doc/bridge.png)
+![Bridge pattern pattern class diagram](doc/bridge_class_diagram.png)
 
 Imagine a variety of equations represented as classes: linear, quadratic, cubic, differential. 
 The method `solve()` returning the root(s) of equation is a unique constraint for these classes. 

@@ -125,4 +125,4 @@ Check out [StrategyTest] the see the proper use of these classes.
 [ProductFilterInterface]: ProductFilterInterface.php
 [InStockFilter]: InStockFilter.php
 [PriceFilter]: PriceFilter.php
-[StrategyTest] : Test/StrategyTest.php
+[StrategyTest]: Test/StrategyTest.php
