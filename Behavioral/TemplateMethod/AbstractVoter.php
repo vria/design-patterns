@@ -6,6 +6,8 @@ namespace DesignPatterns\Behavioral\TemplateMethod;
  * Abstract class that defines a common algorithm of voting.
  * To determine whether the attribute of a particular object is accessible call @see AbstractVoter::vote() method.
  *
+ * It corresponds to `AbstractClass` in the Strategy pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 abstract class AbstractVoter

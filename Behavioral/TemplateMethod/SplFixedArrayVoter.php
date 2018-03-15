@@ -5,6 +5,8 @@ namespace DesignPatterns\Behavioral\TemplateMethod;
 /**
  * Voter to check if the methods of @see \SplFixedArray could be called.
  *
+ * It corresponds to `ConcreteClass` in the Strategy pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SplFixedArrayVoter extends AbstractVoter

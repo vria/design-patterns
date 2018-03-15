@@ -26,7 +26,7 @@ See [https://en.wikipedia.org/wiki/Prototype_pattern](https://en.wikipedia.org/w
 
 ## Implementation
 
-![Prototype pattern class diagram](doc/Prototype.png)
+![Prototype pattern class diagram](doc/prototype_class_diagram.png)
 
 The implementation of this pattern is from the same area as for the [Abstract factory pattern].
 This will emphasize the similarities and differences between these two patterns.
@@ -56,4 +56,4 @@ Note that when a page prototype is cloned, you must [clone all the elements] it 
 [AbstractPage]: AbstractPage.php
 [PlainPage]: Plain/PlainPage.php
 [BootstrapPage]: Bootstrap/BootstrapPage.php
-[clone all the elements]: AbstractPage.php#L46
+[clone all the elements]: AbstractPage.php#L47

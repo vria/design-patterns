@@ -8,7 +8,9 @@ use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
 use DesignPatterns\Behavioral\Visitor\VisitorInterface;
 
 /**
- * Validate the view value of form fields.
+ * Visitor that validates the view value of form fields.
+ *
+ * It corresponds to `ConcreteVisitor` in the Strategy pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

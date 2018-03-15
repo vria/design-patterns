@@ -1,0 +1,79 @@
+@startuml
+
+interface ElementInterface {
+    +render()
+}
+
+abstract class AbstractButton << PrototypeA >> {
+    #label : string
+    +__construct(label : string)
+}
+
+abstract class AbstractTextInput << PrototypeB >> {
+    #label : string
+    #name : string
+    +__construct(name : string, label : string)
+}
+
+abstract class AbstractPage << PrototypeC >> {
+    #elements : ElementInterface[] = []
+    +addElement(element : ElementInterface) : $this
+    +getElements() : ElementInterface[]
+    +__clone()
+}
+
+class Renderer << Client >> {
+    -buttonPrototype : AbstractButton
+    -pagePrototype : AbstractPage
+    -textInputPrototype : AbstractTextInput
+    +__construct(buttonPrototype : AbstractButton, textInputPrototype : AbstractTextInput, pagePrototype : AbstractPage)
+	+createButton() : AbstractButton
+    +createPage() : AbstractPage
+    +createTextInput() : AbstractTextInput
+}
+
+class Plain.PlainButton << ConcretePrototypeA1 >> {
+    +render()
+}
+
+class Plain.PlainTextInput << ConcretePrototypeB1 >> {
+    +render()
+}
+
+class Plain.PlainPage << ConcretePrototypeC1 >> {
+    +render()
+}
+
+class Bootstrap.BootstrapButton << ConcretePrototypeA2 >> {
+    +render()
+}
+
+class Bootstrap.BootstrapTextInput << ConcretePrototypeB2 >> {
+    +render()
+}
+
+class Bootstrap.BootstrapPage << ConcretePrototypeC2 >> {
+    +render()
+}
+
+"Plain.PlainButton" -up-|> AbstractButton
+"Plain.PlainTextInput" -up-|> AbstractTextInput
+"Plain.PlainPage" -up-|> AbstractPage
+
+"Bootstrap.BootstrapButton" -up-|> AbstractButton
+"Bootstrap.BootstrapTextInput" -up-|> AbstractTextInput
+"Bootstrap.BootstrapPage" -up-|> AbstractPage
+
+Renderer o-right- "1" AbstractButton
+Renderer .right.> AbstractButton : creates
+
+Renderer o-right- "1" AbstractTextInput
+Renderer .right.> AbstractTextInput : creates
+
+Renderer o-down- "1" AbstractPage
+Renderer .down.> AbstractPage : creates
+
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

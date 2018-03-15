@@ -3,7 +3,9 @@
 namespace DesignPatterns\Behavioral\Strategy;
 
 /**
- * Concrete strategy to filter products by the criteria of being in stock.
+ * Strategy to filter products by the criteria of being in stock.
+ *
+ * It corresponds to `ConcreteStrategy` in the Strategy pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

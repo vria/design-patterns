@@ -6,6 +6,8 @@ namespace DesignPatterns\Behavioral\Observer;
  * SendEmailObserver is a listener that reacts to state change of Order object.
  * When Order is finalized it "sends" an email.
  *
+ * It corresponds to `ConcreteObserver` in the Observer pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SendEmailObserver implements \SplObserver

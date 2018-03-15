@@ -1,0 +1,34 @@
+@startuml
+
+class ProductCollection << Context >> {
+    -filter : ProductFilterInterface
+    -products : array
+    +__construct(products : array)
+	+filterElements() : array
+    +setFilter(filter : ProductFilterInterface)
+}
+
+interface ProductFilterInterface << Strategy >> {
+    +filter(product : array) : array
+}
+
+class InStockFilter << ConcreteStrategy >> {
+    +filter(products : array) : array
+}
+
+class PriceFilter << ConcreteStrategy >> {
+    +{static}INFERIOR = "INFERIOR"
+    +{static}SUPERIOR = "SUPERIOR"
+    -compareWay : string
+    -threshold : double
+	+__construct(threshold : double, compareWay : string = "INFERIOR")
+    +filter(products : array) : array
+}
+
+InStockFilter .up.|> ProductFilterInterface
+PriceFilter .up.|> ProductFilterInterface
+ProductCollection "1" o.right. "1" ProductFilterInterface
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

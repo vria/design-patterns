@@ -8,12 +8,15 @@ use DesignPatterns\Behavioral\Command\Command\RightCommand;
 use DesignPatterns\Behavioral\Command\Command\TopCommand;
 
 /**
- * The receiver. When player wants to move it must call one of these operaions
+ * Field holds the current state of a game.
+ * When player wants to move it must call one of these operations:
  * - toLeft
  * - toRight
  * - toTop
  * - toBottom
- * Note that the `Joystick` is not coupled with the `Field` and can not call its methods directly.
+ * Note that the `Receiver` is not coupled with the `Field` and can not call its methods directly.
+ *
+ * Corresponds to `Receiver` in the Command pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

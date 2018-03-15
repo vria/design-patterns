@@ -1,0 +1,46 @@
+@startuml
+
+interface SplObserver << Observer >> {
+    public function update (SplSubject $subject);
+}
+
+interface SplSubject << Subject >> {
+    +attach(SplObserver $observer);
+    +detach(SplObserver $observer);
+    +notify();
+}
+
+class Order << ConcreteSubject >> {
+    -observers : SplObjectStorage
+    -state : string
+	+__construct()
+    +attach(observer : SplObserver)
+    +detach(observer : SplObserver)
+    +finalize()
+    +getState() : string
+    +initialize()
+    +notify()
+}
+
+class PersisterObserver << ConcreteObserver >> {
+    +update(subject : SplSubject)
+}
+
+class LoggerObserver << ConcreteObserver >> {
+    +update(subject : SplSubject)
+}
+
+class SendEmailObserver << ConcreteObserver >> {
+    +update(subject : SplSubject)
+}
+
+SendEmailObserver .up.|> SplObserver
+PersisterObserver .up.|> SplObserver
+Order .up.|> SplSubject
+LoggerObserver .up.|> SplObserver
+
+Order o-right- "*" SplObserver
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

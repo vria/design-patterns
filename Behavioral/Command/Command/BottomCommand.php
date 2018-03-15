@@ -3,7 +3,9 @@
 namespace DesignPatterns\Behavioral\Command\Command;
 
 /**
- * Move to bottom
+ * Move to bottom.
+ *
+ * It corresponds to `ConcreteCommand` in the Command pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

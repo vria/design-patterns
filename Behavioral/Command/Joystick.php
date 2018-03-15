@@ -7,6 +7,8 @@ namespace DesignPatterns\Behavioral\Command;
  * This class is completely decoupled from `Field` and it has no means to call its methods directly.
  * Instead the joystick calls the appropriate methods of `Field` by means of `Command` objects.
  *
+ * Corresponds to `Invoker` in the Command pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class Joystick
@@ -15,7 +17,7 @@ class Joystick
      * Available keys.
      * Array that maps string requests "left", "right", etc. to commands LestCommand, RightCommand, etc.
      *
-     * @var array
+     * @var CommandInterface[]
      */
     private $keyboard = [];
 

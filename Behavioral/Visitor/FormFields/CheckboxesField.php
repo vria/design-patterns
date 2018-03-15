@@ -8,6 +8,8 @@ use DesignPatterns\Behavioral\Visitor\VisitorInterface;
 /**
  * A group of checkboxes. The value and a the view value are arrays.
  *
+ * It corresponds to `ConcreteElement` in the Strategy pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class CheckboxesField extends FormField

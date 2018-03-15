@@ -30,7 +30,7 @@ of Observer calls some method of Subject that in turn broadcasts the notificatio
 
 This example makes use of two SPL interfaces: [SplSubject] and [SplObserver].
 
-![Observer pattern class diagram](doc/Observer.png)
+![Observer pattern class diagram](doc/observer_class_diagram.png)
 
 In this case [Order] class as a `Subject` that evolves over the time: from `INITIALIZED` to `FINALIZED` state.
 

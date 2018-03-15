@@ -7,6 +7,8 @@ namespace DesignPatterns\Behavioral\Strategy;
  * The products can by filtered by various filtering strategies.
  * The code of these strategies is encapsulated in the implementator of @see ProductFilterInterface that is also stored in this class.
  *
+ * It corresponds to `Context` in the Strategy pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class ProductCollection

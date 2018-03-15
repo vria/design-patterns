@@ -1,0 +1,77 @@
+@startuml
+
+class Point {
+    +x : int
+    +y : int
+    +__construct(x : int, y : int)
+	+equalTo(p : Point) : bool
+}
+
+class Field << Receiver >> {
+    -goal : Point
+    -player : Point
+    +__construct(player : Point, goal : Point)
+	+checkGoal() : bool
+    +getGoal() : Point
+    +getPlayer() : Point
+    +toBottom()
+    +toLeft()
+    +toRight()
+    +toTop()
+}
+
+interface Command << Command >> {
+    +move()
+    +moveBack()
+}
+
+class Joystick << Invoker >> {
+    -keyboard : CommandInterface[] = []
+    -requests : array = []
+    +addKey(key, command : Command)
+    +pressKey(key : string)
+    +undo()
+}
+
+abstract class Command.MoveCommand {
+    #field : Field
+    +__construct(field : Field)
+}
+
+class Command.LeftCommand << ConcreteCommand >> {
+    +move()
+    +moveBack()
+}
+
+class Command.RightCommand << ConcreteCommand >> {
+    +move()
+    +moveBack()
+}
+
+class Command.TopCommand << ConcreteCommand >> {
+    +move()
+    +moveBack()
+}
+
+class Command.BottomCommand << ConcreteCommand >> {
+    +move()
+    +moveBack()
+}
+
+"Command.MoveCommand" .up.|> Command
+"Command.LeftCommand" -up-|> Command.MoveCommand
+"Command.RightCommand" -up-|> Command.MoveCommand
+"Command.TopCommand" -up-|> Command.MoveCommand
+"Command.BottomCommand" -up-|> Command.MoveCommand
+
+Joystick "1" o-right- "*" "Command.MoveCommand"
+"Command.MoveCommand" "1" o-right- "1" Field
+
+"Command.LeftCommand" .up.> Field : call toLeft
+"Command.RightCommand" .up.> Field : call toRight
+"Command.TopCommand" .up.> Field : call toTop
+"Command.BottomCommand" .up.> Field : call toBottom
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

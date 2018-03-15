@@ -3,7 +3,9 @@
 namespace DesignPatterns\Behavioral\Command;
 
 /**
- * Interface for generic command
+ * Interface for commands.
+ *
+ * It corresponds to `Command` in the Command pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

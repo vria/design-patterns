@@ -11,6 +11,8 @@ use DesignPatterns\Behavioral\Visitor\FormFields\EmailField;
  * visitor pattern doesn't require their class hierarchies to be related.
  * The method's name and signature determines the class that sends the visit request.
  *
+ * It corresponds to `Visitor` in the Strategy pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 interface VisitorInterface

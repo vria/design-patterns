@@ -6,8 +6,9 @@ namespace DesignPatterns\Creational\Prototype;
  * An interface for all concrete pages:
  * - @see \DesignPatterns\Creational\Prototype\Bootstrap\BootstrapPage
  * - @see \DesignPatterns\Creational\Prototype\Plain\PlainPage
- * This is a `Prototype` constraint (interface or abstract class) in terms of the prototype pattern.
  * The `Renderer` (`Client`) depends on it.
+ *
+ * This is a `PrototypeC` constraint (interface or abstract class) in terms of the prototype pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

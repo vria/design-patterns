@@ -8,6 +8,8 @@ namespace DesignPatterns\Behavioral\Visitor;
  * On top of that there is an abstract @see FormField::accept method that takes a visitor as an argument.
  * Through this method the form fields can be extended by introducing a new concrete visitor.
  *
+ * It corresponds to `Element` in the Strategy pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 abstract class FormField

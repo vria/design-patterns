@@ -1,0 +1,67 @@
+@startuml
+
+abstract class FormField << Element >> {
+    -error : string
+    -required : boolean = false
+    -value : mixed
+    -viewValue : mixed
+    +{abstract}accept(visitor : VisitorInterface)
+    +getError() : string|null
+    +getValue() : mixed|null
+    +getViewValue() : mixed
+    +isRequired() : boolean
+    +setError(error : string)
+    +setRequired(required : boolean)
+    +setValue(value : mixed)
+    +setViewValue(viewValue : mixed)
+}
+
+class FormFields.IntegerField << ConcreteElement >> {
+    +accept(visitor : VisitorInterface)
+}
+
+class FormFields.EmailField << ConcreteElement >> {
+    +accept(visitor : VisitorInterface)
+}
+
+class FormFields.CheckboxesField << ConcreteElement >> {
+    -choices : array
+    +accept(visitor : VisitorInterface)
+    +getChoices() : array
+    +setChoices(choices : array)
+}
+
+interface VisitorInterface << Visitor >> {
+    +visitCheckboxes(checkboxesField : CheckboxesField)
+    +visitEmail(emailField : EmailField)
+    +visitInteger(integerField : IntegerField)
+}
+
+class Visitors.ValidatorVisitor << ConcreteVisitor >> {
+    +visitCheckboxes(checkboxesField : CheckboxesField)
+    +visitEmail(emailField : EmailField)
+    +visitInteger(integerField : IntegerField)
+}
+
+class Visitors.ViewToModelTransformerVisitor << ConcreteVisitor >> {
+    +visitCheckboxes(checkboxesField : CheckboxesField)
+    +visitEmail(emailField : EmailField)
+    +visitInteger(integerField : IntegerField)
+}
+
+class Visitors.ModelToViewTransformerVisitor << ConcreteVisitor >> {
+    +visitCheckboxes(checkboxesField : CheckboxesField)
+    +visitEmail(emailField : EmailField)
+    +visitInteger(integerField : IntegerField)
+}
+
+class FormFields.CheckboxesField extends FormField
+class FormFields.IntegerField extends FormField
+class FormFields.EmailField extends FormField
+class Visitors.ValidatorVisitor implements VisitorInterface
+class Visitors.ViewToModelTransformerVisitor implements VisitorInterface
+class Visitors.ModelToViewTransformerVisitor implements VisitorInterface
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

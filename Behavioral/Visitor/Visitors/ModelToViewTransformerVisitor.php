@@ -8,7 +8,9 @@ use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
 use DesignPatterns\Behavioral\Visitor\VisitorInterface;
 
 /**
- * Transform model value to view value.
+ * Visitor that transforms model value to view value.
+ *
+ * It corresponds to `ConcreteVisitor` in the Strategy pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

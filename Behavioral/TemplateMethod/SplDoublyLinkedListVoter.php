@@ -5,6 +5,8 @@ namespace DesignPatterns\Behavioral\TemplateMethod;
 /**
  * Voter to check if the methods of @see \SplDoublyLinkedList could be called.
  *
+ * It corresponds to `ConcreteClass` in the Strategy pattern.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SplDoublyLinkedListVoter extends AbstractVoter

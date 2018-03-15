@@ -6,7 +6,7 @@ use DesignPatterns\Behavioral\Command\CommandInterface;
 use DesignPatterns\Behavioral\Command\Field;
 
 /**
- * Common move command that stores the `receiver` object of commands
+ * Common move command that holds the `Receiver` object.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

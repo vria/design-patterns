@@ -108,7 +108,7 @@ See [https://en.wikipedia.org/wiki/Strategy_pattern](https://en.wikipedia.org/wi
 
 As an example of implementation consider following classes:  
 
-![Strategy pattern class diagram](doc/Strategy.png)
+![Strategy pattern class diagram](doc/strategy_class_diagram.png)
 
 - [ProductCollection] (`Context`) holds an array of products. A filtered list of products can be obtained from the method 
 `ProductCollection::filterElements`. While different filtering algorithms can be applied to the original array of products, 

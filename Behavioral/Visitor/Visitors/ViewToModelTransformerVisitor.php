@@ -8,7 +8,9 @@ use DesignPatterns\Behavioral\Visitor\FormFields\IntegerField;
 use DesignPatterns\Behavioral\Visitor\VisitorInterface;
 
 /**
- * Transform view value to model value. When the field is not valid then the model value is null.
+ * Visitor that transforms view value to model value. When the field is not valid then the model value is null.
+ *
+ * It corresponds to `ConcreteVisitor` in the Strategy pattern.
  *
  * @author Vlad Riabchenko <contact@vria.eu>
  */

@@ -1,0 +1,43 @@
+@startuml
+
+abstract class AbstractVoter << AbstractClass >> {
+    +{static}ABSTAINED = "ABSTAINED"
+    +{static}ACCESS_DENIED = "ACCESS_DENIED"
+    +{static}ACCESS_GRANTED = "ACCESS_GRANTED"
+    #{abstract}hasAccess(object, attribute) : bool
+    #{abstract}supportsAttribute(attribute : string) : bool
+    #{abstract}supportsObject(object : object) : bool
+    +vote(object : object, attribute : string) : string
+}
+
+note right of AbstractVoter
+    function vote($object, $attribute)
+    {
+        ...
+        $this->supportsAttribute($attribute)
+        ...
+        $this->supportsObject($object)
+        ...
+        $this->hasAccess($object, $attribute)
+        ...
+    }
+end note
+
+class SplDoublyLinkedListVoter << ConcreteClass >> {
+    #hasAccess(object, attribute)
+    #supportsAttribute(attribute)
+    #supportsObject(object)
+}
+
+class SplFixedArrayVoter << ConcreteClass >> {
+    #hasAccess(object, attribute)
+    #supportsAttribute(attribute)
+    #supportsObject(object)
+}
+
+SplDoublyLinkedListVoter -up-|> AbstractVoter
+SplFixedArrayVoter -up-|> AbstractVoter
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

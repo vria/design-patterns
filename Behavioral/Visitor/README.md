@@ -94,7 +94,7 @@ because visitor's methods may require a lot of privilege.
 
 See [https://en.wikipedia.org/wiki/Visitor_pattern](https://en.wikipedia.org/wiki/Visitor_pattern) for more information.
 
-![Visitor pattern class diagram](doc/Visitor.png)
+![Visitor pattern class diagram](doc/visitor_class_diagram.png)
 
 Consider a library for handling web form and its fields (like the Form component of Symfony).
 The idea is that of each field in the form can be configured by an object of one of these classes: 
@@ -131,13 +131,13 @@ end the class of the visitor:
 
 ```
 /**
+ * This results in that any method of any visitor can be called.
+ *
  * @var $field FormField
  * @var $visitor VisitorInterface
  */
 $field->accept($visitor);
 ```
-
-Any method of any visitor can be called.
 
 [FormField]: FormField.php
 [EmailField]: FormFields/EmailField.php

@@ -71,7 +71,7 @@ See [https://en.wikipedia.org/wiki/Template_method_pattern](https://en.wikipedia
 
 ## Implementation
 
-![Template method pattern class diagram](doc/TemplateMethod.png)
+![Template method pattern class diagram](doc/template_method_class_diagram.png)
 
 As an example consider a security system for checking permissions. The special objects called voters are in charge of
 deciding whether the `$attribute` is suitable to the `$object`. 
