@@ -1,0 +1,77 @@
+@startuml
+
+class ProductRepository {
+    -qb : QueryBuilder
+    +__construct(qb : QueryBuilder)
+    +findAll() : mixed
+    +findForCarousel() : mixed
+    +findForHomepage() : mixed
+}
+
+abstract class QueryBuilder {
+    +{static}ASC = "ASC"
+    +{static}DESC = "DESC"
+    +{static}EQUALS = "EQUALS"
+    +{static}GREATER = "GREATER"
+    +{static}IN = "IN"
+    +{static}LOWER = "LOWER"
+    +{abstract}createQuery(from : string) : $this
+    +andWhere(field : string, operator : string, value : string|array|bool) : $this
+    +addOrderBy(field : string, direction : string) : $this
+    +setMaxResults(maxResults : integer) : $this
+    +{abstract}getQuery() : mixed
+}
+
+class MongoDB.MongoDBQuery {
+    -collection : string
+    -find : string[] = []
+    -limit : string
+    -sort : string[]. = []
+    +__construct(collection : string)
+    +addFindClause(find) : $this
+    +addSortClause(sort) : $this
+    +setLimit(limit : string) : $this
+    +getCommand() : string
+}
+
+class MongoDB.MongoDBBQueryBuilder {
+    -query : MongoDBQuery
+    +createQuery(collection)
+    +andWhere(field, operator, value)
+    +addOrderBy(field, direction)
+    +setMaxResults(maxResults)
+    +getQuery() : MongoDBQuery
+}
+
+class MySQL.MySQLQueryBuilder {
+    -query : MySQLQuery
+    +createQuery(from)
+    +andWhere(field, operator, value)
+    +addOrderBy(field, direction)
+    +setMaxResults(maxResults)
+    +getQuery() : MySQLQuery
+}
+
+class MySQL.MySQLQuery {
+    -limit : integer
+    -orderBy : string[]. = []
+    -table : string
+    -where : string[] = []
+    +__construct(table : string)
+    +addWhereClause(where) : $this
+    +addOrderByClause(orderBy) : $this
+    +setLimit(limit : int) : $this
+    +getSQL() : string
+}
+
+ProductRepository o-right- QueryBuilder
+
+"MongoDB.MongoDBBQueryBuilder" .up.|> QueryBuilder
+"MongoDB.MongoDBBQueryBuilder" o-right- "MongoDB.MongoDBQuery"
+
+"MySQL.MySQLQueryBuilder" .up.|> QueryBuilder
+"MySQL.MySQLQueryBuilder" o-right- "MySQL.MySQLQuery"
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml
