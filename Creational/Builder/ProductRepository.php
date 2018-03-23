@@ -3,8 +3,8 @@
 namespace DesignPatterns\Creational\Builder;
 
 /**
- * Repository that is responsible for retrieving data from database.
- * It contains high level methods containing business of such retrieval.
+ * Repository that is responsible for retrieving product's data from database.
+ * It contains high level methods of such retrieval.
  * An instance of concrete builder is used to implement these methods.
  *
  * It corresponds to `Director` in the Builder pattern.
