@@ -13,6 +13,7 @@ The examples of the Gang of Four's design patterns in PHP.
 * [Builder](Creational/Builder) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Builder_pattern)
 * [FactoryMethod](Creational/FactoryMethod) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Factory_method_pattern)
 * [Prototype](Creational/Prototype) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Prototype_pattern)
+* [Singleton](Creational/Singleton) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Singleton_pattern)
 
 ## Structural
 

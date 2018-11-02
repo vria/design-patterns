@@ -1,0 +1,28 @@
+@startuml
+
+abstract class Session {
+    -{static} instance : Session
+    -id : string
+    -__construct(id: string)
+    +{static} getInstance(id: string)
+    +getId() : string
+    +{abstract} read() : string
+    +{abstract} write() : string
+}
+
+class SessionFile {
+    +read() : string
+    +write() : string
+}
+
+class SessionMemcached {
+    +read() : string
+    +write() : string
+}
+
+SessionFile -up-|> Session
+SessionMemcached -up-|> Session
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml
