@@ -25,11 +25,11 @@ class StubExampleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Create session with SessionFile class.
+     * Create session with @see SessionFile class.
      */
     public function testStubbedId()
     {
-        $session = Session::getInstance(uniqid());
+        $session = Session::getInstance();
 
         $this->assertEquals('stubbed_id', $session->getId());
         $this->assertEquals('SessionFile reads from file "stubbed_id"', $session->read());

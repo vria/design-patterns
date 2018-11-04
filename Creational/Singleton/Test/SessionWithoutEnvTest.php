@@ -7,12 +7,15 @@ use DesignPatterns\Creational\Singleton\SessionFile;
 use DesignPatterns\Creational\Singleton\SessionMemcached;
 
 /**
+ * Tests creating sessions without environment variable set.
+ * All tests must throw exceptions.
+ *
  * @author Vlad Riabchenko <vriabchenko@webnet.fr>
  */
 class SessionWithoutEnvTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Create session with Session class.
+     * Create session with abstract @see Session class.
      *
      * @runInSeparateProcess
      * @expectedException \LogicException
@@ -20,11 +23,11 @@ class SessionWithoutEnvTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateWithSession()
     {
-        Session::getInstance(uniqid());
+        Session::getInstance();
     }
 
     /**
-     * Create session with SessionFile class.
+     * Create session with @see SessionFile class.
      *
      * @runInSeparateProcess
      * @expectedException \LogicException
@@ -32,11 +35,11 @@ class SessionWithoutEnvTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateWithSessionFile()
     {
-        SessionFile::getInstance(uniqid());
+        SessionFile::getInstance();
     }
 
     /**
-     * Create session with SessionMemcached class.
+     * Create session with @see SessionMemcached class.
      *
      * @runInSeparateProcess
      * @expectedException \LogicException
@@ -44,6 +47,6 @@ class SessionWithoutEnvTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateWithSessionMemcached()
     {
-        SessionMemcached::getInstance(uniqid());
+        SessionMemcached::getInstance();
     }
 }

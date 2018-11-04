@@ -3,6 +3,8 @@
 namespace DesignPatterns\Creational\Singleton;
 
 /**
+ * Session implementation that stores data in Memcached.
+ *
  * @author Vlad Riabchenko <vriabchenko@webnet.fr>
  */
 class SessionMemcached extends Session
