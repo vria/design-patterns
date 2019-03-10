@@ -9,7 +9,7 @@ namespace DesignPatterns\Creational\Builder;
  *
  * It corresponds to `Director` in the Builder pattern.
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class ProductRepository
 {

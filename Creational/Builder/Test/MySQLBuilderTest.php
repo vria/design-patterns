@@ -7,7 +7,7 @@ use DesignPatterns\Creational\Builder\ProductRepository;
 use DesignPatterns\Creational\Builder\QueryBuilder;
 
 /**
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class MySQLBuilderTest extends \PHPUnit_Framework_TestCase
 {

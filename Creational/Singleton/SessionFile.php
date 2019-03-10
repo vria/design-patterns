@@ -5,7 +5,7 @@ namespace DesignPatterns\Creational\Singleton;
 /**
  * Session implementation that stores data in file.
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SessionFile extends Session
 {

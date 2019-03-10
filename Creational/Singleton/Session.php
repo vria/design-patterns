@@ -7,7 +7,7 @@ namespace DesignPatterns\Creational\Singleton;
  * It is responsible for providing a single instance of currently configured session.
  * Clients should depend on this class to get session object which can be any of Session subclass.
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 abstract class Session
 {

@@ -10,7 +10,7 @@ use DesignPatterns\Creational\Builder\QueryBuilder;
  *
  * It corresponds to `ConcreteBuilder` in the Builder pattern.
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class MongoDBBQueryBuilder extends QueryBuilder
 {

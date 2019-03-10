@@ -1,0 +1,53 @@
+@startuml
+
+interface Node << Target >> {
+    +{abstract}label() : string
+    +{abstract}children() : Node[]
+}
+
+class TreeRenderer << Client >> {
+    +render(tree: Node, level: int = 0) : string
+}
+
+class "Adapter.BinaryTreeAdapter" << Adapter >> {
+    -tree : BinaryTreeNode
+    +__construct(tree: BinaryTreeNode)
+    +label() : int
+    +children() : Node[]
+}
+
+class "Adapter.FilesystemAdapter" << Adapter >> {
+	+label() : int
+	+children() : Node[]
+}
+
+class "BinaryTree.BinaryTreeNode" << Adaptee >> {
+    -value : int
+    -left : BinaryTreeNode
+    -right : BinaryTreeNode
+    +__construct(value : int)
+    +insert(value : int)
+    +getValue() : int
+    +getLeft() : BinaryTreeNode
+    +getRight() : BinaryTreeNode
+}
+
+class "Filesystem.FilesystemElement" << Adaptee >> {
+    -path : string
+    +__construct(path : string)
+    +getBasename() : string
+    +getSubElements() : string[]
+}
+
+
+TreeRenderer .right.> Node
+"Adapter.BinaryTreeAdapter" .up.|> Node
+"Adapter.FilesystemAdapter" .up.|> Node
+
+
+"Adapter.BinaryTreeAdapter" *-- "BinaryTree.BinaryTreeNode"
+"Adapter.FilesystemAdapter" -right-|> "Filesystem.FilesystemElement"
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

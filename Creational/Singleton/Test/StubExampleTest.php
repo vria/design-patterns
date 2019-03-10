@@ -12,7 +12,7 @@ use DesignPatterns\Creational\Singleton\SessionFile;
  *
  * @see SessionFileStub
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class StubExampleTest extends \PHPUnit_Framework_TestCase
 {
@@ -49,7 +49,7 @@ class StubExampleTest extends \PHPUnit_Framework_TestCase
  * Stubbed session - this is test double that permits to test `read` and `write`
  * methods of @see SessionFile without depending on the implementation of `getId` method.
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SessionFileStub extends SessionFile
 {

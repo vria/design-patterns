@@ -10,7 +10,7 @@ use DesignPatterns\Creational\Singleton\SessionMemcached;
  * Tests creating sessions without environment variable set.
  * All tests must throw exceptions.
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SessionWithoutEnvTest extends \PHPUnit_Framework_TestCase
 {

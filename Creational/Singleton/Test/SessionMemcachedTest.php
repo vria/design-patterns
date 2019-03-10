@@ -9,7 +9,7 @@ use DesignPatterns\Creational\Singleton\SessionMemcached;
 /**
  * Tests creating @see SessionMemcached session object.
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class SessionMemcachedTest extends \PHPUnit_Framework_TestCase
 {

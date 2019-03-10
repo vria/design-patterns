@@ -7,7 +7,7 @@ namespace DesignPatterns\Creational\Builder\MongoDB;
  *
  * It corresponds to `Product` in the Builder pattern.
  *
- * @author Vlad Riabchenko <vriabchenko@webnet.fr>
+ * @author Vlad Riabchenko <contact@vria.eu>
  */
 class MongoDBQuery
 {
