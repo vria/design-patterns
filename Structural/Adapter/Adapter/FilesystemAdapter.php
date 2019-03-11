@@ -6,6 +6,9 @@ use DesignPatterns\Structural\Adapter\Filesystem\FilesystemElement;
 use DesignPatterns\Structural\Adapter\Node;
 
 /**
+ * Adapts @FilesystemElement to enable it to be rendered by tree renderer.
+ * An example of class adapter that extends its adaptee.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class FilesystemAdapter extends FilesystemElement implements Node
@@ -25,6 +28,7 @@ class FilesystemAdapter extends FilesystemElement implements Node
     {
         $children = $this->getSubElements();
 
+        // Return all children in the form of FilesystemAdapter objects.
         return array_map(function($path) {
             return new FilesystemAdapter($path);
         }, $children);

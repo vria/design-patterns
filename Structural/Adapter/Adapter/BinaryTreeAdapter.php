@@ -6,11 +6,16 @@ use DesignPatterns\Structural\Adapter\BinaryTree\BinaryTreeNode;
 use DesignPatterns\Structural\Adapter\Node;
 
 /**
+ * Adapts @BinaryTreeNode to enable it to be rendered by tree renderer.
+ * An example of object adapter.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class BinaryTreeAdapter implements Node
 {
     /**
+     * Reference to adaptee.
+     *
      * @var BinaryTreeNode
      */
     private $tree;
@@ -24,7 +29,7 @@ class BinaryTreeAdapter implements Node
     }
 
     /**
-     * @return int
+     * @inheritdoc
      */
     public function label()
     {
@@ -36,6 +41,7 @@ class BinaryTreeAdapter implements Node
      */
     public function children()
     {
+        // Simply collect all existing children.
         $children = [];
 
         if ($left = $this->tree->getLeft()) {

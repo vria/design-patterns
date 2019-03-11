@@ -3,11 +3,15 @@
 namespace DesignPatterns\Structural\Adapter\Filesystem;
 
 /**
+ * Represents either a folder or a file in a filesystem.
+ *
  * @author Vlad Riabchenko <contact@vria.eu>
  */
 class FilesystemElement
 {
     /**
+     * Absolute path.
+     *
      * @var string
      */
     protected $path;
@@ -21,6 +25,8 @@ class FilesystemElement
     }
 
     /**
+     * Get the basename of current element: /var/www/{basename.ext}.
+     *
      * @return string
      */
     public function getBasename()
@@ -29,6 +35,9 @@ class FilesystemElement
     }
 
     /**
+     * Get all children of this element.
+     * Always returns empty array if this element is a file.
+     *
      * @return array
      */
     public function getSubElements()
