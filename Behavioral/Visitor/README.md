@@ -1,10 +1,12 @@
 Visitor
 =======
 
-Visitor pattern lets introduce a new method for a multiple element classes without changing that classes. 
-These new methods (one for each element class) are encapsulated in the `Visitor` class. 
-Then when it comes to executing this operation the visitor object is passed to a generic method `acceptVisitor($anyVisitor)` of an element object
-which in turn calls the proper method of passed visitor.
+Visitor pattern lets you introduce a new method for a multiple classes without 
+changing those classes. These new methods (one for each element class) 
+are encapsulated in the `Visitor` class. When it comes to executing this 
+operation the visitor object is passed to a generic method 
+`acceptVisitor($anyVisitor)` of an element object which in turn calls a proper 
+method of passed visitor.
 
 So before: 
 
@@ -17,24 +19,27 @@ interface Element {
 }
 
 class First implements Element {
-    public fucntion print() [ // printing first, may contain many lines };
-    public fucntion sum() { // sum first, may contain many lines };
-    public fucntion do() { // doing first, may contain many lines };
+    public fucntion print() { // ... };
+    public fucntion sum() { // ... };
+    public fucntion do() { // ... };
     // other methods
 }
 
 class Second implements Element {
-    public fucntion print() [ // printing second, may contain many lines };
-    public fucntion sum() { // sum second, may contain many lines };
-    public fucntion do() { // doing second, may contain many lines };
+    public fucntion print() [ // ... };
+    public fucntion sum() { // ... };
+    public fucntion do() { // ... };
     // other methods
 }
 ```
 
-As you can see, to add a new operation in the `Element` interface, you need to add its body to each class that implements it.
-In that way you can end up with many big methods in your `First` and `Second` classes.
-Moreover that operation are quite different: printing, sum, doing something, etc. 
-The classes `First` and `Second` gets polluted very quickly with unrelated logic.
+As you can see, in order to add a new operation in the `Element` interface, 
+you need to add its body to each class that implements it. Hence you can end up 
+with many large methods in your `First` and `Second` classes. 
+
+Moreover a new operation can be quite different from the methods that already 
+exist in `First` and `Second`. The classes get polluted very quickly with 
+unrelated logic which breaks single responsibility principle.
 
 Let's see how visitors can enhance the architecture:
 ```
@@ -83,12 +88,13 @@ class DoVisitor implements Visitor {
 // other visitors
 ```
  
-With the Visitor pattern, the methods that were in the `Element` (and `First` and `Second`) were in regrouped to the visitors.
-In addition these methods are localized by its purpose: printing, sum, doing, etc.
-To introduce a new operation to the `Element` and its implementators, you simply add a new visitor class
-without changing anything else.
+As you cas see Visitor pattern shifted methods from `Element` interface (`print`,
+`sum`, `do`) to the dedicated classes (`PrintVisitor`, `SumVisitor`, `DoVisitor`).
+From now the methods are grouped by its purpose: printing, sum, doing, etc. To 
+introduce a new operation to the `Element` and its implementators, you simply 
+need to add a new visitor class without changing anything else.
 
-This architecture is a way much cleaner because it promotes a separation of concerns. 
+This architecture gets much cleaner because it promotes a separation of concerns. 
 Nevertheless it may affect encapsulation of `First` and `Second` classes 
 because visitor's methods may require a lot of privilege.
 
@@ -96,17 +102,24 @@ See [https://en.wikipedia.org/wiki/Visitor_pattern](https://en.wikipedia.org/wik
 
 ![Visitor pattern class diagram](doc/visitor_class_diagram.png)
 
-Consider a library for handling web form and its fields (like the Form component of Symfony).
-The idea is that of each field in the form can be configured by an object of one of these classes: 
+Consider a library for handling web form and its fields (like the Form component 
+of Symfony).
+Each field in a form corresponds to one of these classes: 
 - [EmailField] for email text fields,
 - [IntegerField] for integer fields,
 - [CheckboxesField] for a group of checkboxes.
 
-These classes inherit from [FormField] that contains common properties like `$value`, `$viewValue`, `$required` and `$error`.
- 
-To show a default value in a field when the form is rendered, the php model value (`$value`) is mapped to html value (`$viewValue`).
-When the form is submitted the view value is mapped back to php model value. 
+These classes inherit from [FormField] class that contains common properties:
+- `$value`: submitted or default "php" value (also called "model value"),
+- `$viewValue`: submitted or default "html" value,
+- `$required`: if true then a field is required,
+- `$error`: validation error message.
 
+We can specify a default value to show in a field when its rendered by setting
+`$value` property of the field. It then gets transformed to `$viewValue` and
+shown. When a form is submitted all fields contain submitted data in theirs 
+`$viewValue` properties. Then `$viewValue` is transformed to `$value`.
+ 
 The view value must be validated before it gets transformed to php value: 
 - email must be a valid email address, 
 - integer can not contain nothing but digits,
@@ -114,20 +127,30 @@ The view value must be validated before it gets transformed to php value:
 - checkbox value must be allowed,
 - etc.
 
-We could add methods like `validate`, `transformModelToView`, `transformViewToModel` to [FormField] and redefine them is all its subclasses.
-Another solution that Visitor pattern suggests is encapsulate these logic in separate classes, visitors :
+We could add methods like `validate`, `transformModelToView`, 
+`transformViewToModel` to [FormField] and redefine them is all its subclasses.
+Another solution that the Visitor pattern suggests is to encapsulate these logic 
+in separate classes called visitors:
 
-- [VisitorInterface] a contract for all visitors, determines which form fields the visitors can process 
-(`visitEmail(EmailField $emailField)`, `visitInteger(IntegerField $integerField)`, `visitCheckboxes(CheckboxesField $checkboxesField)`)
-- [ValidatorVisitor] validates form fields, it sets the message in the `$error` property of form fields if its view value is not valid, 
-- [ModelToViewTransformerVisitor] sets `$viewValue` of the form field by transforming `$value`,
-- [ViewToModelTransformerVisitor] sets `$value` of the form field by transforming `$viewValue`.
+- [VisitorInterface] a contract for all visitors, determines which form fields 
+the visitors will be able to process (`visitEmail(EmailField $emailField)`, 
+`visitInteger(IntegerField $integerField)`, 
+`visitCheckboxes(CheckboxesField $checkboxesField)`),
+- [ValidatorVisitor] validates form fields. It sets the message in the `$error` 
+properties of the form fields if theirs view values are not valid, 
+- [ModelToViewTransformerVisitor] sets `$viewValue` of the form field by 
+transforming `$value`,
+- [ViewToModelTransformerVisitor] sets `$value` of the form field by 
+transforming `$viewValue`.
 
-As for form fields classes, the only addition is `accept(VisitorInterface $visitor)` method that accepts any visitor.
-This method is very similar in all form fields - the visitor is requested to perform its logic.     
+As for the form fields classes the only addition is the
+`accept(VisitorInterface $visitor)` method that accepts any visitor.
+This method is very similar in all form fields - the visitor is requested to 
+perform its logic.     
 
-Visitor pattern implements so-called "double dispatch" when the actual called method depends on both the class of the form element
-end the class of the visitor:
+Visitor pattern implements so-called "double dispatch" when the actual called 
+method depends on both the class of the form element end the class of the 
+visitor:
 
 ```
 /**

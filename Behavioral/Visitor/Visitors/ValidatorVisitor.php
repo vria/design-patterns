@@ -73,10 +73,9 @@ class ValidatorVisitor implements VisitorInterface
     {
         $viewValues = $checkboxesField->getViewValue();
         $choices = array_keys($checkboxesField->getChoices());
-        $empty = empty($viewValues);
 
         // Verify that field is not empty
-        if ($checkboxesField->isRequired() && $empty) {
+        if ($checkboxesField->isRequired() && empty($viewValues)) {
             $checkboxesField->setError("At least one choice is required.");
 
             return;

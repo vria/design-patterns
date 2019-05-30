@@ -21,12 +21,13 @@ class ViewToModelTransformerVisitor implements VisitorInterface
      */
     public function visitEmail(EmailField $emailField)
     {
-        // Set the email model value only when there is no validation error.
+        $value = null;
         if (!$emailField->getError()) {
-            $emailField->setValue($emailField->getViewValue());
-        } else {
-            $emailField->setValue(null);
+            // Set the email model value only when there is no validation error.
+            $value = $emailField->getViewValue();
         }
+
+        $emailField->setValue($value);
     }
 
     /**
@@ -34,14 +35,13 @@ class ViewToModelTransformerVisitor implements VisitorInterface
      */
     public function visitInteger(IntegerField $integerField)
     {
-        $viewValue = $integerField->getViewValue();
-
-        // Set the integer model value only when there is no validation error.
+        $value = null;
         if (!$integerField->getError()) {
-            $integerField->setValue(intval($viewValue));
-        } else {
-            $integerField->setValue(null);
+            // Set the integer model value only when there is no validation error.
+            $value = intval($integerField->getViewValue());
         }
+
+        $integerField->setValue($value);
     }
 
     /**
@@ -49,20 +49,19 @@ class ViewToModelTransformerVisitor implements VisitorInterface
      */
     public function visitCheckboxes(CheckboxesField $checkboxesField)
     {
-        // Set the checkboxes model value only when there is no validation error.
+        $values = null;
         if (!$checkboxesField->getError()) {
-            $modelValues = [];
+            // Set the checkboxes model value only when there is no validation error.
+            $values = [];
 
             $choices = $checkboxesField->getChoices();
 
             // For each view value find a corresponding model value and add it to the array of view values.
-            foreach ($checkboxesField->getViewValue() as $value) {
-                $modelValues[] = $choices[$value];
+            foreach ($checkboxesField->getViewValue() as $viewValue) {
+                $values[] = $choices[$viewValue];
             }
-
-            $checkboxesField->setValue($modelValues);
-        } else {
-            $checkboxesField->setValue(null);
         }
+
+        $checkboxesField->setValue($values);
     }
 }

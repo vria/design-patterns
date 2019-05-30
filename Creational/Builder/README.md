@@ -2,13 +2,14 @@ Builder
 =======
 
 The Builder pattern separates the algorithm of creating a complex object from its representation.
-In other terms the algorithm that directs the creation and configuration of complex object does not depend on its 
-actual class. Neither it depends on the actual classes of any object that compose a complex object.
+In other terms the algorithm that directs the creation and configuration of a complex object 
+does not depend on its actual class. Neither does it depend on the actual classes of objects that is a part of this complex object.
 
-This is achieved by hiding the complex object being build (`Product`) behind abstract `Builder` class.
+This is achieved by hiding the complex object being build (`Product`) behind an abstract `Builder` class.
 `Builder` creates, configures and builds a `Product` object step by step according to the commands it receives from `Director`.
 
-`Director` depends on abstract builder only. It does not depend on `Product` class neither on other classes needed to configure a product instance:
+`Director` depends on the abstract builder only. It does not depend on the `Product` 
+class as well as on other classes needed to configure a product instance:
 
 ```
 class Director 
@@ -45,7 +46,7 @@ abstract class Builder
 }
 ```
 
-Concrete implementation of `Builder` creates and configures a new instances of `ProductA` class:
+A concrete implementation of `Builder` creates and configures new instances of `ProductA` class:
 ```
 class ConcreteBuilderA extends Builder 
 {

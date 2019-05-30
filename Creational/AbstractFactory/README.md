@@ -1,13 +1,14 @@
 Abstract factory (Kit)
 ======================
 
-The abstract factory pattern is about to delegate the creation of objects to a special object called `Factory`.
-A client code that asks the factory to create objects on his behalf is coupled only with a generic interface that 
-a concrete factory implements. Therefore various concrete factories are interchangeable.
+The abstract factory pattern is about delegating the creation of objects to a 
+special object called `Factory`. A client code that asks the factory to create objects 
+on its behalf is coupled only with the generic interface that a concrete factory implements. 
+Therefore various concrete factories are interchangeable.
 
-Moreover the concrete classes of created objects are hidden from client behind their interfaces. 
+Moreover the concrete classes of created objects are hidden from clients behind their interfaces. 
 So these classes are also interchangeable. 
-Usually the objects created by concrete factory belong to the same family.
+Usually the objects created by a concrete factory belong to the same family.
 
 See [https://en.wikipedia.org/wiki/Abstract_factory_pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern) for more information.
 
@@ -20,7 +21,7 @@ Imagine that some html renderer or any other client code needs to create a set o
 - [TextInputInterface] that can be [PlainTextInput], [BootstrapTextInput], etc.
 - [PageInterface] that can be [PlainPage], [BootstrapPage], etc.
 
-Tha client code should not be aware of concrete class implementing these interfaces. 
+The client code should not be aware of a concrete class implementing these interfaces. 
 To achieve this the client code does not create these objects directly, instead it asks any object that implements 
 [HTMLFactoryInterface] (`AbstractFactory`) to do it. This interface has methods to create:
 - [ButtonInterface] (`AbstractProductA`),
