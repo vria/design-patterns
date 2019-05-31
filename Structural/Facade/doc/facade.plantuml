@@ -1,0 +1,31 @@
+@startuml
+
+class Security << Security Facade >> {
+    -authentication: Authentication
+    -roleRegistry: RoleRegistry
+    -authorization: Authorization
+    +check(user: string, password: string, urlPath: string)
+}
+
+class Authentication << Subsystem >> {
+    -userPasswords: array
+    +authenticate(user: string, password: string): bool
+}
+
+class RoleRegistry << Subsystem >> {
+    -roles: array
+    +getRole(user: string): string
+}
+
+class Authorization << Subsystem >> {
+    -roles: array
+    +check(role: string, urlPath: string): bool
+}
+
+Security .down.> Authentication
+Security .down.> RoleRegistry
+Security .down.> Authorization
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

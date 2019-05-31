@@ -14,19 +14,16 @@ class FilesystemElementAdapterTest extends \PHPUnit_Framework_TestCase
     {
         $renderer = new TreeRenderer();
         $node = new FilesystemAdapter(__DIR__.'/filesystem_adapter_fixtures');
-
         $rendered = $renderer->render($node);
-        $expected = <<<EOL
-filesystem_adapter_fixtures
---1_one
-----1_duo
-------1_trois.txt
-------2_trois.txt
-----2_duo
---2_one
---3_one.txt
 
-EOL;
+        $expected = "filesystem_adapter_fixtures\n"
+                    ."--1_one\n"
+                    ."----1_duo\n"
+                    ."------1_trois.txt\n"
+                    ."------2_trois.txt\n"
+                    ."----2_duo\n"
+                    ."--2_one\n"
+                    ."--3_one.txt\n";
 
         $this->assertEquals($expected, $rendered);
     }
