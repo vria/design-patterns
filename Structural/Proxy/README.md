@@ -215,8 +215,11 @@ the proxies. Check out all the classes of this setting:
 - [DependencyInjection/ScannerProxy]
 - [DependencyInjection/ServiceLocator]
 
+This approach is inspired by [the article of Marco Pivetta].
+
 [Printer]: Printer.php
 [Scanner]: Scanner.php
 [DependencyInjection/PrinterProxy]: DependencyInjection/PrinterProxy.php
 [DependencyInjection/ScannerProxy]: DependencyInjection/ScannerProxy.php
 [DependencyInjection/ServiceLocator]: DependencyInjection/ServiceLocator.php
+[the article of Marco Pivetta]: https://ocramius.github.io/blog/zf2-and-symfony-service-proxies-with-doctrine-proxies/
