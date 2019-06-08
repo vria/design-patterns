@@ -1,0 +1,52 @@
+@startuml
+
+class Printer << Subject >> {
+    -scanner: Scanner
+    +__construct(scanner: Scanner)
+    +printDocument(document: string)
+    +printScannedDocument(document: string)
+}
+
+class Scanner << Subject >> {
+    - printer: Printer
+    +__construct(printer: Printer)
+    +scanDocument(document: string)
+    +scanPrintedDocument(document: string)
+}
+
+class "DependencyInjection.PrinterProxy" << Proxy >> {
+    -serviceLocator: ServiceLocator
+    -printer: Printer
+    +__construct(serviceLocator: ServiceLocator)
+    -init()
+    +printDocument(document: string)
+    +printScannedDocument(document: string)
+}
+
+class "DependencyInjection.ScannerProxy" << Proxy >> {
+    -serviceLocator: ServiceLocator
+    -scanner: Scanner
+    +__construct(serviceLocator: ServiceLocator)
+    -init()
+    +scanDocument(document: string)
+    +scanPrintedDocument(document: string)
+}
+
+class "DependencyInjection.ServiceLocator" {
+    -services: array
+    +getPrinter: Printer
+    +getScanner: Scanner
+}
+
+"DependencyInjection.ScannerProxy" -up-|> Scanner
+"DependencyInjection.ScannerProxy" o-up- Scanner
+"DependencyInjection.PrinterProxy" -up-|> Printer
+"DependencyInjection.PrinterProxy" o-up- Printer
+Scanner o-right- Printer
+Scanner -right-o Printer
+"DependencyInjection.ServiceLocator" -up-> "DependencyInjection.ScannerProxy" : creates
+"DependencyInjection.ServiceLocator" -up-> "DependencyInjection.PrinterProxy" : creates
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml
