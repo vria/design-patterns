@@ -18,4 +18,14 @@ class AuthorizationTest extends TestCase
 
         $this->assertTrue($authorization->check('ROLE_USER', '/my_account/preferences'));
     }
+
+    public function testCheckAccessDenied()
+    {
+
+    }
+
+    public function testCheckAccessDeniedNoPattern()
+    {
+
+    }
 }

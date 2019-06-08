@@ -12,21 +12,21 @@ So before:
 
 ```
 interface Element {
-    public fucntion print();
+    public fucntion printDocument();
     public fucntion sum();
     public fucntion do();
     // other methods
 }
 
 class First implements Element {
-    public fucntion print() { // ... };
+    public fucntion printDocument() { // ... };
     public fucntion sum() { // ... };
     public fucntion do() { // ... };
     // other methods
 }
 
 class Second implements Element {
-    public fucntion print() [ // ... };
+    public fucntion printDocument() [ // ... };
     public fucntion sum() { // ... };
     public fucntion do() { // ... };
     // other methods
@@ -88,7 +88,7 @@ class DoVisitor implements Visitor {
 // other visitors
 ```
  
-As you cas see Visitor pattern shifted methods from `Element` interface (`print`,
+As you cas see Visitor pattern shifted methods from `Element` interface (`printDocument`,
 `sum`, `do`) to the dedicated classes (`PrintVisitor`, `SumVisitor`, `DoVisitor`).
 From now the methods are grouped by its purpose: printing, sum, doing, etc. To 
 introduce a new operation to the `Element` and its implementators, you simply 

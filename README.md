@@ -22,6 +22,7 @@ The examples of the Gang of Four's design patterns in PHP.
 * [Composite](Structural/Composite) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Composite_pattern)
 * [Decorator](Structural/Decorator) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Decorator_pattern)
 * [Facade](Structural/Facade) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Facade_pattern)
+* [Proxy](Structural/Proxy) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Proxy_pattern)
 
 ## Behavioral
 
