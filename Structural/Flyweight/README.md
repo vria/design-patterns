@@ -35,9 +35,9 @@ separate object that represents it. It's the objects of [CustomPackage] class.
 This is unshared concrete flyweight.
 
 `SmallPackage`, `BigPackage` and `CustomPackage` implement [PackageInterface].
-The latter defines a method `getTotalWeight` which returns a weight of a 
+The latter defines the method `getTotalWeight` which returns a weight of a 
 package based on intrinistic data (*volume*) and extrinistic data (*density*).
-The volume value is stored in flyweight, the density value is passed to the
+The volume value is stored in the flyweight, the density value is passed to its
 method.
 
 Every instantiation of `SmallPackage`, `BigPackage` or `CustomPackage` must be

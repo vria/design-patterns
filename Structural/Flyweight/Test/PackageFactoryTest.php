@@ -54,7 +54,7 @@ class PackageFactoryTest extends TestCase
             $factory->get('unknown');
         } catch (\InvalidArgumentException $e) {
             $this->assertEquals('Unknown package type', $e->getMessage());
-            
+
             return;
         }
 
