@@ -1,0 +1,41 @@
+@startuml
+
+interface PackageInterface << Flyweight >> {
+    +getName(): string
+    +getTotalWeight(count: int): int
+}
+
+class SmallPackage <<Concrete flyweight>> {
+    -name: string
+    -volume: int
+    +getName()
+    +getTotalWeight(count)
+}
+
+class BigPackage <<Concrete flyweight>> {
+    -name: string
+    -volume: int
+    +getName()
+    +getTotalWeight(count)
+}
+
+class CustomPackage <<Unshared concrete flyweight>> {
+    -name: string
+    -volume: int
+    +getName()
+    +getTotalWeight(count)
+}
+
+class PackageFactory <<Flyweight factory>> {
+    -packages: PackageInterface[]
+    +get(type, name = null, volume = null)
+}
+
+SmallPackage .up.|> PackageInterface
+BigPackage .up.|> PackageInterface
+CustomPackage .up.|> PackageInterface
+PackageFactory -right-o PackageInterface
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml
