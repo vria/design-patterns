@@ -1,0 +1,34 @@
+@startuml
+
+class Parcel << Request >> {
+    +weight : float
+    +distance : int
+    +__construct(weight : float, distance : int)
+}
+
+abstract class MailTransport << Handler >> {
+    -successor : MailTransport
+    +setSuccessor(successor: MailTransport)
+    +deliver(parcel: Parcel) : string
+}
+
+class AirMail << Concrete Handler >> {
+    +deliver(parcel: Parcel) : string
+}
+
+class RailwayMail << Concrete Handler >> {
+    +deliver(parcel: Parcel) : string
+}
+
+class TruckMail << Concrete Handler >> {
+    +deliver(parcel: Parcel) : string
+}
+
+"AirMail" -up-|> MailTransport
+"RailwayMail" -up-|> MailTransport
+"TruckMail" -up-|> MailTransport
+MailTransport .right.> Parcel: deliver
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml
