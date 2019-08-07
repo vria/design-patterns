@@ -27,7 +27,9 @@ The examples of the Gang of Four's design patterns in PHP.
 
 ## Behavioral
 
+* [Chain of responsibility](Behavioral/ChainOfResponsibility) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)
 * [Command](Behavioral/Command) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Command_pattern)
+* [Interpreter](Behavioral/Interpreter) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">]([https://en.wikipedia.org/wiki/Interpreter_pattern])
 * [Observer](Behavioral/Observer) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Observer_pattern)
 * [Strategy](Behavioral/Strategy) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Strategy_pattern)
 * [TemplateMethod](Behavioral/TemplateMethod) [<img height="18px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/200px-Wikipedia-logo-v2.svg.png">](https://en.wikipedia.org/wiki/Template_method_pattern)

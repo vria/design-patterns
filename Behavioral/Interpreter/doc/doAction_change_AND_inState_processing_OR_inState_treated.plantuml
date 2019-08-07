@@ -1,0 +1,37 @@
+@startuml
+
+object doAction_change_AND_inState_processing_OR_inState_treated << Sequence >> {
+}
+
+object doAction_change << DoAction >> {
+}
+
+object change << Action >> {
+}
+
+object inState_processing_OR_inState_treated << Alternation >> {
+}
+
+object inState_processing << InState >> {
+}
+
+object processing << State >> {
+}
+
+object inState_treated << InState >> {
+}
+
+object treated << State >> {
+}
+
+doAction_change_AND_inState_processing_OR_inState_treated .down.> doAction_change
+doAction_change .down.> change
+doAction_change_AND_inState_processing_OR_inState_treated .down.> inState_processing_OR_inState_treated
+inState_processing_OR_inState_treated .down.> inState_processing
+inState_processing .down.> processing
+inState_processing_OR_inState_treated .down.> inState_treated
+inState_treated .down.> treated
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

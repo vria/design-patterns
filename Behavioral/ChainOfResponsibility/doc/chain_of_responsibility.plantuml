@@ -24,9 +24,9 @@ class TruckMail << Concrete Handler >> {
     +deliver(parcel: Parcel) : string
 }
 
-"AirMail" -up-|> MailTransport
-"RailwayMail" -up-|> MailTransport
-"TruckMail" -up-|> MailTransport
+AirMail -up-|> MailTransport
+RailwayMail -up-|> MailTransport
+TruckMail -up-|> MailTransport
 MailTransport .right.> Parcel: deliver
 
 right footer © Vlad Riabchenko <contact@vria.eu>

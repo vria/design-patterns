@@ -1,0 +1,29 @@
+@startuml
+
+object a_big_kind_dog << Description >> {
+}
+
+object big_kind << Features >> {
+}
+
+object big << SingleFeature >> {
+}
+
+object _kind << Features >> {
+}
+
+object kind << SingleFeature >> {
+}
+
+object dog << Animal >> {
+}
+
+a_big_kind_dog .down.> big_kind
+a_big_kind_dog .down.> dog
+big_kind .down.> big
+big_kind .down.> _kind
+_kind .down.> kind
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml

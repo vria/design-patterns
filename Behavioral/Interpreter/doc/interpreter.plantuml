@@ -1,0 +1,55 @@
+@startuml
+
+interface Expression << Expression >> {
+    +interpret()
+}
+
+class Action << TerminalExpression >> {
+    -action: string
+    +interpret()
+}
+
+class State << TerminalExpression >> {
+    -state: string
+    +interpret()
+}
+
+class DoAction << NonTerminalExpression >> {
+    -argument: Action
+    -context: array
+    +interpret()
+}
+
+class InState << NonTerminalExpression >> {
+    -argument: State
+    -context: array
+    +interpret()
+}
+
+class Alternation << NonTerminalExpression >> {
+    -alt1: Expression
+    -alt2: Expression
+    +interpret()
+}
+
+class Sequence << NonTerminalExpression >> {
+    -seq1: Expression
+    -seq2: Expression
+    +interpret()
+}
+
+
+Action .up.|> Expression
+DoAction o-right- Action
+DoAction .up.|> Expression
+State .up.|> Expression
+InState .up.|> Expression
+InState o-right- State
+Alternation .up.|> Expression
+Alternation o.up. Expression
+Sequence .up.|> Expression
+Sequence o.up. Expression
+
+right footer © Vlad Riabchenko <contact@vria.eu>
+
+@enduml
